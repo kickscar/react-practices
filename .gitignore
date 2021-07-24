@@ -1,0 +1,17 @@
+# for Mac
+**/.DS_Store
+
+# JavaScript Project
+**/node_modules
+
+# IDE directories and files
+**/.idea
+**/.vscode
+**/.suo
+**/.ntvs*
+**/.njsproj
+**/.sln
+**/.sw?
+
+# private resources
+**/private-resources

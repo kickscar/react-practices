@@ -1,0 +1,16 @@
+{
+  "name": "ex01",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "server",
+  "scripts": {
+    "start": "node dev-server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.17.1"
+  }
+}
