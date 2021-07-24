@@ -1,4 +1,4 @@
-## React Practices for 5 Days Course
+## React Practices(5 Days Course)
 
 ### 1.  Basics
 ### 2.  Component

@@ -10,7 +10,6 @@
 ### ex07: ex00.cra reconfiguration
 ### ex08: JSX Tutorials
 
-
 ### webpack-practices
 ### babel-practices
 
