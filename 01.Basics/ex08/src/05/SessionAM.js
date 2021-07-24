@@ -1,9 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class extends Component {
-    render() {
-        return (
-            <strong>AM</strong>
-        );
-    }
+export default function() {
+    return (
+        <strong>AM</strong>
+    );
 }

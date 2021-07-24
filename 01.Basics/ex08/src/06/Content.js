@@ -1,12 +1,11 @@
 import React, {Fragment} from 'react';
-import Header from "./Header";
-import Content from "./Content";
+import Clock from "./Clock";
 
 export default function () {
     return (
         <Fragment>
-            <Header />
-            <Content />
+            <p>JSX Tutorial - className</p>
+            <Clock/>
         </Fragment>
     );
 }

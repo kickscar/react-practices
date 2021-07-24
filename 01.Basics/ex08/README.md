@@ -1,6 +1,6 @@
-## ex08: JSX Tutorials
+## ex08: JSX Tutorial
 
-### 01. 컴포넌트(Functional Component) 만들어 보기
+### 01. Functional Component
 ### 02. React API로 만든 컴포넌트
 ### 03. Class Component
 ### 04. JSX 표현식 {} : 조건문 문제점

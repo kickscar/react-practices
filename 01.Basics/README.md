@@ -1,17 +1,18 @@
 ## React Practices - Basics
 
-### ex00.cra: CRA로 작성된 기본 APP
-### ex01: 전통적인 DOM API 기반 APP
-### ex02: App 분리 I
-### ex03: App 분리 II: ES6 Module System
-### ex04: App Bundling => webpack practices
-### ex05: 리팩토링 React(API 기반) App 
-### ex06: 리팩토링 React(JSX 기반) App => babel practices
-### ex07: ex00.cra reconfiguration
-### ex08: JSX Tutorials
+### ex00.cra: Quick Start with CRA 
+### ex01: Traditional App(Based on DOM API)
+### ex02: Modularization of App I
+### ex03: Modularization of App II: ES6 Module System
+### ex04: App Bundling with Webpack Practices
+### ex05: React Refactoring I (Based on API) 
+### ex06: React Refactoring II (Based on JSX with Babel Practices) 
+### ex07: ex00.cra Reconfiguration
+### ex08: JSX Tutorial
 
-### webpack-practices
-### babel-practices
+---
+### Webpack Practices
+### Babel Practices
 
 
 

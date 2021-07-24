@@ -1,4 +1,4 @@
-## React Practices(5 Days Course)
+## React Practices(5Day Intensives)
 
 ### 1.  Basics
 ### 2.  Component
@@ -13,4 +13,4 @@
 ### Emaillist App       [Course App II]
 ### Guestbook App       [Assignment I]
 ### Gallery App         [Assignment II]
-### Schedule Calendar   [Project Prototype]
+### Calendar Scheduler  [Project Prototype]

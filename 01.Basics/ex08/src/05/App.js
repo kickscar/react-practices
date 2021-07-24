@@ -1,14 +1,12 @@
-import React, { Component, Fragment } from 'react';
+import React, { Fragment } from 'react';
 import Header from "./Header";
-import Clock from "./Clock";
+import Content from "./Content";
 
-export default class extends Component {
-    render() {
-        return (
-            <Fragment>
-                <Header/>
-                <Clock />
-            </Fragment>
-        );
-    }
+export default function () {
+    return (
+        <Fragment>
+            <Header />
+            <Content />
+        </Fragment>
+    );
 }
