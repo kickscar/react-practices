@@ -1,4 +1,4 @@
-## React Practices
+## React Practices for 5 Days Course
 
 ### 1.  Basics
 ### 2.  Component
@@ -11,6 +11,6 @@
 
 ### Kanban App          [Course App I]
 ### Emaillist App       [Course App II]
-### Gustbook App        [Assignment I]
+### Guestbook App       [Assignment I]
 ### Gallery App         [Assignment II]
 ### Schedule Calendar   [Project Prototype]
