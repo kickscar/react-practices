@@ -1,0 +1,117 @@
+git remote add origin https://github.com/kickscar/react-movie-app.git
+
+why React?
+
+1.only javascript (no framework to learn)
+- function, object, variable
+- 배워서 다른 쓸 수 있음. 왜? 자바스크립트만 배우면 react를 할 수 있으니깐...
+- React를 통해 JavaScript 기술을 향상 시킬 수 있음.
+
+2.Composition
+- 요소별, 컴포넌트별 작업이 가능
+- 다른 곳에서 사용 가능
+- JSX(React로 HTML을 쓰는 방법)
+
+
+
+
+
+
+
+3.Unidirectional Dataflow
+- Data is on the state
+- The UI display the data
+- if the state changes, the UI updates
+  Data -> UI (단방향) 데이터 -> 데이터 변경 -> UI
+
+4. 커뮤니티가 정말 방대하고 거대한 라이브러리, 오픈소스, Q&A
+
+5. React is view so, mixed with whatever control, whatever model
+   with python, with node
+
+
+
+
+
+
+6. 
+- transpiler(transformer)
+  개발자가 사용하는 코드는 리액트 코드이기 때문에, 이걸 자바 스크립트로 바꿔주는 툴이 필요하다.
+  webpack: 리액트 코드를 브라우저가 이해할 수 있는 코드로 변경해 주는 역활을 한다.
+
+- javascript has many versions.
+  the latest javascript6(ES6, ECMAScript6)
+
+- 최신 자바스크립트를 사용하면 편하고 강력한 기능들이 많은데 문제는 이것을 모든 브라우저가 이해할 수 었다는 것
+  따라서 변경해줘야 한다.
+
+  이 때 webpack를 사용한다. (복잡하긴 해도 이해하면 너무 좋은 툴이다)
+  -> 자세히 배우고 싶다면, 인스타그램 풀스택 강의(장고, 깃을 웹팩을 이용해서 보다 쉽게 작업)
+
+  리액트로 작업을 하려면 웹팩과 같은 모듈번들러가 필요하다.페이스북은 초보자를 위해 "create-react-app" 라는 툴을 제공한다.
+  웹팩과 같은 툴을 사용할 필요 없이 손쉽게 리액트 앱을 만들어 주는 툴(대신 작업을 한다)
+
+
+--------------------------------------------------------------------
+
+npm install -g create-react-app
+
+create react-app movie_app
+
+
+CRA를 사용하면, 복잡한 Configuration을 안해도 된다.
+
+
+--------------------------------------------------------------------
+
+
+1. Component Design
+
+2. JSX -> React 리액트 컴포넌트를 만들때 사용하는 언어
+          
+3. React's biggest 2 Concept
+
+   - props(data flow props)
+
+	어떻게 부모 컴포넌트가 자식 컨테이너에게 데이터를 전달(flow) 하는가?
+
+   - Life Circle 함수를 익혀 놓아야 한다.  	
+
+   - states
+	
+	1. React Component 안에 있는 Object
+ 
+	2. 모든 React Component 안에 있다.
+
+	3. Rule
+
+		- states가 바뀔 때 마다 Componentsms Render를 다시 한다.
+
+ 		- simple 하다.
+
+	4. states를 만들고 변경하는 방법
+     
+		Praticing setState
+
+	5. Loading States
+
+	6. Smart Componenets VS Dumb Components(Stateless Components, Functional Component)   
+
+
+
+             
+4. AJAX on React
+
+   very, very simple -> axios libarary or Fetch()
+
+   Http Request + React 는 방법이 꽤 많다.
+
+   Promise
+
+   await
+
+   async
+
+
+
+

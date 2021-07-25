@@ -1,11 +1,9 @@
-import React, {Fragment} from 'react';
-import Clock from "./Clock";
+import React, { Component } from 'react';
 
-export default function () {
-    return (
-        <Fragment>
-            <p>JSX Tutorial - JSX 표현식 {} : 삼항 연산자 예제 II</p>
-            <Clock/>
-        </Fragment>
-    );
+export default class extends Component {
+    render() {
+        return (
+            <p>JSX Tutorial - Class Component</p>
+        );
+    }
 }

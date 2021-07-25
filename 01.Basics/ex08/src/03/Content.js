@@ -1,9 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class extends Component {
-    render() {
-        return (
-            <p>JSX Tutorial - Class Component</p>
-        );
-    }
+export default function() {
+    return (
+        <p>JSX Tutorial - Functional Component</p>
+    );
 }

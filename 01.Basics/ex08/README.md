@@ -1,16 +1,16 @@
 ## ex08: JSX Tutorial
 
-### 01. Functional Component
-### 02. React API로 만든 컴포넌트
-### 03. Class Component
-### 04. JSX 표현식 {} : 조건문 문제점
-### 05. JSX 표현식 {} : 삼항 연산자 예제
-### 06. className
-### 07. 동적 HTML 렌더링
-### 08. 공백
-### 09. 주석
+### 01. Quirks I: Differences from HTML
+### 02. Quirks II: Single Root Node
+### 03. Functional Component
+### 04. Component Written in Pure React(React API) 
+### 05. Class Component
+### 06. Quirks III: if-Statement's Problem with { _epression_ }
+### 07. Quirks IV: Blank Space
+### 08. Rendering Dynamic HTML
+### 09. Comments
 
-### 예제 실행 방법
+### run example
 ```bash
 $ npm run debug src={no}
 ```
