@@ -1,0 +1,57 @@
+[
+    {
+      "id": 1,
+      "title": "DB Scheme Design",
+      "description": "프로젝트 Database 논리 모델링 작업",
+      "status": "in-progress",
+      "tasks": []
+    },
+    {
+        "id": 2,
+        "title": "Stroy Board 작성",
+        "description": "기능 기반의 화면 목업 작업",
+        "status": "done",
+        "tasks": []
+      },    
+    {
+      "id": 3,
+      "title": "React Study",
+      "description": "React.JS 공부 하기 ",
+      "status": "todo",
+      "tasks": [
+        {
+          "id": 1,
+          "name": "스터디 계획:책선정,목표과제선정",
+          "done": true
+        },
+        {
+          "id": 2,
+          "name": "1주차 시행",
+          "done": false
+        },
+        {
+          "id": 3,
+          "name": "프로젝트 적용 - 프로토타입 작성",
+          "done": false
+        }
+      ]
+    },
+    {
+        "id": 4,
+        "title": "View Publishing",
+        "description": "화면 HTML CSS publishing 하기",
+        "status": "todo",
+        "tasks": [
+          {
+            "id": 1,
+            "name": "bootstarp 테마 찾기",
+            "done": false
+          },
+          {
+            "id": 2,
+            "name": "스토리 보드 화면에 맞게 수정",
+            "done": false
+          }
+        ]
+      }    
+  ]

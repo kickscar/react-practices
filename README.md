@@ -7,10 +7,11 @@
 ### 5.  Testing
 ### 6.  Performance
 
-----
 
-### Kanban App          [Course App I]
-### Emaillist App       [Course App II]
-### Guestbook App       [Assignment I]
-### Gallery App         [Assignment II]
-### Calendar Scheduler  [Project Prototype]
+----
+### Applications in Practices
+1.  Kanban Board            [Course App I]
+2.  Emaillist SPA           [Course App II]
+3.  Guestbook SPA           [Assignment I]
+4.  Gallery on AWS Cloud    [Assignment II Bridge to the Next]
+5.  Calendar Scheduler      [Project Prototype]
