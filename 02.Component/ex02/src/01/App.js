@@ -1,7 +1,6 @@
 import React from 'react';
 
 export default function () {
-    const message = 'Hello World';
     const h1Style = {
         width: 180,
         height: 30,
@@ -11,6 +10,6 @@ export default function () {
     };
 
     return (
-        <h1 style={ h1Style }>{ message }</h1>
+        <h1 style={ h1Style }>Inline Styling</h1>
     );
 }

@@ -1,10 +1,14 @@
-import React, { Component } from 'react';
-import './App.scss';
+import React, { Component, Fragment } from 'react';
+import './assets/css/App.css';
 
-function App() {
+import Banner01 from "./Banner01";
+import Banner02 from "./Banner02";
+
+export default function App() {
     return (
-        <h1 className='Header'>Hello React</h1>
+        <Fragment>
+            <Banner01 />
+            <Banner02 />
+        </Fragment>
     );
 }
-
-export default App;

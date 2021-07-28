@@ -9,30 +9,20 @@ module.exports = (env) => {
         entry: enrty,
         output: {
             path: path.resolve('public'),
-            filename: 'bundle.js'
+            filename: 'bundle.js',
+            assetModuleFilename: 'assets/images/[hash][ext]'
         },
         module: {
             rules: [{
-                test: /\.css$/i,
-                use: [
-                    'style-loader',
-                    { loader: 'css-loader', options: { modules: true } }
-                ]
+                test: /\.(png|gif|jpe?g|svg|ico|tiff?|bmp)$/i,
+                type: 'asset/resource'
             }, {
-                test: /\.s[ac]ss$/i,
+                test: /\.(sa|sc|c)ss$/i,
                 use: [
                     'style-loader',
-                    'css-loader',
+                    { loader: 'css-loader', options: { modules: true } },
                     'sass-loader'
                 ]
-            }, {
-                test: /\.(png|gif|jpe?g|svg|ico|tiff?|bmp)$/i,
-                loader: 'file-loader',
-                options: {
-                    outputPath: '/assets/images',
-                    publicPath: '/assets/images',
-                    name: '[name].[ext]'
-                }
             }, {
                 test: /\.js$/,
                 exclude: /node_modules/,

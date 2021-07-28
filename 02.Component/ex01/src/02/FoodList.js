@@ -5,7 +5,7 @@ export default class extends Component {
     render() {
         return (
             <ul>
-                { this.props.foods.map((food) => <FoodListItem name={food.name} quantity={food.quantity} />) }
+                { this.props.foods.map((food) => <FoodListItem key={food.name} name={food.name} quantity={food.quantity} />) }
             </ul>
         );        
     }

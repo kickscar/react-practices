@@ -5,7 +5,7 @@
   "type": "module",
   "main": "server",
   "scripts": {
-    "start": "node dev-server"
+    "debug": "node dev-server"
   },
   "keywords": [],
   "author": "",

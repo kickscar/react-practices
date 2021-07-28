@@ -1,10 +1,8 @@
 import React from 'react';
-import './App.css'
+import './assets/css/App.css';
 
-export default class App extends React.Component {
-    render() {
-        return (
-            <h1 className='Header'>Hello React</h1>
-        );
-    }
+export default function() {
+    return (
+        <h1 className='Header'>{'Normal CSS (css-loader options: { modules: false })'}</h1>
+    );
 }

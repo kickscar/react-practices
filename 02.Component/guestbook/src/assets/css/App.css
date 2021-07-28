@@ -1,0 +1,8 @@
+@charset "UTF-8";
+*       { box-sizing: border-box; margin: 0; padding: 0; }
+html,
+body    { font:0.75em "맑은 고딕", 돋움, 굴림; text-align:center }
+ul, ol	{ list-style-type: none }
+
+:global(#root),
+:global(.App)   { height:100%; width:540px; margin:0 auto }

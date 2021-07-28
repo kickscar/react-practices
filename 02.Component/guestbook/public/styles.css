@@ -1,0 +1,125 @@
+@charset "UTF-8";
+*       { box-sizing: border-box; margin: 0; padding: 0; }
+html,
+body    { font:0.75em "맑은 고딕", 돋움, 굴림; text-align:center }
+ul, ol	{ list-style-type: none }
+
+#root,
+.App    { height:100%; width:540px; margin:0 auto }
+
+
+.Guestbook			{ margin:20px 0; width:100%; background-color:#fff }
+.Guestbook h1		{
+    color: #5C5C5C;
+    text-align: left;
+    margin-bottom: 10px;
+    background:url('assets/images/guestbook.png') 0 0 no-repeat;
+    background-size: 35px;
+    padding-left:40px;
+    height: 35px;
+    line-height: 35px;
+}
+
+
+.Guestbook__Form { width:530px; margin:0 auto; }
+.Guestbook__Form input[type="text"],
+.Guestbook__Form input[type="password"],
+.Guestbook__Form textarea,
+.Guestbook__Form input[type="submit"] {
+    display: block;
+    outline: none;
+    border: 1px solid #A9A9A9;
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+.Guestbook__Form textarea	{
+    resize: none;
+    height: 80px;
+}
+.Guestbook__Form input[type="submit"] {
+    background-color:#fff;
+    padding:5px 0;
+    font-weight:bold;
+    color: #846B5C;
+    cursor:pointer;
+}
+.Guestbook__Form input[type="submit"]:hover {
+    background-color:#65B791;
+    color:#fff;
+}
+
+
+
+.Guestbook__List {
+    width:540px;
+    margin-top:20px;
+    border-top:1px solid #A9A9A9;
+}
+
+
+
+.Guestbook__List__Item {
+    width:100%;
+    margin-top:20px;
+    background:url('assets/images/user.png') 0 20px no-repeat;
+    padding-left:50px;
+    position:relative;
+}
+.Guestbook__List__Item strong,
+.Guestbook__List__Item a {
+    text-align: left;
+    display:block;
+}
+.Guestbook__List__Item strong {
+    color:#aaa;
+}
+.Guestbook__List__Item p {
+    text-align: left;
+    width:465px;
+    padding:10px;
+    margin:5px 0;
+    border:1px solid #EAECEC;
+    background-color: #FAFAFA;
+    line-height:1.75em;
+    border-radius:4px;
+}
+.Guestbook__List__Item a {
+    position:absolute;
+    width:20px;
+    height:20px;
+    font-size:0;
+    background:url('assets/images/delete.png') 0 0 no-repeat;
+    left:20px;
+    top:40px;
+    outline:none;
+}
+
+
+
+.Guestbook__DeleteForm	{ height:200px }
+.Guestbook__DeleteForm form {
+    width:300px;
+    padding:10px;
+    border:1px solid #666;
+    border-radius: 10px;
+    margin:50px auto;
+}
+
+.Guestbook__DeleteForm a	{ display:block; margin:20px auto; width:110px }
+.Guestbook__DeleteForm input[type="password"] {
+    margin-top:5px;
+    width:284px;
+}
+.Guestbook__DeleteForm input[type="submit"] {
+    width:296px;
+}
+
+
+.Guestbook_MessageBox p	{ padding:100px; height:50px; text-align:center }
+
+
+
+
+
+

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node dev-server.mjs",
+    "debug": "node dev-server.mjs",
     "build": "npx webpack ./src/index.js -o ./public"
   },
   "keywords": [],

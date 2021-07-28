@@ -1,7 +1,7 @@
 import React from 'react';
 import SessionAM from './SessionAM';
 import SessionPM from './SessionPM';
-import './clock.css';
+import './assets/css/Clock.css';
 
 export default function () {
     const date = new Date();
@@ -18,7 +18,7 @@ export default function () {
             /*
                 comment02: 여기서 다중행 주석도 가능하다.
             */
-            className="clock">
+            className="Clock">
 
             { /* JSX는 HTML이 아니다. 이런 <!--  --> 주석은 사용할 수 없다. */ }
 
