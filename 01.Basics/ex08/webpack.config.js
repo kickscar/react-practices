@@ -14,7 +14,7 @@ module.exports = (env) => ({
             type: 'asset/resource'
         }, {
             test: /\.(sa|sc|c)ss$/i,
-            use: ['style-loader', 'css-loader', 'sass-loader']
+            use: ['style-loader', 'css-loader', 'scss-loader']
         }, {
             test: /\.js$/,
             exclude: /node_modules/,

@@ -1,6 +1,6 @@
 import React from 'react';
 import TaskList from "./TaskList";
-import styles from './Card.css';
+import styles from './Card.scss';
 
 export default function Card({ card, title, description, status, tasks }) {
     const styleSideColor = {

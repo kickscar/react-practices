@@ -21,7 +21,7 @@ module.exports = (env) => {
                 use: [
                     'style-loader',
                     { loader: 'css-loader', options: { modules: true } },
-                    'sass-loader'
+                    'scss-loader'
                 ]
             }, {
                 test: /\.js$/,

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "npx webpack --mode production --progress",
-    "debug": "npx webpack serve --mode development --progress --env"
+    "debug": "npx webpack serve --mode development --progress"
   },
   "keywords": [],
   "author": "",
