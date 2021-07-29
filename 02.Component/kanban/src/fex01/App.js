@@ -1,7 +1,7 @@
 import React from 'react';
 import KanbanBoard from './KanbanBoard';
 import cards from './data.json';
-import './App.css';
+import './App.scss';
 
 export default function App() {
     return (

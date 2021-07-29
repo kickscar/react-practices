@@ -1,13 +1,13 @@
 import React, {Fragment} from 'react';
 
-import Incrementor01 from './Incrementor01';
-import Incrementor02 from './Incrementor02';
+import TitleBar01 from './TitleBar01';
+import TitleBar02 from './TitleBar02';
 
 export default function () {
     return (
         <Fragment>
-            <h2>ex03 - SyntheticEvent</h2>
-
+            <TitleBar01 />
+            <TitleBar02 />
         </Fragment>
     );
 }

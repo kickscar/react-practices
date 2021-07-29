@@ -25,9 +25,9 @@
         font-weight: bold;
         color: #846B5C;
         cursor: pointer;
-    }
-    input[type="submit"]:hover {
-        background-color: #65B791;
-        color: #fff;
+        &:hover {
+            background-color: #65B791;
+            color: #fff;
+        }
     }
 }
