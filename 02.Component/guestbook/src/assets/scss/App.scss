@@ -4,5 +4,5 @@ html,
 body    { font:0.75em "맑은 고딕", 돋움, 굴림; text-align:center; overflow-y: hidden }
 ul, ol	{ list-style-type: none }
 
-:global(#root)  { height:100%; width:100%; margin:0 auto;  }
-:global(.App)   { height: 100vh; width:100%; margin:0 auto; overflow-y: scroll }
+:global(#root)  { height: 100vh; width:100% }
+:global(.App)   { height: 100vh; width:100%; overflow-y: scroll }

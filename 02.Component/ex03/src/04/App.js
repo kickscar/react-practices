@@ -21,9 +21,8 @@ export default function App() {
     }
 
     const onMouseMoveImage = function(e) {
-        // const offsetTop = imageRef.current.offsetTop;
-        // const offsetLeft = imageRef.current.offsetLeft;
-
+        const offsetTop = imageRef.current.offsetTop;
+        const offsetLeft = imageRef.current.offsetLeft;
         console.log('mousemove:', `x=${e.clientX - offsetLeft}, y=${e.clientY - offsetTop}`);
     }
 

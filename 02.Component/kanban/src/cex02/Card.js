@@ -35,12 +35,14 @@ export default class Card extends React.Component {
                 <div className={ styles[this.state.showDetails ? 'Card__Title--is-open' : 'Card__Title'] } onClick={ this.onTitleClick.bind(this) }>
                     { this.props.title }
                 </div>
-                { !this.state.showDetails ? 
+                {
+                    !this.state.showDetails ?
                     null :
                     <div className={ styles.Card__Details }>
                         { this.props.description }
                         <TaskList tasks={ this.props.tasks } />
-                    </div> }
+                    </div>
+                }
             </div>
         );        
     }

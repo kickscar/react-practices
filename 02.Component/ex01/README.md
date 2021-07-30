@@ -9,8 +9,9 @@
 4.  부모 컴포넌트가 소유
 
 ### 02. Food List src/01: Class Components
-### 03. Food List src/02: Data Flow with Class Components
-### 04. Food List src/03: Data Flow with Functional Components
+### 03. Food List src/02: Transfer Property in Class Components
+### 04. Food List src/03: Transfer Property in  Functional Components
+
 ### Run Examples
 ```bash
 $ npm run debug src={no}
