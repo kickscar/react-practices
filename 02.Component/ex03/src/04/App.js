@@ -1,5 +1,5 @@
 import React, {Fragment, useRef} from 'react';
-import logo from '../assets/images/react-logo.png';
+import logo from './assets/images/react-logo.png';
 
 export default function App() {
     const imageRef = useRef(null);

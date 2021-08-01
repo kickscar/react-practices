@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState }from 'react';
 import TaskList from "./TaskList";
 import styles from '../assets/scss/Card.scss';
 
 export default function Card({ card, title, description, status, tasks }) {
+    const [ stateShowDetails, setShowDetails ] = useState(true);
+
     const styleSideColor = {
         position: 'absolute',
         zIndex: -1,
@@ -17,14 +19,16 @@ export default function Card({ card, title, description, status, tasks }) {
         <div className={styles.Card}>
             <div style={ styleSideColor } />
             <div
-                className={styles.Card__Title}
-                onClick={ () => {} }>
+                className={ stateShowDetails ? [styles.Card__Title, styles.Card__Title__Open].join(' ') : styles.Card__Title  }
+                onClick={ () => setShowDetails(!stateShowDetails) }>
                 { title }
             </div>
-            <div className={styles.Card__Details}>
-                { description }
-                <TaskList tasks={ tasks }/>
-            </div>
+            {
+                stateShowDetails ? <div className={styles.Card__Details}>
+                    {description}
+                    <TaskList tasks={tasks}/>
+                </div> : null
+            }
         </div>
 
     );
