@@ -11,19 +11,24 @@ export default function App() {
 
     return (
         <Fragment>
-            {/* Light: Not Free*/}
+            {/* light: not free */}
             {/*<FontAwesomeIcon icon={["fal", "coffee"]} />*}
-            {/* Regular: */}
+
+            {/* regular */}
             <FontAwesomeIcon icon={["far", "bell"]} />
-            {/* Solid */}
+
+            {/* solid */}
             <FontAwesomeIcon icon={["fas", "bell"]} />
+
             {/* ...or, omit as FontAwesome defaults to solid, so no need to prefix: */}
             <FontAwesomeIcon icon={ faBell } />
-            {/* Brand: */}
+
+            {/* brand: */}
             <FontAwesomeIcon icon={["fab", "github"]} />
             <FontAwesomeIcon icon={['fab', 'apple']} />
             <FontAwesomeIcon icon={['fab', 'microsoft']} />
             <FontAwesomeIcon icon={['fab', 'google']} />
+
             {/* size */}
             <FontAwesomeIcon icon="bell" size="xs" />
             <FontAwesomeIcon icon="bell" size="lg" />

@@ -10,6 +10,7 @@
 ### 02. Food List src/01: Class Components
 ### 03. Food List src/02: Passing Data(Property) between Class Components
 ### 04. Food List src/03: Passing Data(Property) between Functional Components
+### 05. src/04: Property Validator
 
 ### Run Examples
 ```bash
