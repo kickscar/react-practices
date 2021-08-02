@@ -1,12 +1,12 @@
 import React, { Fragment } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBell, faCheckCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons'
+// additinal... not necessarily
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faBell as farCoffee } from '@fortawesome/free-regular-svg-icons'
-import { faBell, faCheckCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 
 export default function App() {
-
     library.add(faBell, farCoffee, fab);
 
     return (
@@ -37,7 +37,6 @@ export default function App() {
             {/* examples */}
             <FontAwesomeIcon icon={ faCheckCircle } />
             <FontAwesomeIcon icon={ faTimesCircle } />
-
         </Fragment>
     );
 }

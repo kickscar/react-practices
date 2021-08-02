@@ -1,4 +1,5 @@
 import React, {Fragment} from 'react';
+import PropTypes from 'prop-types';
 import styles from './assets/scss/Message.scss';
 
 export default function Message({ no, name, message }) {
@@ -16,4 +17,10 @@ export default function Message({ no, name, message }) {
             <a href=''>삭제</a>
         </li>
     );
+}
+
+Message.propTypes = {
+    no: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    message: PropTypes.string.isRequired
 }

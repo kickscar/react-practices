@@ -16,18 +16,23 @@ export default function Card({ card, title, description, status, tasks }) {
     };
 
     return (
-        <div className={styles.Card}>
+        <div className={ styles.Card }>
             <div style={ styleSideColor } />
             <div
-                className={ stateShowDetails ? [styles.Card__Title, styles.Card__Title__Open].join(' ') : styles.Card__Title  }
+                className={
+                    stateShowDetails ?
+                        [styles.Card__Title, styles.Card__Title__Open].join(' ') :
+                        styles.Card__Title
+                }
                 onClick={ () => setShowDetails(!stateShowDetails) }>
                 { title }
             </div>
             {
-                stateShowDetails ? <div className={styles.Card__Details}>
-                    {description}
-                    <TaskList tasks={tasks}/>
-                </div> : null
+                stateShowDetails ?
+                    <div className={styles.Card__Details}>
+                        {description}
+                        <TaskList tasks={tasks}/>
+                    </div> : null
             }
         </div>
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Message from './Message';
 import styles from './assets/scss/MessageList.scss';
 
@@ -11,4 +12,8 @@ export default function MessageList({ messages }) {
                                                 message={message.message}/>) }
         </ul>
     );
+}
+
+MessageList.propType = {
+    message: PropTypes.arrayOf(PropTypes.shape(Message.propType))
 }
