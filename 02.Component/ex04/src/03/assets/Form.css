@@ -1,0 +1,24 @@
+@charset "utf-8";
+
+*                   { box-sizing: border-box; margin: 0; padding: 0; }
+html, body          { font:0.75em "맑은 고딕", 돋움, 굴림; text-align:center; }
+ul, ol              { list-style-type: none }
+
+:global(#root)          { height: 100%; width:100%; }
+form, fieldset,
+input, textarea         { border: 1px solid #ddd }
+form, fieldset          { text-align: left; padding: 10px }
+form                    { width:250px; margin: 10px auto; border-width: 0px; padding-top: 0 }
+label, legend           { font-weight: bold; }
+form > label,
+form > input,
+form > fieldset,
+form > textarea         { display: inline-block; width:176px; outline: none }
+textarea                { height:50px; resize: none; padding:3px }
+form > label,
+form > fieldset,
+input[type='submit']    { cursor: pointer; margin-top:10px; }
+input[type='submit']:hover  { background-color: #61dafb }
+input[type='text'],
+input[type='password']  { padding: 3px; }
+input[type='submit']    { padding: 5px; }

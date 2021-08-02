@@ -4,4 +4,4 @@
 ### ex02: Component Styling
 ### ex03: React Event
 ### ex04: State
-### ex06: Component Lifecycle
+### ex05: Component Lifecycle

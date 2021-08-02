@@ -5,7 +5,7 @@
 ### 03. Functional Component
 ### 04. Component Written in Pure React(React API) 
 ### 05. Class Component
-### 06. Quirks III: if-Statement's Problem with { _epression_ }
+### 06. Quirks III: if-Statement's Problem with { _expr_ }
 ### 07. Quirks IV: Blank Space
 ### 08. Rendering Dynamic HTML
 ### 09. Comments
