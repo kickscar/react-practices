@@ -3,6 +3,6 @@ import './assets/css/App.css';
 
 export default function() {
     return (
-        <h1 className='Header'>{'Normal CSS (scss-loader options: { modules: false })'}</h1>
+        <h1 className='Header'>{'Normal CSS (css-loader options: { modules: false })'}</h1>
     );
 }

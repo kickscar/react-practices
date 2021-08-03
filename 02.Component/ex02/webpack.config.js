@@ -16,7 +16,7 @@ module.exports = (env) => ({
             test: /\.(sa|sc|c)ss$/i,
             use: [
                 'style-loader',
-                { loader: 'scss-loader', options: { modules: env['scss-modules'] !== 'false' } },
+                { loader: 'css-loader', options: { modules: env['scss-modules'] !== 'false' } },
                 'sass-loader'
             ]
         }, {
