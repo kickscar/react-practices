@@ -11,7 +11,7 @@
 
 ### Run Examples
 ```bash
-$ npm run debug src={no} [css-modules=false]
+$ npm run debug src={no} [scss-modules=false]
 ```
 
 

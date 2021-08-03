@@ -1,6 +1,6 @@
 import React from 'react';
 import CardList from "./CardList";
-import styles from './KabanBoard.css';
+import styles from './KabanBoard.scss';
 
 export default function KanbanBoard({ cards }) {
     return (

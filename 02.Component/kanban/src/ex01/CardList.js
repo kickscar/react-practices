@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from "./Card";
-import styles from "./CardList.css";
+import styles from "./CardList.scss";
 
 export default function CardList({ title, cards }) {
     return (

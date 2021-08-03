@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Task.css';
+import styles from './Task.scss';
 
 export default function Task({ name }) {
     return (
