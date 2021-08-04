@@ -10,6 +10,7 @@
 
 ----
 ### Applications in Practices
-1.  Kanban Board            [Course App I]
-3.  Guestbook SPA           [Assignment I]
-4.  Gallery on AWS Cloud    [Assignment II Bridge to the Next]
+0. Emaillist               [Exmaple of Integration Configuration with Node]
+1. Kanban Board            [Course App I]
+2. Guestbook SPA           [Assignment I]
+3. Gallery on AWS Cloud    [Assignment II Bridge to the Next]
