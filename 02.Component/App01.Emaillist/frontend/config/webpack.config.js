@@ -4,8 +4,8 @@ module.exports = (env) => ({
     mode: "none",
     entry: path.resolve('frontend/src/index.js'),
     output: {
-        path: path.resolve('backend/public/assets'),
-        filename: 'js/main.js',
+        path: path.resolve('backend/public'),
+        filename: 'assets/js/main.js',
         assetModuleFilename: 'images/[hash][ext]'
     },
     module: {
@@ -30,7 +30,7 @@ module.exports = (env) => ({
     },
     devtool: "eval-source-map",
     devServer: {
-        contentBase: path.resolve('public'),
+        contentBase: path.resolve('frontend/public'),
         watchContentBase: true,
         host: "0.0.0.0",
         port: 9999,

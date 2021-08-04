@@ -1,0 +1,4 @@
+# Server Application's Bulk Data
+/logs
+/multer-temporary-store
+**/upload-images
