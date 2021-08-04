@@ -30,9 +30,7 @@
         // .use(multer({dest: path.join(__dirname, process.env.MULTER_TEMPORARY_STORE)}).single('file'))
         // 4-4. Static
         .use(express.static(path.join(__dirname, process.env.STATIC_RESOURCES_DIRECTORY)))
-        // 4-5. Favicon
-        // .use(favicon(path.join(__dirname, process.env.STATIC_RESOURCES_DIRECTORY, 'assets', 'images', 'favicon.ico')))
-        // 4-6. View Engine Setup
+        // 4-5. View Engine Setup
         .set('views', path.join(__dirname, 'views'))
         .set('view engine', 'ejs');
 
