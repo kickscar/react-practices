@@ -1,52 +1,27 @@
 import React, { useEffect } from 'react';
+import SevenSegmentLED from "./SevenSegmentLED";
+import SessionAmPm from "./SessionAmPm";
 import './assets/scss/Clock.scss';
 
-export default function Clock({hours, minutes, seconds, pm}) {
+export default function Clock({ message, hours, minutes, seconds }) {
 
     useEffect( () => {
-        console.log('Clock', 'Mounted');
+        console.log('Clock', 'Mounted(componentDidMount)');
 
         return function() {
-            console.log('Clock', 'Clean-UP(componentWillUnmount)');
+            console.log('Clock', 'Clean-Up(componentWillUnmount)');
         }
     }, []);
 
     return (
-        <div className="clock-field">
-            <div className="numbers">
-                <p className="hours">{hours}</p>
-                <p className="placeholder"></p>
-                <p className="type">hour</p>
-            </div>
-            <div className="colon">
-                <p>:</p>
-            </div>
-            <div className="numbers">
-                <p className="minutes">{minutes}</p>
-                <p className="placeholder"></p>
-                <p className="type">minute</p>
-            </div>
-            <div className="colon">
-                <p>:</p>
-            </div>
-            <div className="numbers">
-                <p className="seconds">{seconds}</p>
-                <p className="placeholder"></p>
-                <p className="type">second</p>
-            </div>
-            <div className="am-pm">
-                <div>
-                    <p className={`am ${pm ? '' : 'light-on'}`}>am</p>
-                </div>
-                <div>
-                    <p className={`pm ${pm ? 'light-on' : ''}`}>pm</p>
-                </div>
+        <div className={ 'clock-display' }>
+            <h2>{ message }</h2>
+            <div className={ 'Clock' }>
+                <SevenSegmentLED number={ hours } colon={ true } />
+                <SevenSegmentLED number={ minutes } colon={ true } />
+                <SevenSegmentLED number={ seconds } colon={ false } />
+                <SessionAmPm session={ hours > 12 ? 'pm' : 'am' } />
             </div>
         </div>
     );
-
-
-    // componentWillUnmount() {
-    //
-    // }
 }

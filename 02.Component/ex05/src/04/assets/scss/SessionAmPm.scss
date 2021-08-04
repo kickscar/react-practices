@@ -1,0 +1,32 @@
+@media (max-width: 400px) {
+  :global(.Clock) .AmPm div p { font-size: 10px; }
+}
+
+:global(.clock-display) {
+  :global(.Clock) {
+    .AmPm {
+      font-family: sans-serif;
+      text-transform: uppercase;
+      width: 20px;
+
+      div {
+        position: relative;
+        top: 50%;
+
+        p {
+          color: #2b2828;
+          font-size: 12px;
+          font-weight: bold;
+          width: 100%;
+        }
+      }
+
+      .on {
+        color: #ffffff !important;
+      }
+      .off {
+        color: #2b2828 !important;
+      }
+    }
+  }
+}

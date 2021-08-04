@@ -1,0 +1,19 @@
+:global(.clock-display) {
+  :global(.Clock) {
+    .SevenSegmentLED {
+      :global(.placeholder) {
+        color: #2b2828;
+        position: absolute;
+        top: 0;
+        z-index: 50;
+      }
+      :global(.type) {
+        font-size: 10px;
+        font-weight: bold;
+        font-family: sans-serif;
+        text-transform: uppercase;
+        margin-top: -10px;
+      }
+    }
+  }
+}

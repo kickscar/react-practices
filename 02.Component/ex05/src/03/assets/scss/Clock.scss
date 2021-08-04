@@ -1,3 +1,29 @@
+@media (max-width: 768px) {
+  :global(.clock-display) { padding: 15px 30px; }
+  :global(.desktop-view)  { display: none; }
+}
+
+@media (max-width: 550px) {
+  :global(.clock-field) div p { font-size: 80px; }
+}
+
+@media (max-width: 468px) {
+  :global(.clock-field) div p { font-size: 60px; }
+}
+
+@media (max-width: 400px) {
+  :global(.clock-field) :global(.am-pm) div p { font-size: 10px; }
+  :global(.clock-field) div p { font-size: 50px; }
+}
+
+@media (max-width: 350px) {
+  :global(.clock-field) div p { font-size: 43px; }
+}
+
+@media (max-width: 320px) {
+  :global(.clock-field) div p { font-size: 40px; }
+}
+
 :global(.clock-display) {
   font-family: 'digital-7', sans-serif;
   display: block;
@@ -49,6 +75,14 @@
       text-transform: uppercase;
       width: 20px;
 
+      :global(.light-on) {
+        color: #ffffff !important;
+      }
+
+      :global(.am), :global(.pm) {
+        color: #2b2828;
+      }
+
       div {
         position: relative;
         top: 50%;
@@ -60,56 +94,5 @@
         }
       }
     }
-
-    :global(.light-on) {
-      color: #ffffff !important;
-    }
-
-    :global(.am),
-    :global(.pm) {
-      color: #2b2828;
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  :global(.clock-display) {
-    padding: 15px 30px;
-  }
-  :global(.desktop-view) {
-    display: none;
-  }
-}
-
-@media (max-width: 550px) {
-  :global(.clock-field) div p {
-    font-size: 80px;
-  }
-}
-
-@media (max-width: 468px) {
-  :global(.clock-field) div p {
-    font-size: 60px;
-  }
-}
-
-@media (max-width: 400px) {
-  :global(.clock-field) :global(.am-pm) div p {
-    font-size: 10px;
-  }
-  :global(.clock-field) div p {
-    font-size: 50px;
-  }
-}
-
-@media (max-width: 350px) {
-  :global(.clock-field) div p {
-    font-size: 43px;
-  }
-}
-
-@media (max-width: 320px) {
-  :global(.clock-field) div p {
-    font-size: 40px;
   }
 }

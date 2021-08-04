@@ -1,3 +1,32 @@
+@font-face {
+  font-family: 'digital-7';
+  src: url('../fonts/digital-7.ttf');
+}
+
+@media (max-width: 768px) {
+  :global(.clock-display) { padding: 15px 30px; }
+}
+
+@media (max-width: 550px) {
+  :global(.Clock) div p { font-size: 80px; }
+}
+
+@media (max-width: 468px) {
+  :global(.Clock) div p { font-size: 60px; }
+}
+
+@media (max-width: 400px) {
+  :global(.Clock) div p { font-size: 50px; }
+}
+
+@media (max-width: 350px) {
+  :global(.Clock) div p { font-size: 43px; }
+}
+
+@media (max-width: 320px) {
+  :global(.Clock) div p { font-size: 40px; }
+}
+
 :global(.clock-display) {
   font-family: 'digital-7', sans-serif;
   display: block;
@@ -11,7 +40,7 @@
   color: #ffffff;
   box-shadow: 4px 4px 7px 4px rgba(0, 0, 0, .3);
 
-  :global(.clock-field) {
+  :global(.Clock) {
     margin: 5px 0;
     display: flex;
     justify-content: center;
@@ -26,90 +55,5 @@
         z-index: 100;
       }
     }
-
-    :global(.numbers) {
-      :global(.placeholder) {
-        color: #2b2828;
-        position: absolute;
-        top: 0;
-        z-index: 50;
-      }
-
-      :global(.type) {
-        font-size: 10px;
-        font-weight: bold;
-        font-family: sans-serif;
-        text-transform: uppercase;
-        margin-top: -10px;
-      }
-    }
-
-    :global(.am-pm) {
-      font-family: sans-serif;
-      text-transform: uppercase;
-      width: 20px;
-
-      div {
-        position: relative;
-        top: 50%;
-
-        p {
-          font-size: 12px;
-          font-weight: bold;
-          width: 100%;
-        }
-      }
-    }
-
-    :global(.light-on) {
-      color: #ffffff !important;
-    }
-
-    :global(.am),
-    :global(.pm) {
-      color: #2b2828;
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  :global(.clock-display) {
-    padding: 15px 30px;
-  }
-  :global(.desktop-view) {
-    display: none;
-  }
-}
-
-@media (max-width: 550px) {
-  :global(.clock-field) div p {
-    font-size: 80px;
-  }
-}
-
-@media (max-width: 468px) {
-  :global(.clock-field) div p {
-    font-size: 60px;
-  }
-}
-
-@media (max-width: 400px) {
-  :global(.clock-field) :global(.am-pm) div p {
-    font-size: 10px;
-  }
-  :global(.clock-field) div p {
-    font-size: 50px;
-  }
-}
-
-@media (max-width: 350px) {
-  :global(.clock-field) div p {
-    font-size: 43px;
-  }
-}
-
-@media (max-width: 320px) {
-  :global(.clock-field) div p {
-    font-size: 40px;
   }
 }
