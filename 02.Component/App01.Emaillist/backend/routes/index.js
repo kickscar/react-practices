@@ -12,6 +12,7 @@ const applicationRouter = {
         })
 
         .use('/', require('./emaillist'))
+        .use('/api', require('./emaillist-api'))
         // .use('/user', require('./user'))
         // .use('/guestbook', require('./guestbook'))
         // .use('/gallery', require('./gallery'))
