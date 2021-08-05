@@ -1,12 +1,18 @@
 {
-  "name": "App01.Emaillist",
+  "name": "Emaillist",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "",
   "scripts": {
-    "build": "npx webpack --config ./frontend/config/webpack.config.js --mode production",
-    "debug": "npx webpack serve --config ./frontend/config/webpack.config.js --mode development --progress",
-    "debug-backend": "nodemon ./backend/index.js"
+    "start": "NODE_ENV=production node ./backend/index.js --name $npm_package_name",
+    "restart": "npm stop && npm start",
+    "stop": "pkill -9 $npm_package_name",
+    "postinstall": "npm run build",
+    "build": "npm run build:frontend",
+    "build:frontend": "NODE_ENV=production webpack --config ./frontend/config/webpack.config.js --mode production --progress",
+    "dev": "",
+    "dev:frontend": "NODE_ENV=development webpack serve --config ./frontend/config/webpack.config.js --mode development --progress",
+    "dev:backend": "NODE_ENV=development nodemon ./backend/index.js --name $npm_package_name"
   },
   "keywords": [],
   "author": "",
@@ -36,6 +42,7 @@
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "express-session": "^1.17.2",
+    "minimist": "^1.2.5",
     "mysql2": "^2.2.5",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

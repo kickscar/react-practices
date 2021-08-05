@@ -1,21 +1,27 @@
-(function(){
+(function() {
     const express = require('express');
     const session = require('express-session');
     const http = require('http');
     const path = require('path');
     const dotenv = require('dotenv');
 
+    // 1. Start-Up Arguments
+    const argv = require('minimist')(process.argv.slice(2));
+
     // 1. Environment Variables
     dotenv.config({path: path.join(__dirname, 'config/app.env')})
     dotenv.config({path: path.join(__dirname, 'config/db.env')})
 
-    // 2. Application Routers
+    // 2. Process Title
+    process.title = argv.name;
+
+    // 3. Application Routers
     const { applicationRouter } = require('./routes');
 
-    // 3. Logger
+    // 4. Logger
     const logger = require('./logging');
 
-    // 4. Application Setup
+    // 5. Application Setup
     const application = express()
         // 4-1. Session Environment
         .use(session({
@@ -34,10 +40,10 @@
         .set('views', path.join(__dirname, 'views'))
         .set('view engine', 'ejs');
 
-    // 5. Application Router Setup
+    // 6. Application Router Setup
     applicationRouter.setup(application);
 
-    // 6. Server Startup
+    // 7. Server Startup
     http.createServer(application)
         .on('listening', function(){
             logger.info('Listening on port ' + process.env.PORT );

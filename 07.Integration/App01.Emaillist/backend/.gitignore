@@ -1,0 +1,9 @@
+# Server Application's Bulk Data
+/logs
+/multer-temporary-store
+**/upload-images
+
+# Bundle Target(main.js or bundle.js)
+**/main.js
+**/bundle.js
+
