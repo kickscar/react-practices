@@ -70,28 +70,29 @@
       }
     }
 
-    :global(.am-pm) {
+    :global(.AmPm) {
       font-family: sans-serif;
       text-transform: uppercase;
       width: 20px;
-
-      :global(.light-on) {
-        color: #ffffff !important;
-      }
-
-      :global(.am), :global(.pm) {
-        color: #2b2828;
-      }
 
       div {
         position: relative;
         top: 50%;
 
         p {
+          color: #2b2828;
           font-size: 12px;
           font-weight: bold;
           width: 100%;
         }
+      }
+
+      :global(.on) {
+        color: #ffffff !important;
+      }
+
+      :global(.off) {
+        color: #2b2828 !important;
       }
     }
   }

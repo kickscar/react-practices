@@ -10,7 +10,7 @@ export default class App extends Component {
             hours: '00',
             minutes: '00',
             seconds: '00',
-            pm: false
+            session: "am"
         }
     }
 
@@ -18,13 +18,13 @@ export default class App extends Component {
         return (
             <div className='clock-display'>
                 <h2>ex05 - Component LifeCycle Practice</h2>
-                { this.state.count === 10 ?
+                { this.state.count % 10 === 0 ?
                     null :
                     <Clock
                         hours={ this.state.hours }
                         minutes={ this.state.minutes }
                         seconds={ this.state.seconds }
-                        pm={ this.state.pm } />
+                        session={ this.state.session } />
                 }
             </div>
         );
@@ -42,7 +42,7 @@ export default class App extends Component {
                 minutes: minutes,
                 seconds: seconds,
                 pm: hours > 12,
-                count: this.state.count === 10 ? 0 : this.state.count + 1
+                count: this.state.count + 1
             })
         }.bind(this), 1000);
     }
