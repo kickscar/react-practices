@@ -7,6 +7,7 @@ module.exports = {
             return;
         }
 
+        /* response json */
         res.status(404).send({
             result: 'fail',
             data: null,
@@ -17,10 +18,13 @@ module.exports = {
         logger.error(err.stack);
 
         if(req.accepts('html')) {
-            res.status(500).send(`<pre>${err.stack}</pre>`);
+            res.status(500).render('error/500', {
+                error: err.stack
+            });
             return;
         }
 
+        /* response json */
         res.status(500).send({
             result: 'fail',
             data: null,

@@ -9,8 +9,7 @@
     const argv = require('minimist')(process.argv.slice(2));
 
     // 2. Environment Variables
-    dotenv.config({path: path.join(__dirname, 'config/app.env')})
-    dotenv.config({path: path.join(__dirname, 'config/db.env')})
+    dotenv.config({path: path.join(__dirname, 'app.config.env')})
 
     // 3. Process Title(Name)
     process.title = argv.name;

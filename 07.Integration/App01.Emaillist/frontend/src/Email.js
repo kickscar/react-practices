@@ -12,7 +12,7 @@ export default function Email({ firstName, lastName, email}) {
 }
 
 Email.propTypes = {
-    fistName: PropTypes.string.isRequired,
+    firstName: PropTypes.string.isRequired,
     lastName: PropTypes.string.isRequired,
     email: PropTypes.string.isRequired
 }
