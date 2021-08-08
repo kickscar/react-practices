@@ -1,4 +1,4 @@
-## React Practices(5Day Intensives)
+## React Practices
 
 ### 1.  Basics
 ### 2.  Component

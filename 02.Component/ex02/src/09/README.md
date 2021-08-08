@@ -1,11 +1,9 @@
-## Working with UI(Material-UI)
+## Working with UI II: React Modal
 
-1. Get Started
+1. Install
     ```bash
-    $ npm i @material-ui/core
-    $ npm i @material-ui/icons
+    $ npm i react-modal
     ```
-
-## Feedback Component I: Dialog
-1. 09/AlertDialog
-2. 09/FormDialog
+2. Examples 
+   - 기본1
+   - 기본2

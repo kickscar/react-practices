@@ -13,7 +13,7 @@ const useStyles = theme => ({
         justifyContent: 'center'
     },
     dialogTitleRoot: {
-        backgroundColor: '#dedede'
+
     },
     dialogContentRoot: {
         width: 300,
@@ -58,8 +58,8 @@ class AlertDialog extends Component {
                     { this.state.message }
                 </DialogContentText>
             </DialogContent>
-            <DialogActions classes={{root: classes.dialogActionsRoot}}>
-                <Button onClick={ () => this.setState({ open: false }) } color="primary" autoFocus>
+            <DialogActions classes={ {root: classes.dialogActionsRoot} }>
+                <Button onClick={ () => this.setState({open: false}) } color="primary" autoFocus>
                     확인
                 </Button>
             </DialogActions>

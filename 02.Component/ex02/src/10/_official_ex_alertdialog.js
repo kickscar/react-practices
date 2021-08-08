@@ -5,24 +5,9 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles({
-    dialogActionsRoot: {
-        justifyContent: 'center'
-    },
-    dialogTitleRoot: {
-        backgroundColor: '#dedede'
-    },
-    dialogContentRoot: {
-        width: 300,
-        wordBreak: 'normal'
-    }
-});
-
-export default function AlertDialog({ open, title, message }) {
+export default function AlertDialog() {
     const [open, setOpen] = React.useState(false);
-    const classes = useStyles();
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -40,16 +25,22 @@ export default function AlertDialog({ open, title, message }) {
             <Dialog
                 open={open}
                 onClose={handleClose}
-                scroll={ 'body' }>
-                <DialogTitle classes={ {root: classes.dialogTitleRoot} }>{ '타이틀입니다.' }</DialogTitle>
+                aria-labelledby="alert-dialog-title"
+                aria-describedby="alert-dialog-description"
+            >
+                <DialogTitle id="alert-dialog-title">{"Use Google's location service?"}</DialogTitle>
                 <DialogContent>
-                    <DialogContentText classes={ {root: classes.dialogContentRoot} }>
-                        { `이름이 비어 있습니다.\n이름은 필수 입력 항목입니다.` }
+                    <DialogContentText id="alert-dialog-description">
+                        Let Google help apps determine location. This means sending anonymous location data to
+                        Google, even when no apps are running.
                     </DialogContentText>
                 </DialogContent>
-                <DialogActions classes={ {root: classes.dialogActionsRoot} }>
+                <DialogActions>
+                    <Button onClick={handleClose} color="primary">
+                        Disagree
+                    </Button>
                     <Button onClick={handleClose} color="primary" autoFocus>
-                        확인
+                        Agree
                     </Button>
                 </DialogActions>
             </Dialog>

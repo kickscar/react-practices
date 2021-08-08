@@ -1,10 +1,11 @@
-## Working with Font Awesome
+## Working with UI I: Font Awesome
 
 1. Get Started
     ```bash
     $ npm i @fortawesome/fontawesome-svg-core
     $ npm i @fortawesome/react-fontawesome
     ```
+   
 2. Adding Additional Styles
     ```bash
     $ npm i @fortawesome/free-solid-svg-icons
