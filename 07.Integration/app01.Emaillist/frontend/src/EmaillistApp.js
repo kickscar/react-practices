@@ -6,10 +6,6 @@ export default function EmaillistApp() {
     const [emails, setEmails] = useState([]);
     const [keyword, setKeyword] = useState('');
 
-    const notifyKeywordChanged = function (keyword) {
-        setKeyword(keyword);
-    }
-
     useEffect(async () => {
         try {
             const response = await fetch('/apis', {
@@ -30,11 +26,21 @@ export default function EmaillistApp() {
             }
 
             const json = await response.json();
+
+            if(json.result !== 'success') {
+                throw new Error(`${json.result} ${json.message}`);
+            }
+
             setEmails(json.data);
+
         } catch(err) {
             console.error(err);
         }
     }, []);
+    
+    const notifyKeywordChanged = function (keyword) {
+        setKeyword(keyword);
+    }
 
     return (
         <div className='EmaillistApp'>
