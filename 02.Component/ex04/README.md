@@ -37,7 +37,7 @@
    - 컴포넌트의 하이라키(hierarchy)에서 상위에 있고 상태를 가져야만 하는 컴포넌트
    - 없다면, 상태를 관리하는 새로운 컴포넌트를 만들고 하위 컴포넌트를 래핑한다.
 5. 예제(emaillist): src/04
-   - Stateful: &lt;App /&gt;
+   - Stateful: &lt;_ex_upload_ /&gt;
    - Pure: &lt;Emaillist /&gt;, &lt;SearchBar /&gt;
 
 ## Data Flow(Bottom-Up Direction)

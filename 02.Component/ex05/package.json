@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "npx webpack serve --mode development --progress --env"
     "build": "npx webpack --mode production",
-    "debug": "npx webpack serve --mode development --progress --env"
   },
   "keywords": [],
   "author": "",

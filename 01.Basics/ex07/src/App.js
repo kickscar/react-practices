@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './assets/images/logo.svg';
 import './assets/css/App.css';
 
-function App() {
+function _ex_upload_() {
   return (
     <div className="App">
       <header className="App-header">

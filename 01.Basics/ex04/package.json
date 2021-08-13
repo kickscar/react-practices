@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "debug": "node dev-server.mjs",
-    "build": "npx webpack ./src/index.js -o ./public"
+    "build": "npx webpack ./src/index.js -o ./public",
+    "dev": "node dev-server.mjs"
   },
   "keywords": [],
   "author": "",

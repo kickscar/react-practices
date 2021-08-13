@@ -1,0 +1,9 @@
+# Bulk Data of Backend
+/logs
+/07.Integration/app04.Gallery/backend/multer-temporary-store
+**/upload-images
+
+# Bundle Target(main.js or bundle.js) of Frontend
+**/main.js
+**/bundle.js
+

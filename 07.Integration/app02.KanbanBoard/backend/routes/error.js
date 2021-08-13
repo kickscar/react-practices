@@ -7,8 +7,8 @@ module.exports = {
             return;
         }
 
-        /* response json */
-        res.status(404).send({
+        /* response(200) json */
+        res.status(200).send({
             result: 'fail',
             data: null,
             message: 'unknown request'
@@ -24,8 +24,8 @@ module.exports = {
             return;
         }
 
-        /* response json */
-        res.status(500).send({
+        /* response(200) json */
+        res.status(200).send({
             result: 'fail',
             data: null,
             message: err.stack

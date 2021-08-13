@@ -19,14 +19,14 @@ module.exports = {
         try {
             let task = req.body;
 
-            console.log(`cardId: ${ req.params['cardId'] }에 task name: ${ task.name } 추가`);
+            console.log(`cardNo: ${ req.params['cardNo'] }에 task name: ${ task.name } 추가`);
 
-            task.id = Date.now();
+            task.no = Date.now();
             res.status(200)
                 .send({
                     result: 'success',
-                    message: null,
-                    data: task
+                    data: task,
+                    message: null
                 });
         } catch(err){
             next(err);
