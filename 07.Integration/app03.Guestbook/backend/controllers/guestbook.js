@@ -1,8 +1,8 @@
 const models = require('../models');
-const { Op } = require("sequelize");
+const {Op} = require("sequelize");
 
 module.exports = {
-    create: async function(req, res, next) {
+    create: async function (req, res, next) {
         try {
             const result = await models.Guestbook.create(req.body);
             res
@@ -12,13 +12,14 @@ module.exports = {
                     data: result,
                     message: null
                 });
-        } catch(err){
+        } catch (err) {
             next(err);
         }
     },
-    read: async function(req, res, next) {
+    read: async function (req, res, next) {
         try {
-            const startNo = req.query.sno || 0;
+            const startNo = req.params.startNo || 0;
+            console.log('----->', startNo);
             const results = await models.Guestbook.findAll({
                 attributes: ['no', 'name', 'message'],
                 where: (startNo > 0) ? {no: {[Op.lt]: startNo}} : {},
@@ -35,11 +36,11 @@ module.exports = {
                     data: results,
                     message: null
                 });
-        } catch(err){
+        } catch (err) {
             next(err);
         }
     },
-    delete: async function(req, res, next) {
+    delete: async function (req, res, next) {
         try {
             const result = await models.Guestbook.destroy({
                 where: {
@@ -48,10 +49,10 @@ module.exports = {
             });
             res.send({
                 result: 'success',
-                data: req.params.no,
+                data: result === 0 ? null : req.params.no,
                 message: null
             });
-        } catch(err){
+        } catch (err) {
             next(err);
         }
     }

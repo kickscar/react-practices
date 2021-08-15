@@ -1,4 +1,4 @@
-(function() {
+(function () {
     const express = require('express');
     const session = require('express-session');
     const http = require('http');
@@ -15,7 +15,7 @@
     process.title = argv.name;
 
     // 4. Application Routers
-    const { applicationRouter } = require('./routes');
+    const {applicationRouter} = require('./routes');
 
     // 5. Logger
     const logger = require('./logging');
@@ -42,20 +42,20 @@
 
     // 8. Server Startup
     http.createServer(application)
-        .on('listening', function(){
-            logger.info('Listening on port ' + process.env.PORT );
+        .on('listening', function () {
+            logger.info('Listening on port ' + process.env.PORT);
         })
-        .on('error', function(error) {
-            if(error.syscall !== 'listen') {
+        .on('error', function (error) {
+            if (error.syscall !== 'listen') {
                 throw error;
             }
-            switch(error.code) {
+            switch (error.code) {
                 case 'EACCES':
-                    logger.error('Port ' + process.env.PORT  + ' requires elevated privileges');
+                    logger.error('Port ' + process.env.PORT + ' requires elevated privileges');
                     process.exit(1);
                     break;
                 case 'EADDRINUSE':
-                    logger.error('Port ' + process.env.PORT  + ' is already in use');
+                    logger.error('Port ' + process.env.PORT + ' is already in use');
                     process.exit(1);
                     break;
                 default:

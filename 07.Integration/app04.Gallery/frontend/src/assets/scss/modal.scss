@@ -7,12 +7,12 @@
   border-radius: 3px;
   background: #fff;
   color: #333;
-  padding: .2em;
+  padding: .4em;
   outline: 0;
 
   h1 {
     position: relative;
-    padding: .4em .5em;
+    padding: .8em .5em;
     margin: .1em 0;
     border: 1px solid #ddd;
     border-radius: 3px;
@@ -21,7 +21,8 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: 0.9em;
+    font-size: 1.5em;
+    text-align: left;
   }
 
   div {

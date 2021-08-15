@@ -4,6 +4,6 @@ import './assets/scss/App.scss';
 
 export default function App() {
     return (
-        <Gallery />
+        <Gallery/>
     );
 }

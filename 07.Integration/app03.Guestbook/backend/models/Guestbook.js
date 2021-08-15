@@ -1,12 +1,12 @@
-const { Sequelize, DataTypes } = require('sequelize');
+const {Sequelize, DataTypes} = require('sequelize');
 
-module.exports = function(sequelize) {
+module.exports = function (sequelize) {
     return sequelize.define('Guestbook', {
-        no: { 
+        no: {
             field: 'no',
             type: DataTypes.BIGINT(11),
             primaryKey: true,
-            autoIncrement: true 
+            autoIncrement: true
         },
         name: {
             field: 'name',
@@ -30,7 +30,7 @@ module.exports = function(sequelize) {
             defaultValue: Sequelize.NOW
         }
     }, {
-        underscored: true,    
+        underscored: true,
         freezeTableName: true,
         timestamps: true,
         createdAt: false,

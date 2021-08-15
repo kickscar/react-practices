@@ -37,23 +37,23 @@ export default function Header({notifyImage}) {
                 <h1>My Photos</h1>
                 <a
                     className={styles.UploadButton}
-                    onClick={ () => setModalIsOpen(true) }>
+                    onClick={() => setModalIsOpen(true)}>
                     이미지 올리기
                 </a>
             </div>
             <Modal
-                isOpen={ modalIsOpen }
-                onRequestClose={ () => setModalIsOpen(false) }
-                shouldCloseOnOverlayClick={ true }
-                className={ modalStyles.Modal }
-                overlayClassName={ modalStyles.Overlay }
-                style={ {content: {width: 350}} }>
+                isOpen={modalIsOpen}
+                onRequestClose={() => setModalIsOpen(false)}
+                shouldCloseOnOverlayClick={true}
+                className={modalStyles.Modal}
+                overlayClassName={modalStyles.Overlay}
+                style={{content: {width: 350}}}>
                 <h1>이미지(사진) 등록</h1>
                 <div>
                     <form
-                        className={ styles.FormUpload }
-                        onSubmit={ handleSubmit }
-                        ref={ refForm }>
+                        className={styles.FormUpload}
+                        onSubmit={handleSubmit}
+                        ref={refForm}>
                         <input
                             type={'text'}
                             name={'comment'}
