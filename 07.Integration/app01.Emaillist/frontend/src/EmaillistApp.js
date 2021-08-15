@@ -8,7 +8,7 @@ export default function EmaillistApp() {
 
     useEffect(async () => {
         try {
-            const response = await fetch('/apis', {
+            const response = await fetch('/api', {
                 method: 'get',
                 mode: 'same-origin',                    // no-cors, cors, *same-origin
                 credentials: 'same-origin',             // include, *same-origin, omit
@@ -22,23 +22,23 @@ export default function EmaillistApp() {
                 body: null                              // body data type must match "Content-Type" header, set null when method is 'GET'
             });
 
-            if(!response.ok) {
+            if (!response.ok) {
                 throw new Error(`${response.status} ${response.statusText}`);
             }
 
             const json = await response.json();
 
-            if(json.result !== 'success') {
+            if (json.result !== 'success') {
                 throw new Error(`${json.result} ${json.message}`);
             }
 
             setEmails(json.data);
 
-        } catch(err) {
+        } catch (err) {
             console.error(err);
         }
     }, []);
-    
+
     const notifyKeywordChanged = function (keyword) {
         setKeyword(keyword);
     }

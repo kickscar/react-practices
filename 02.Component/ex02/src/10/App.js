@@ -7,7 +7,7 @@ export default function App() {
     function handleClick01() {
         Alert({
             open: true,
-            title: '팝업 다이알로그 01',
+            title: '팝업 다이알로그 ex01',
             message: 'Matrial-UI 다이얼로그 좋습니다.'
         });
     }

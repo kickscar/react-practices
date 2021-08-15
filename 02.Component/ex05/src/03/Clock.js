@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './assets/scss/Clock.scss';
 
 export default class Clock extends Component {
@@ -6,29 +6,29 @@ export default class Clock extends Component {
         return (
             <div className="clock-field">
                 <div>
-                    <p className="hours">{ this.props.hours }</p>
+                    <p className="hours">{this.props.hours}</p>
                     <p className="placeholder"></p>
                 </div>
                 <div className="colon">
                     <p>:</p>
                 </div>
                 <div className="numbers">
-                    <p>{ this.props.minutes }</p>
+                    <p>{this.props.minutes}</p>
                     <p className="placeholder"></p>
                 </div>
                 <div className="colon">
                     <p>:</p>
                 </div>
                 <div className="numbers">
-                    <p>{ this.props.seconds }</p>
+                    <p>{this.props.seconds}</p>
                     <p className="placeholder"></p>
                 </div>
                 <div className="AmPm">
                     <div>
-                        <p className={ this.props.session === 'am' ? 'on' : 'off' }>am</p>
+                        <p className={this.props.session === 'am' ? 'on' : 'off'}>am</p>
                     </div>
                     <div>
-                        <p className={ this.props.session === 'pm' ? 'on' : 'off' }>pm</p>
+                        <p className={this.props.session === 'pm' ? 'on' : 'off'}>pm</p>
                     </div>
                 </div>
             </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import FoodList from './FoodList';
 
-export default function() {
+export default function () {
     const foods = [{
         name: 'Bread',
         quantity: 20
@@ -14,6 +14,6 @@ export default function() {
     }];
 
     return (
-        <FoodList foods={ foods }/>
+        <FoodList foods={foods}/>
     );
 }

@@ -6,7 +6,7 @@ export default function Hook({ color }) {
     const h3Ref = useRef(null);
 
     /**
-     *  01. Alternative of getDerivedStateFromProps
+     *  ex01. Alternative of getDerivedStateFromProps
      */
     if(boxColor !== color) {
         setBoxColor(color);

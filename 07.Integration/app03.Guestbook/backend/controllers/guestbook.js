@@ -19,7 +19,6 @@ module.exports = {
     read: async function (req, res, next) {
         try {
             const startNo = req.params.startNo || 0;
-            console.log('----->', startNo);
             const results = await models.Guestbook.findAll({
                 attributes: ['no', 'name', 'message'],
                 where: (startNo > 0) ? {no: {[Op.lt]: startNo}} : {},
@@ -29,13 +28,15 @@ module.exports = {
                 limit: 3
             });
 
-            res
-                .status(200)
-                .send({
-                    result: 'success',
-                    data: results,
-                    message: null
-                });
+            setTimeout(() => {
+                res
+                    .status(200)
+                    .send({
+                        result: 'success',
+                        data: results,
+                        message: null
+                    });
+            }, 1000);
         } catch (err) {
             next(err);
         }

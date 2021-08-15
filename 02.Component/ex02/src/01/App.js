@@ -10,6 +10,6 @@ export default function () {
     };
 
     return (
-        <h1 style={ h1Style }>Inline Styling</h1>
+        <h1 style={h1Style}>Inline Styling</h1>
     );
 }

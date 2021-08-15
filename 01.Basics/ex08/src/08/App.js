@@ -5,8 +5,8 @@ import Content from "./Content";
 export default function () {
     return (
         <Fragment>
-            <Header />
-            <Content />
+            <Header/>
+            <Content/>
         </Fragment>
     );
 }

@@ -6,8 +6,8 @@ import TitleBar02 from './TitleBar02';
 export default function () {
     return (
         <Fragment>
-            <TitleBar01 />
-            <TitleBar02 />
+            <TitleBar01/>
+            <TitleBar02/>
         </Fragment>
     );
 }

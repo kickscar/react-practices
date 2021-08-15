@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import FoodList from './FoodList';
 
 export default class extends Component {
@@ -19,7 +19,7 @@ export default class extends Component {
 
     render() {
         return (
-            <FoodList foods={ this.foods }/>
+            <FoodList foods={this.foods}/>
         );
     }
 }

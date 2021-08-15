@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function() {
+export default function () {
     return (
         /*
             리액트 컴포넌트는 단일 루트 노드만 렌더링 할 수 있다.

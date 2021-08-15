@@ -28,12 +28,12 @@ export default function App() {
         }, 1000);
     });
 
-    return ( state.count === 100000 ?
-                null :
-                <Clock
-                    message={'ex05: useEffect Hook example'}
-                    hours={state.hours}
-                    minutes={state.minutes}
-                    seconds={state.seconds} />
+    return (state.count === 100000 ?
+            null :
+            <Clock
+                message={'ex05: useEffect Hook example'}
+                hours={state.hours}
+                minutes={state.minutes}
+                seconds={state.seconds}/>
     );
 }

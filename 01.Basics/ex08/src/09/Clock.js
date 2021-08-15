@@ -20,19 +20,19 @@ export default function () {
             */
             className="Clock">
 
-            { /* JSX는 HTML이 아니다. 이런 <!--  --> 주석은 사용할 수 없다. */ }
+            { /* JSX는 HTML이 아니다. 이런 <!--  --> 주석은 사용할 수 없다. */}
 
             // comment03: JSX 컴포넌트 렌더링 안에서 주석을 사용하면 화면에 그대로 나온다.
 
             {('0' + (hours == 0 ? 12 : (hours > 12 ? hours - 12 : hours))).slice(-2)}
 
-            { /* comment04: 이런 식으로 주석을 달아야 한다. */ }
+            { /* comment04: 이런 식으로 주석을 달아야 한다. */}
 
-            { " : " }
+            {" : "}
             {minutes}
-            { " : " }
+            {" : "}
             {seconds}
-            { " " }
+            {" "}
             {hours > 12 ? <SessionPM/> : <SessionAM/>}
         </div>
     );

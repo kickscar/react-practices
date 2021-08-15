@@ -6,8 +6,8 @@ export default function () {
     return (
         <Fragment>
             <p>JSX Tutorial - Quirks IV: Blank Space</p>
-            <Clock01 />
-            <Clock02 />
+            <Clock01/>
+            <Clock02/>
         </Fragment>
     );
 }

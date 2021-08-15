@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
 export default class LifeCircle extends Component {
     constructor() {
@@ -33,7 +33,7 @@ export default class LifeCircle extends Component {
 
     render() {
         console.log('[MOUNT03][UPDATE03]: render()');
-        return <h3 style={ {backgroundColor: this.state.color, width:100, height:50} } ref={ref => this.h3Ref = ref} />
+        return <h3 style={{backgroundColor: this.state.color, width: 100, height: 50}} ref={ref => this.h3Ref = ref}/>
     }
 
     /**

@@ -9,13 +9,13 @@ export default function () {
 
     const contents =
         "<span>" +
-            ('0' + (hours == 0 ? 12 : (hours > 12 ? hours - 12 : hours))).slice(-2) +
-            " : " +
-            minutes +
-            " : " +
-            seconds +
-            " " +
-            (hours > 12 ? "PM" : "AM") +
+        ('0' + (hours == 0 ? 12 : (hours > 12 ? hours - 12 : hours))).slice(-2) +
+        " : " +
+        minutes +
+        " : " +
+        seconds +
+        " " +
+        (hours > 12 ? "PM" : "AM") +
         "</span>";
 
     return (
@@ -23,7 +23,7 @@ export default function () {
         // HTML 태그를 동적으로 생성하여 JSX에 추가 하는 작업은 기본적으로 금지(XSS 공격 방지 기능 기본 내장)
         //
         <div>
-            { contents }
+            {contents}
         </div>
     );
 }

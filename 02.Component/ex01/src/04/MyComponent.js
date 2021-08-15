@@ -1,7 +1,7 @@
 import React, { Fragment }from 'react';
 import PropTypes from 'prop-types';
 
-export default function MyComponent({ props01, props02, props03, props04, props05, props06, props07, props08, props09, props10 }) {
+export default function MyComponent({props01, props02, props03, props04, props05, props06, props07, props08, props09, props10}) {
     return (
         <Fragment>
             <span>props01: { props01 ? props01 : '--not set--'}</span>

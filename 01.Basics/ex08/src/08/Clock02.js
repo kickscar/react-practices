@@ -23,6 +23,6 @@ export default function () {
         // JSX에 동적으로 생성된 HTML을 렌더링하는 것을 금지하고 있지만
         // XSS 보호기능을 끄고 HTML을 렌더링하는 속성을 제공한다.
         //
-        <div dangerouslySetInnerHTML={{__html: contents}} />
+        <div dangerouslySetInnerHTML={{__html: contents}}/>
     );
 }

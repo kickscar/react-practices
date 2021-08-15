@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './assets/scss/App.scss'
 import Clock from './Clock';
 
@@ -18,20 +18,20 @@ export default class App extends Component {
         return (
             <div className='clock-display'>
                 <h2>ex05 - Component LifeCycle Practice</h2>
-                { this.state.count % 10 === 0 ?
+                {this.state.count % 10 === 0 ?
                     null :
                     <Clock
-                        hours={ this.state.hours }
-                        minutes={ this.state.minutes }
-                        seconds={ this.state.seconds }
-                        session={ this.state.session } />
+                        hours={this.state.hours}
+                        minutes={this.state.minutes}
+                        seconds={this.state.seconds}
+                        session={this.state.session}/>
                 }
             </div>
         );
     }
 
     componentDidMount() {
-        this.interval = setInterval(function() {
+        this.interval = setInterval(function () {
             const date = new Date();
             const hours = date.getHours();
             const minutes = ('0' + date.getMinutes()).slice(-2);

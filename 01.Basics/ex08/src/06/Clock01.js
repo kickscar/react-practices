@@ -8,7 +8,7 @@ export default function () {
     const minutes = ('0' + date.getMinutes()).slice(-2);
     const seconds = ('0' + date.getSeconds()).slice(-2);
 
-    if(hours > 12) {
+    if (hours > 12) {
         hours = 12;
         session = 'PM';
     }

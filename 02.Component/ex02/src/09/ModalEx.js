@@ -47,7 +47,7 @@ export default function App() {
                 <button onClick={closeModal}>close</button>
                 <div>I am a modal</div>
                 <form>
-                    <input />
+                    <input/>
                     <button>tab navigation</button>
                     <button>stays</button>
                     <button>inside</button>

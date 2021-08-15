@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-export default function ({ begin, step }) {
+export default function ({begin, step}) {
     const [stateVal, setVal] = useState(begin);
     const [stateStep] = useState(step);
 
@@ -12,7 +12,7 @@ export default function ({ begin, step }) {
                 <strong>+</strong>
             </button>
             {' '}
-            <span>{ stateVal }</span>
+            <span>{stateVal}</span>
         </div>
     );
 }

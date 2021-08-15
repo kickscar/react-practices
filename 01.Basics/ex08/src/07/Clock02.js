@@ -14,11 +14,11 @@ export default function () {
         //
         <div>
             {('0' + (hours == 0 ? 12 : (hours > 12 ? hours - 12 : hours))).slice(-2)}
-            { " : " }
+            {" : "}
             {minutes}
-            { " : " }
+            {" : "}
             {seconds}
-            { " " }
+            {" "}
             {hours > 12 ? "PM" : "AM"}
         </div>
     );
