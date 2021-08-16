@@ -1,6 +1,6 @@
 import React from 'react';
 import SiteLayout from "../layout/SiteLayout";
-import styles from '../assets/scss/apps/Gallery.scss';
+import styles from '../assets/scss/component/Gallery.scss';
 
 export default function Gallery() {
     return (
