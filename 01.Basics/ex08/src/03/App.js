@@ -7,7 +7,7 @@ export default function () {
     return (
         // <div>
         //     <Header />
-        //     <Content />
+        //     <SiteLayout />
         // </div>
         //
         // 반드시 하나의 엘리멘트로 반환 하여야 함. (단일 루트 노드)

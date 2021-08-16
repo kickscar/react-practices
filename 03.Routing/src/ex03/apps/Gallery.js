@@ -8,7 +8,7 @@ export default function Gallery() {
     return (
         <Fragment>
             <Header/>
-            <div class={styles.Gallery}>
+            <div className={styles.Gallery}>
                 <h2>Gallery</h2>
             </div>
             <Navigation/>

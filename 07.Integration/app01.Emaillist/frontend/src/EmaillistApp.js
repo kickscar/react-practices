@@ -14,12 +14,12 @@ export default function EmaillistApp() {
                 credentials: 'same-origin',             // include, *same-origin, omit
                 cache: 'default',                       // *default, no-cache, reload, force-cache, only-if-cached
                 headers: {
-                    'Content-Type': 'application/json', // cf. 'Content-Type': 'application/x-www-form-urlencoded'
+                    'Content-Type': 'application/json', // cf. 'SiteLayout-Type': 'application/x-www-form-urlencoded'
                     'Accept': 'applcation/json'
                 },
                 redirect: 'follow',                     // manual, *follow, error
                 referrer: 'no-referrer',                // no-referrer, *client
-                body: null                              // body data type must match "Content-Type" header, set null when method is 'GET'
+                body: null                              // body data type must match "SiteLayout-Type" header, set null when method is 'GET'
             });
 
             if (!response.ok) {
