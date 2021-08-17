@@ -8,9 +8,10 @@ import Location from "./Location";
 export default function About() {
     return (
         <SiteLayout>
-            <Route component={Navigation} />
-            <Route path='/about/kickscar' component={Me} />
-            <Route path='/about/location' component={Location} />
+            <Route component={Navigation}/>
+            <Route exact path='/about' component={Me}/>
+            <Route path='/about/kickscar' component={Me}/>
+            <Route path='/about/location' component={Location}/>
         </SiteLayout>
     );
 }

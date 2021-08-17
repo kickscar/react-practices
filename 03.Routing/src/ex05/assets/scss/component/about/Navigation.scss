@@ -6,6 +6,9 @@ nav.About {
 
   span  {
     padding: 0 5px;
+    &::before {
+      content: '|'
+    }
   }
 
   a {

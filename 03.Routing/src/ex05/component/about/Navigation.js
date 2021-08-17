@@ -6,7 +6,7 @@ export default function Navigation() {
     return (
         <nav className={styles.About}>
             <NavLink to={'/about/kickscar'}>Kickscar</NavLink>
-            <span>|</span>
+            <span/>
             <NavLink to={'/about/location'}>Location</NavLink>
         </nav>
     );
