@@ -8,7 +8,7 @@ export default function Index() {
 
     useEffect(async () => {
         try {
-            const response = await fetch('/api', {
+            const response = await fetch('/api/gallery', {
                 method: 'get',
                 headers: {
                     'Content-Type': 'application/json',
@@ -41,7 +41,7 @@ export default function Index() {
                 formData.append('file', file);
 
                 // Post
-                const response = await fetch(`/api`, {
+                const response = await fetch(`/api/gallery`, {
                     method: 'post',
                     headers: { 'Accept': 'applcation/json' },
                     body: formData
@@ -67,7 +67,7 @@ export default function Index() {
         delete: async function(no) {
             try {
                 // Delete
-                const response = await fetch(`/api/${no}`, {
+                const response = await fetch(`/api/gallery/${no}`, {
                     method: 'delete',
                     headers: { 'Accept': 'applcation/json' },
                     body: null
