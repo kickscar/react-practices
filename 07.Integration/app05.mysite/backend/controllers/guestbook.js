@@ -28,15 +28,13 @@ module.exports = {
                 limit: 3
             });
 
-            setTimeout(() => {
-                res
-                    .status(200)
-                    .send({
-                        result: 'success',
-                        data: results,
-                        message: null
-                    });
-            }, 1000);
+            res
+                .status(200)
+                .send({
+                    result: 'success',
+                    data: results,
+                    message: null
+                });
         } catch (err) {
             next(err);
         }

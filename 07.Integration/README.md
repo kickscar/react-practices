@@ -73,7 +73,7 @@
 6. examples
    - App01.Emaillist
    - App02.KanbanBoard
-   - App03.Guestbook
+   - App03.Index
    - App04.Index
    - App05.MySite
 
@@ -107,7 +107,7 @@ example
    - Frontend: Fully React Applied(SPA)
    - AJAX: based on axios
 
-3. App03.Guestbook
+3. App03.Index
    - Integration Configuration with Node
    - Backend: Fully APIs on Node Express
    - Frontend: Fully React Applied(SPA)
@@ -131,7 +131,7 @@ example
    - Frontend: Partial React Applied(without Webpack Dev Server)
    - AJAX: based on axios
 
-7. App07.Guestbook
+7. App07.Index
    - Integration Configuration with Spring Boot
    - Backend: Fully APIs on Spring Boot
    - Frontend: Fully React Applied(SPA)
