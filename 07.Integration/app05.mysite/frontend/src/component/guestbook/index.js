@@ -14,24 +14,19 @@ export default function Guestbook() {
             const documentHeight = window.document.body.offsetHeight;
             const viewportHeight = document.documentElement.clientHeight || window.innerHeight;
             const scrollTop = document.documentElement.scrollTop;
-
             if (viewportHeight + scrollTop + 10 > documentHeight) {
-                fetchMessage();
+                fetchMessage.call(this);
             }
         }
 
         window.addEventListener('scroll', handleWindowScroll);
-        fetchMessage();
+        fetchMessage.call(this);
 
         return () => {
             window.removeEventListener('scroll', handleWindowScroll);
         }
+
     }, []);
-
-    useEffect(() => {
-        console.log('update', messages);
-    });
-
 
     const setMessages = function(messages) {
         messagesRef.current = messages;
@@ -66,18 +61,13 @@ export default function Guestbook() {
     }
 
     const fetchMessage = async function () {
-        console.log('[01. Enter]', ' Fetching');
-        if (isFetching === true) {
-            console.log('[Prevent]', ' Fetching -------');
+        if (isFetching) {
             return;
         }
-
         isFetching = true;
-        console.log('[02.Start]', ' Fetching');
 
-        console.log('????', messages, messagesRef);
-        const startNo = messages.length === 0 ? 0 : messages[messages.length - 1].no;
-
+        const messagesInState = this ? messagesRef.current : messages;
+        const startNo = messagesInState.length === 0 ? 0 : messagesInState[messagesInState.length - 1].no;
         try {
             const response = await fetch(`/api/guestbook/${startNo}`, {
                 method: 'get',
@@ -96,11 +86,8 @@ export default function Guestbook() {
                 throw json.message;
             }
 
-            // setMessages([...messages, ...json.data]);
-            json.data.length > 0 && setMessages([...messages, ...json.data]);
-            console.log('[03End]', ' Fetching');
+            json.data.length > 0 && setMessages([...messagesInState, ...json.data]);
             isFetching = false;
-
         } catch (err) {
             console.error(err);
         }
