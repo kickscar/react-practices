@@ -34,7 +34,7 @@ export default function Header({notifyImage}) {
     return (
         <Fragment>
             <div className={styles.Header}>
-                <h1>My Photos</h1>
+                <h2>My Photos</h2>
                 <a
                     className={styles.UploadButton}
                     onClick={() => setModalIsOpen(true)}>

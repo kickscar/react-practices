@@ -96,7 +96,7 @@ export default function Guestbook() {
     return (
         <MySiteLayout>
             <div className={styles.Guestbook}>
-                <h1>방명록</h1>
+                <h2>방명록</h2>
                 <WriteForm notifyMessage={notifyMessage}/>
                 <MessageList messages={messages} notifyMessage={notifyMessage}/>
             </div>
