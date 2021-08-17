@@ -6,13 +6,37 @@ import styles from '../../assets/scss/component/guestbook/Guestbook.scss';
 
 export default function Guestbook() {
     let isFetching = false;
-    const outterRef = useRef(null);
-    const innerRef = useRef(null);
-    const [messages, setMessages] = useState([]);
+    const [messages, _setMessages] = useState([]);
+    const messagesRef = useRef(messages);
 
     useEffect(() => {
+        const handleWindowScroll = function () {
+            const documentHeight = window.document.body.offsetHeight;
+            const viewportHeight = document.documentElement.clientHeight || window.innerHeight;
+            const scrollTop = document.documentElement.scrollTop;
+
+            if (viewportHeight + scrollTop + 10 > documentHeight) {
+                fetchMessage();
+            }
+        }
+
+        window.addEventListener('scroll', handleWindowScroll);
         fetchMessage();
+
+        return () => {
+            window.removeEventListener('scroll', handleWindowScroll);
+        }
     }, []);
+
+    useEffect(() => {
+        console.log('update', messages);
+    });
+
+
+    const setMessages = function(messages) {
+        messagesRef.current = messages;
+        _setMessages(messages);
+    }
 
     const notifyMessage = {
         delete: function (no) {
@@ -42,7 +66,7 @@ export default function Guestbook() {
     }
 
     const fetchMessage = async function () {
-        console.log('[ex01. Enter]', ' Fetching');
+        console.log('[01. Enter]', ' Fetching');
         if (isFetching === true) {
             console.log('[Prevent]', ' Fetching -------');
             return;
@@ -51,6 +75,7 @@ export default function Guestbook() {
         isFetching = true;
         console.log('[02.Start]', ' Fetching');
 
+        console.log('????', messages, messagesRef);
         const startNo = messages.length === 0 ? 0 : messages[messages.length - 1].no;
 
         try {
@@ -75,6 +100,7 @@ export default function Guestbook() {
             json.data.length > 0 && setMessages([...messages, ...json.data]);
             console.log('[03End]', ' Fetching');
             isFetching = false;
+
         } catch (err) {
             console.error(err);
         }
@@ -82,21 +108,10 @@ export default function Guestbook() {
 
     return (
         <MySiteLayout>
-            <div
-                ref={outterRef}
-                className={styles.ScrollOuter}
-                onScroll={e => {
-                    if (outterRef.current.scrollTop + outterRef.current.clientHeight > innerRef.current.clientHeight) {
-                        fetchMessage();
-                    }
-                }}>
-                <div ref={innerRef}>
-                    <div className={styles.Guestbook}>
-                        <h1>방명록</h1>
-                        <WriteForm notifyMessage={notifyMessage}/>
-                        <MessageList messages={messages} notifyMessage={notifyMessage}/>
-                    </div>
-                </div>
+            <div className={styles.Guestbook}>
+                <h1>방명록</h1>
+                <WriteForm notifyMessage={notifyMessage}/>
+                <MessageList messages={messages} notifyMessage={notifyMessage}/>
             </div>
         </MySiteLayout>
     );
