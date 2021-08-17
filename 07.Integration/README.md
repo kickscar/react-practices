@@ -74,7 +74,7 @@
    - App01.Emaillist
    - App02.KanbanBoard
    - App03.Guestbook
-   - App04.Gallery
+   - App04.Index
    - App05.MySite
 
 ## Development Environment Integration with Node II
@@ -113,7 +113,7 @@ example
    - Frontend: Fully React Applied(SPA)
    - AJAX: based on axios
 
-4. App04.Gallery
+4. App04.Index
    - Integration Configuration with Node
    - Backend: Fully APIs on node Express
    - Frontend: Fully React Applied(SPA)

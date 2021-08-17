@@ -14,7 +14,7 @@ export default function Main() {
                 /*
                 <ul>
                     <li><Link to={'/'}>[Main]</Link></li>
-                    <li><Link to={'gallery'}>[Gallery]</Link></li>
+                    <li><Link to={'gallery'}>[Index]</Link></li>
                     <li><Link to={'guestbook'}>[Guestbook]</Link></li>
                 </ul>
                 /*/
