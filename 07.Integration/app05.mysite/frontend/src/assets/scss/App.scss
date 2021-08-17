@@ -2,13 +2,12 @@
 
 * {
   margin: 0;
-  padding: 0;
+  padding: 0
 }
 
-html,
 body {
   font: 0.75em "맑은 고딕", 돋움, 굴림;
-  text-align: center;
+  text-align: center
 }
 
 ul, ol {
@@ -16,5 +15,8 @@ ul, ol {
 }
 
 :global(#root) {
-  width: 100%
+  text-align: left;
+  width: 700px;
+  margin: 0 auto;
+  background-color: #EEE
 }

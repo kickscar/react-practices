@@ -1,4 +1,5 @@
 import React, {useEffect, useState, useRef} from 'react';
+import MySiteLayout from "../../layout/MySiteLayout";
 import WriteForm from './WriteForm';
 import MessageList from './MessageList';
 import styles from '../../assets/scss/component/guestbook/Guestbook.scss';
@@ -80,21 +81,23 @@ export default function Guestbook() {
     }
 
     return (
-        <div
-            ref={outterRef}
-            className={styles.ScrollOuter}
-            onScroll={e => {
-                if (outterRef.current.scrollTop + outterRef.current.clientHeight > innerRef.current.clientHeight) {
-                    fetchMessage();
-                }
-            }}>
-            <div ref={innerRef}>
-                <div className={styles.Guestbook}>
-                    <h1>방명록</h1>
-                    <WriteForm notifyMessage={notifyMessage}/>
-                    <MessageList messages={messages} notifyMessage={notifyMessage}/>
+        <MySiteLayout>
+            <div
+                ref={outterRef}
+                className={styles.ScrollOuter}
+                onScroll={e => {
+                    if (outterRef.current.scrollTop + outterRef.current.clientHeight > innerRef.current.clientHeight) {
+                        fetchMessage();
+                    }
+                }}>
+                <div ref={innerRef}>
+                    <div className={styles.Guestbook}>
+                        <h1>방명록</h1>
+                        <WriteForm notifyMessage={notifyMessage}/>
+                        <MessageList messages={messages} notifyMessage={notifyMessage}/>
+                    </div>
                 </div>
             </div>
-        </div>
+        </MySiteLayout>
     );
 }

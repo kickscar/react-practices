@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import MySiteLayout from "../../layout/MySiteLayout";
 import Header from "./Header";
 import ImageList from "./ImageList";
 import styles from '../../assets/scss/component/gallery/Galery.scss';
@@ -32,7 +33,7 @@ export default function Index() {
     }, []);
 
     const notifyImage = {
-        add: async function(comment, file) {
+        add: async function (comment, file) {
             try {
 
                 // Create FormData
@@ -43,7 +44,7 @@ export default function Index() {
                 // Post
                 const response = await fetch(`/api/gallery`, {
                     method: 'post',
-                    headers: { 'Accept': 'applcation/json' },
+                    headers: {'Accept': 'applcation/json'},
                     body: formData
                 });
 
@@ -64,12 +65,12 @@ export default function Index() {
                 console.error(err);
             }
         },
-        delete: async function(no) {
+        delete: async function (no) {
             try {
                 // Delete
                 const response = await fetch(`/api/gallery/${no}`, {
                     method: 'delete',
-                    headers: { 'Accept': 'applcation/json' },
+                    headers: {'Accept': 'applcation/json'},
                     body: null
                 });
 
@@ -93,9 +94,11 @@ export default function Index() {
     }
 
     return (
-        <div className={ styles.Gallery }>
-            <Header notifyImage={ notifyImage }/>
-            <ImageList imageList={ imageList } notifyImage={ notifyImage } />
-        </div>
+        <MySiteLayout>
+            <div className={styles.Gallery}>
+                <Header notifyImage={notifyImage}/>
+                <ImageList imageList={imageList} notifyImage={notifyImage}/>
+            </div>
+        </MySiteLayout>
     )
 }
