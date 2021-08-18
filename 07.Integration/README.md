@@ -123,13 +123,13 @@ example
    - Frontend: Fully React Applied(SPA)
    - AJAX: based on fetch
 
----
-
 6. app06.mysite
    - Integration Configuration with Node
    - Backend: Classic Web Application(Partial APIs) on Node Express
    - Frontend: Partial React Applied(without Webpack Dev Server)
    - AJAX: based on axios
+
+---
 
 7. app07.mysite
    - Integration Configuration with Spring Boot

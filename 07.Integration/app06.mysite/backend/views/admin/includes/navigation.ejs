@@ -1,0 +1,26 @@
+			<div id="navigation">
+				<ul>
+					<% if(menu === 'main') { %>
+						<li class="selected"><a href="/admin/">메인페이지 관리</a></li>
+						<li><a href="/admin/guestbook">방명록 관리</a></li>
+						<li><a href="/admin/board">게시판 관리</a></li>
+						<li><a href="/admin/user">사용자 관리</a></li>
+					<% } else if(menu === 'guestbook') { %>
+						<li><a href="/admin/">메인페이지 관리</a></li>
+						<li class="selected"><a href="/admin/guestbook">방명록 관리</a></li>
+						<li><a href="/admin/board">게시판 관리</a></li>
+						<li><a href="/admin/user">사용자 관리</a></li>
+					<% } else if(menu === 'board') { %>
+						<li><a href="/admin/">메인페이지 관리</a></li>
+						<li><a href="/admin/guestbook">방명록 관리</a></li>
+						<li class="selected"><a href="/admin/board">게시판 관리</a></li>
+						<li><a href="/admin/user">사용자 관리</a></li>
+					<% } else if(menu === 'user') { %>
+						<li><a href="/admin/">메인페이지 관리</a></li>
+						<li><a href="/admin/guestbook">방명록 관리</a></li>
+						<li><a href="/admin/board">게시판 관리</a></li>
+						<li class="selected"><a href="/admin/user">사용자 관리</a></li>
+					<% } %>
+				</ul>
+			</div>
+			<div id="footer">&nbsp;</div>

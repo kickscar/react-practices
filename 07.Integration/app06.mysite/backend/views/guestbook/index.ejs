@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>mysite</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link href="/assets/css/guestbook.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div id="container">
+		<%-include('../includes/header')%>
+		<div id="content">
+			<div id="guestbook">
+				<form action="/guestbook/add" method="post">
+					<table>
+						<tr>
+							<td>이름</td><td><input type="text" name="name"></td>
+							<td>비밀번호</td><td><input type="password" name="password"></td>
+						</tr>
+						<tr>
+							<td colspan=4><textarea name="message" id="content"></textarea></td>
+						</tr>
+						<tr>
+							<td colspan=4 align=right><input type="submit" VALUE=" 확인 "></td>
+						</tr>
+					</table>
+				</form>
+				<ul>
+					<% 
+						const count = guestbooks.length;
+						guestbooks.forEach(function(guestbook, index) {
+					%>
+						<li>
+							<table>
+								<tr>
+									<td>[<%=count-index %>]</td>
+									<td><%=guestbook.name %></td>
+									<td><%=moment(guestbook.regDate).format('YYYY-MM-DD hh:mm:ss') %></td>
+									<td><a href="/guestbook/delete/<%=guestbook.no %>">삭제</a></td>
+								</tr>
+								<tr>
+									<td colspan=4>
+										<%-guestbook.message.replace(/\n/g, '<br/>') %>
+									</td>
+								</tr>
+							</table>
+							<br>
+						</li>
+					<% }) %>
+				</ul>
+			</div>
+		</div>
+		<%-include('../includes/navigation') %>
+		<%-include('../includes/footer') %>
+	</div>
+</body>
+</html>

@@ -10,7 +10,7 @@
     const argv = require('minimist')(process.argv.slice(2));
 
     // 2. Environment Variables
-    dotenv.config({path: path.join(__dirname, 'app.config.env')})
+    dotenv.config({path: path.join(__dirname, 'app.config.env')});
 
     // 3. Process Title(Name)
     process.title = argv.name;
@@ -32,7 +32,7 @@
         // 6-2. Body Parsers
         .use(express.json())
         .use(express.urlencoded({extended: true}))
-        // 6-3. Multer
+        // 6-3. Multipart
         .use(multer({dest: path.join(__dirname, process.env.MULTER_TEMPORARY_STORE)}).single('file'))
         // 6-4. Static
         .use(express.static(path.join(__dirname, process.env.STATIC_RESOURCES_DIRECTORY)))
@@ -43,7 +43,7 @@
     // 7. Application Router Setup
     applicationRouter.setup(application);
 
-    // 8. Server Startup
+    // 6. Server Startup
     http.createServer(application)
         .on('listening', function () {
             logger.info('Listening on port ' + process.env.PORT);
