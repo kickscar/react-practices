@@ -2,7 +2,7 @@ const dotenv = require('dotenv');
 const path = require('path');
 const assert = require('assert').strict;
 
-dotenv.config({path: path.join(path.resolve(__dirname, '..'), 'config/db.env')})
+dotenv.config({path: path.join(path.resolve(__dirname, '..'), 'app.config.env')})
 
 describe('Model User', function(){
     let models = null;
