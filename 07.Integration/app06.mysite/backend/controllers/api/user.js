@@ -1,5 +1,5 @@
-const models = require('../models');
-const logger = require('../logging');
+const models = require('../../models');
+const logger = require('../../logging');
 
 module.exports = {
     checkemail: async function(req, res) {

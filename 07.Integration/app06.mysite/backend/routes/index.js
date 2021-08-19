@@ -19,9 +19,10 @@ const applicationRouter = {
         .use('/guestbook', require('./guestbook'))
         .use('/gallery', require('./gallery'))
         .use('/admin', authorized('ADMIN'), require('./admin'))
-        .use('/api/user/', require('./user-api'))
-        .use('/api/guestbook', require('./guestbook-api'))
-        
+        .use('/api/user/', require('./api/user'))
+        .use('/api/guestbook', require('./api/guestbook'))
+        .use('/api/gallery', require('./api/gallery'))
+
         .use(errorRouter.error404)
         .use(errorRouter.error500)
         
