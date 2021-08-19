@@ -17,7 +17,7 @@ public class MainController {
 	
 	@RequestMapping("")
 	public String index(Model model) {
-		System.out.println("!!!!!!!!!!!!!");
+		System.out.println("dwqdw");
 		SiteVo vo = siteService.getSite();
 		model.addAttribute("vo", vo);
 		return "main/index";

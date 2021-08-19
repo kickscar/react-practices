@@ -1,37 +1,27 @@
 # active spring boot profile
 spring:
    profiles:
-      active: dev
+      active: development
 
 ---
 # common spring boot configuration
 spring:
-
    # mvc
    mvc:
       view:
          prefix: /WEB-INF/views/
          suffix: .jsp
-
-#   http:
-#      encoding:
-#         forced: true
-#         forced-request: true
-#         forced-response: true
-   
    # message resource(Internationalization)
    messages:
       # always-message-format: true
       basename: messages/messages_ko
       encoding: UTF-8
-
    # multipart
    servlet:
       multipart:
          enabled: true
          max-file-size: 50MB
          max-request-size: 50MB
-
    # AOP
    aop:
       auto: true
@@ -39,37 +29,40 @@ spring:
 
 
 ---
-# dev profile - spring boot configuration
+# development profile - spring boot configuration
 spring:
-   profiles: dev
+   config:
+      activate:
+         on-profile: development
 
    # devtools enabled
    devtools:
       livereload:
          enabled: true
-
+      remote:
+         restart:
+            enabled: true
    # datasource
    datasource:
       driver-class-name: org.mariadb.jdbc.Driver
-      url: jdbc:mysql://127.0.0.1:3306/webdb?characterEncoding=utf8
+      url: jdbc:mysql://localhost:3306/webdb?characterEncoding=utf8
       username: webdb
       password: webdb
-      initialSize: 10
-      maxActive: 100
+
 
 ---
 # production profile - spring boot configuration
 spring:
-   profiles: production
+   config:
+      activate:
+         on-profile: production
 
    # datasource
    datasource:
       driver-class-name: org.mariadb.jdbc.Driver
-      url: jdbc:mysql://localhost:3307/webdb?characterEncoding=utf8
+      url: jdbc:mysql://localhost:3306/webdb?characterEncoding=utf8
       username: webdb
       password: webdb
-      initialSize: 10
-      maxActive: 100 
 
 
 ---
@@ -87,9 +80,3 @@ server:
 # mybatis
 mybatis:
    config-location: classpath:mybatis/configuration.xml
-
-
----
-# logging
-logging:
-   cofig: classpath:logback.xml 

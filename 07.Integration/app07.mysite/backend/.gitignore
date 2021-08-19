@@ -1,5 +1,12 @@
 # IDE directories and files
+**/.idea
 **/*.iml
+**/.vscode
+**/.suo
+**/.ntvs*
+**/.njsproj
+**/.sln
+**/.sw?
 
 # build target
 **/.classpath
@@ -8,3 +15,11 @@
 **/target/
 **/build/
 
+# Bundle Target(main.js or bundle.js) of Frontend
+**/main.js
+**/bundle.js
+
+
+# Bulk Data of Backend
+/logs
+**/upload-images
