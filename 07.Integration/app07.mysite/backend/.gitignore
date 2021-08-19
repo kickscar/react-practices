@@ -1,0 +1,10 @@
+# IDE directories and files
+**/*.iml
+
+# build target
+**/.classpath
+**/.project
+**/.settings/
+**/target/
+**/build/
+

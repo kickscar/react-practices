@@ -1,0 +1,95 @@
+# active spring boot profile
+spring:
+   profiles:
+      active: dev
+
+---
+# common spring boot configuration
+spring:
+
+   # mvc
+   mvc:
+      view:
+         prefix: /WEB-INF/views/
+         suffix: .jsp
+
+#   http:
+#      encoding:
+#         forced: true
+#         forced-request: true
+#         forced-response: true
+   
+   # message resource(Internationalization)
+   messages:
+      # always-message-format: true
+      basename: messages/messages_ko
+      encoding: UTF-8
+
+   # multipart
+   servlet:
+      multipart:
+         enabled: true
+         max-file-size: 50MB
+         max-request-size: 50MB
+
+   # AOP
+   aop:
+      auto: true
+      proxy-target-class: true
+
+
+---
+# dev profile - spring boot configuration
+spring:
+   profiles: dev
+
+   # devtools enabled
+   devtools:
+      livereload:
+         enabled: true
+
+   # datasource
+   datasource:
+      driver-class-name: org.mariadb.jdbc.Driver
+      url: jdbc:mysql://127.0.0.1:3306/webdb?characterEncoding=utf8
+      username: webdb
+      password: webdb
+      initialSize: 10
+      maxActive: 100
+
+---
+# production profile - spring boot configuration
+spring:
+   profiles: production
+
+   # datasource
+   datasource:
+      driver-class-name: org.mariadb.jdbc.Driver
+      url: jdbc:mysql://localhost:3307/webdb?characterEncoding=utf8
+      username: webdb
+      password: webdb
+      initialSize: 10
+      maxActive: 100 
+
+
+---
+# server
+server:
+   port: 8080
+   servlet:
+      context-path: /mysite06
+      encoding:
+         charset: UTF-8
+         enabled: true
+
+
+---
+# mybatis
+mybatis:
+   config-location: classpath:mybatis/configuration.xml
+
+
+---
+# logging
+logging:
+   cofig: classpath:logback.xml 

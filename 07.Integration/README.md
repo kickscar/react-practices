@@ -129,14 +129,15 @@ example
    - Frontend: Partial React Applied(without Webpack Dev Server)
    - AJAX: based on axios
 
----
-
 7. app07.mysite
    - Integration Configuration with Spring Boot
    - Backend: Fully APIs on Spring Boot
    - Frontend: Fully React Applied(SPA)
    - AJAX: based on axios
-   
+
+---
+
+
 8. app08.mysite
    - Integration Configuration with Spring Boot
    - Backend: Classic Web Application(Partial APIs) on Spring Boot
