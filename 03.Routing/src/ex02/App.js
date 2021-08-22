@@ -4,23 +4,29 @@ import Gallery from "./component/Gallery";
 import Guestbook from "./component/Guestbook";
 
 export default function App() {
-    const [route, setRoute] = useState('');
+    const [route, setRoute] = useState('/');
 
     useEffect(() => {
-        const handleHashChange = () => {
-            setRoute(window.location.hash.substr(1));
-        };
+        const handlePopState = (e) => {
+            setRoute(e.state);
+        }
 
-        window.addEventListener('hashchange', handleHashChange);
-
+        window.addEventListener('popstate', handlePopState);
         return () => {
-            window.removeEventListener('hashchange', handleHashChange);
+            window.removeEventListener('popstate', handlePopState);
         };
     }, []);
 
+    const handleLinkClick = (e) => {
+        e.preventDefault();
+
+        const url = `${e.target.href.substr(e.target.href.lastIndexOf('/'))}`;
+        window.history.pushState(url, e.target.text, url);
+        setRoute(url);
+    }
+
     const router = function () {
         let component = null;
-
         switch (route) {
             case '/':
                 component = <Main/>;
@@ -36,5 +42,14 @@ export default function App() {
         return component;
     };
 
-    return router(route);
+    return (
+        <div>
+            { router(route) }
+            <ul>
+                <li><a href={'/'} onClick={handleLinkClick}>[Main]</a></li>
+                <li><a href={'/gallery'} onClick={handleLinkClick}>[Gallery]</a></li>
+                <li><a href={'/guestbook'} onClick={handleLinkClick}>[Guestbook]</a></li>
+            </ul>
+        </div>
+    )
 }
