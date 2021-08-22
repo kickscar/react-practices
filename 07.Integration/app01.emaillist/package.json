@@ -6,7 +6,7 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development nohup node backend/index.js --name $npm_package_name > /dev/null 2>&1 &",
     "restart": "npm stop && npm start",
-    "stop": "pkill -9 $npm_package_name",
+    "stop": "pkill $npm_package_name",
     "prestart": "npm run build",
     "postinstall": "npm run build",
     "build": "npm run build:frontend && npm run build:backend",

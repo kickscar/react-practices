@@ -4,7 +4,7 @@
   "description": "",
   "main": "",
   "scripts": {
-    "start": "java -jar ./backend/target/$npm_package_name.jar &",
+    "start": "nohup java -jar ./backend/target/$npm_package_name.jar > /dev/null 2>&1 &",
     "restart": "npm stop && npm start",
     "stop": "ps -ef | grep $npm_package_name | grep -v grep | awk '{print $2}' | xargs kill",
     "prestart": "npm run build",
