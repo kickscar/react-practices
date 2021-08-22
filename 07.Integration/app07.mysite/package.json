@@ -7,6 +7,7 @@
     "start": "java -jar ./backend/target/$npm_package_name.jar &",
     "restart": "npm stop && npm start",
     "stop": "ps -ef | grep $npm_package_name | grep -v grep | awk '{print $2}' | xargs kill",
+    "prestart": "npm run build",
     "postinstall": "npm run build",
     "build": "npm run build:frontend && npm run build:backend",
     "build:backend": "cd ./backend && mvn clean package",
