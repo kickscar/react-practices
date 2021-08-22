@@ -13,10 +13,6 @@ export default function Guestbook() {
         fetchMessage();
     }, []);
 
-    useEffect(() => {
-        console.log("!!!!!!!!!!!--------> UPDATE!!!!!");
-    });
-
     const notifyMessage = {
         delete: function (no) {
             setMessages(messages.filter((message) => message.no != no));
@@ -45,9 +41,7 @@ export default function Guestbook() {
     }
 
     const fetchMessage = async function () {
-        console.log('[ex01. Enter]', ' Fetching');
         if(isFetching === true) {
-            console.log('[Prevent]', ' Fetching -------');
             return;
         }
 
@@ -74,9 +68,7 @@ export default function Guestbook() {
                 throw json.message;
             }
 
-            // setMessages([...messages, ...json.data]);
             json.data.length > 0 && setMessages([...messages, ...json.data]);
-            console.log('[03End]', ' Fetching');
             isFetching = false;
         } catch (err) {
             console.error(err);

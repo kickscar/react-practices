@@ -8,7 +8,6 @@ export default function App() {
 
     useEffect(() => {
         const handleHashChange = () => {
-            console.log(window.location.hash.substr(1));
             setRoute(window.location.hash.substr(1));
         };
 
