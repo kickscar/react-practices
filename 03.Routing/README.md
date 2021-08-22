@@ -1,6 +1,8 @@
 ## React Practices - Routing
 
-### ex01: React Router Basic I: HashRouter Component
+### ex01: React Router Basic I: Route Component &amp; HashRouter Component
+### ex02: React Router Basic I: Route Component &amp; BrowserRouter Component
+
 ### ex02: React Router Basic II: Link VS NavLink Component
 ### ex03: Styling &amp; Semantic Markup
 ### ex04: Composition

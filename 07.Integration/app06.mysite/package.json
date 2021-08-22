@@ -4,7 +4,7 @@
   "description": "",
   "main": "",
   "scripts": {
-    "start": "cross-env NODE_ENV=production node backend/index.js --name $npm_package_name",
+    "start": "cross-env NODE_ENV=development node backend/index.js --name $npm_package_name",
     "restart": "npm stop && npm start",
     "stop": "pkill -9 $npm_package_name",
     "postinstall": "npm run build",
