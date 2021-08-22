@@ -11,12 +11,12 @@
 ### ex09: Router Parameter
 
 
-### 설치
+### Install Dependency(from ex03~)
 ```bash
 $ npm i react-router-dom
 ```
 
-### 예제 실행
+### Run Examples
 ```bash
 $ npm run dev src=[ex01|ex02|ex03|ex04|ex05|ex06|...]
 ```
