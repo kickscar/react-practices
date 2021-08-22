@@ -3,7 +3,7 @@ import {HashRouter, Route} from 'react-router-dom';
 import Main from "./component/Main";
 import Gallery from "./component/Gallery";
 import Guestbook from "./component/Guestbook";
-import About from "./component/about/About";
+import About from "./component/About";
 import './assets/scss/App.scss'
 
 export default function App() {

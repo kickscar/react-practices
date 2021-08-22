@@ -1,10 +1,8 @@
 import React from 'react';
 import {HashRouter, Route} from 'react-router-dom';
-import Main from "./component/Main";
-import Gallery from "./component/Gallery";
-import Guestbook from "./component/Guestbook";
-import About from "./component/About";
-import './assets/scss/App.scss'
+import Main from "./sites/Main";
+import Gallery from "./sites/Gallery";
+import Guestbook from "./sites/Guestbook";
 
 export default function App() {
     return (
@@ -12,7 +10,6 @@ export default function App() {
             <Route exact path='/' component={Main}/>
             <Route path='/gallery' component={Gallery}/>
             <Route path='/guestbook' component={Guestbook}/>
-            <Route path='/about' component={About}/>
         </HashRouter>
     );
 }
