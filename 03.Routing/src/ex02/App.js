@@ -4,12 +4,10 @@ import Gallery from "./component/Gallery";
 import Guestbook from "./component/Guestbook";
 
 export default function App() {
-    const [route, setRoute] = useState('/');
+    const [route, setRoute] = useState({page: '/'});
 
     useEffect(() => {
-        const handlePopState = (e) => {
-            setRoute(e.state);
-        }
+        const handlePopState = (e) => setRoute(e.state);
 
         window.addEventListener('popstate', handlePopState);
         return () => {
@@ -21,13 +19,14 @@ export default function App() {
         e.preventDefault();
 
         const url = `${e.target.href.substr(e.target.href.lastIndexOf('/'))}`;
-        window.history.pushState(url, e.target.text, url);
-        setRoute(url);
+
+        window.history.pushState({page: url}, e.target.text, url);
+        setRoute({page: url});
     }
 
     const router = function () {
         let component = null;
-        switch (route) {
+        switch (route.page) {
             case '/':
                 component = <Main/>;
                 break;
