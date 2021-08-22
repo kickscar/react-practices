@@ -4,9 +4,9 @@
   "description": "",
   "main": "",
   "scripts": {
-    "start": "cross-env NODE_ENV=development node backend/index.js --name $npm_package_name",
+    "start": "cross-env NODE_ENV=development node backend/index.js --name $npm_package_name &",
     "restart": "npm stop && npm start",
-    "stop": "pkill -9 $npm_package_name",
+    "stop": "ps -ef | grep $npm_package_name | grep -v grep | awk '{print $2}' | xargs kill",
     "postinstall": "npm run build",
     "build": "npm run build:backend && npm run build:frontend",
     "build:backend": "echo \"no build specified\"",
