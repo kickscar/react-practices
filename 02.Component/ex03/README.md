@@ -7,7 +7,7 @@
 ### 05. src/05: Event Handler Using 'ref' I     (Functional Component) 
 ### 06. src/06: Event Handler Using 'ref' II    (Class Component)
 
-### Run Examples
+## Run Examples
 ```bash
-$ npm run debug src={no}
+$ npm run dev [src=no]
 ```

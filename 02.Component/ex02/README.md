@@ -11,10 +11,10 @@
 ### 09. src/09: Working with UI II: React Modal
 ### 10. src/10: Working with UI III: Material-UI
  
-
 ### Run Examples
+
 ```bash
-$ npm run debug src={no} [scss-modules=false]
+$ npm run dev [src=no]
 ```
 
 

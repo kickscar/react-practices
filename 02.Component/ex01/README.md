@@ -13,8 +13,9 @@
 ### 05. src/04: Property Validator
 
 ### Run Examples
+
 ```bash
-$ npm run debug src={no}
+$ npm run dev [src=no]
 ```
 
 

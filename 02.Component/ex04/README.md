@@ -47,5 +47,5 @@
 
 ## Run Examples
 ```bash
-$ npm run debug src={no}
+$ npm run dev [src=no]
 ```
