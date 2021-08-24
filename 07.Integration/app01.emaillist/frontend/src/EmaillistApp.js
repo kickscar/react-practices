@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import SearchBar from './SearchBar';
 import Emaillist from './Emaillist';
 
-export default function EmaillistApp() {
+export default function App() {
     const [emails, setEmails] = useState([]);
     const [keyword, setKeyword] = useState('');
 

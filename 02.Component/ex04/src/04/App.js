@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
 import SearchBar from './SearchBar';
 import Emaillist from './Emaillist';
+import './assets/scss/App.scss';
+
 import data from './assets/json/data.json';
 
-export default function EmaillistApp() {
+export default function App() {
     const [emails] = useState(data);
     const [keyword, setKeyword] = useState('');
 

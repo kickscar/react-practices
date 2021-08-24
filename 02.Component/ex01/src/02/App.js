@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import FoodList from './FoodList';
 
-export default class extends Component {
+export default class App extends Component {
     constructor() {
         super(...arguments);
 

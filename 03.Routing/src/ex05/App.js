@@ -1,8 +1,8 @@
 import React from 'react';
 import {HashRouter, Route} from 'react-router-dom';
-import Main from "./sites/Main";
-import Gallery from "./sites/Gallery";
-import Guestbook from "./sites/Guestbook";
+import Main from "./component/Main";
+import Gallery from "./component/Gallery";
+import Guestbook from "./component/Guestbook";
 
 export default function App() {
     return (

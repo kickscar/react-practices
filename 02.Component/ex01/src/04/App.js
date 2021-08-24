@@ -1,7 +1,7 @@
 import React from 'react';
 import MyComponent from './MyComponent';
 
-export default function () {
+export default function App() {
     return (
         <MyComponent
             /* props01={ '문자열' } : Not Required but Default Value Set Alternatively */

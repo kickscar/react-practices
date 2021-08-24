@@ -3,7 +3,7 @@
 ### 1.  Basics
 ### 2.  Component
 ### 3.  Routing
-### 4.  Flux: Redux
+### 4.  Redux
 ### 5.  Testing
 ### 6.  Performance
 ### 7.  Integration

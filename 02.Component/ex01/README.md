@@ -7,9 +7,9 @@
 4. 하위 컴포넌트에서는 변경 불가(immutable)
 5. 상위 컴포넌트가 전달하고 소유한다.
 
-### 02. Food List src/01: Class Components
-### 03. Food List src/02: Passing Data(Property) between Class Components
-### 04. Food List src/03: Passing Data(Property) between Functional Components
+### 02. src/01: Class Components
+### 03. src/02: Passing Data(Property) between Class Components
+### 04. src/03: Passing Data(Property) between Functional Components
 ### 05. src/04: Property Validator
 
 ### Run Examples
