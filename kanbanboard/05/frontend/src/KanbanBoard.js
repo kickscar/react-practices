@@ -63,7 +63,7 @@ export default function KanbanBoard() {
                 }
 
                 let newCards = update(cards, {
-                    [cardIndex] : {
+                    [cardIndex]: {
                         tasks: {
                             $push: [json.data]
                         }

@@ -6,7 +6,7 @@ module.exports = (env) => ({
     output: {
         path: path.resolve('backend/public'),
         filename: 'assets/js/main.js',
-        assetModuleFilename: 'images/[hash][ext]'
+        assetModuleFilename: 'assets/images/[hash][ext]'
     },
     module: {
         rules: [{
