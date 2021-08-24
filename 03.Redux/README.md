@@ -13,4 +13,4 @@
 ### ex02: Using Redux
 
 
-### ex03: Integration with React: React-Redux
+### ex03: Integration with React

@@ -1,0 +1,9 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html,
+body    { height:100%; }
+body    { background: #eee; font-family: '맑은 고딕', 돋움, 굴림; }
+h1      { font-weight: 200; color: #3b414c; font-size: 20px; }
+ul      { list-style-type: none; padding: 0; margin: 0; }
+
+:global(#root) { height:100%; }

@@ -1,4 +1,4 @@
-## Immutability of Component's State(컴포넌트 상태의 불변성)
+## Immutability: 컴포넌트 상태의 불변성
 
 ### Basic Principles:
 1. Never Manupulate Component's state DIRECTLY!

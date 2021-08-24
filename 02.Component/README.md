@@ -5,4 +5,4 @@
 ### ex03: React Event
 ### ex04: State
 ### ex05: Component Lifecycle
-### ex06: Immutability of Component's State
+### ex06: Immutability

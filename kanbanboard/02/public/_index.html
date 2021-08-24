@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+<meta charset='UTF-8'>
+<title>Kanban Board</title>
+<link rel='stylesheet' type='text/css' href='styles.css'>
+</head>
+<body>
+  <div id='root'>
+
+    <!-- Begin: KanbanBoard -->
+    <div class='KanbanBoard'>
+
+      
+
+      <!-- Begin: To Do CardList -->
+      <div class='CardList'>
+        <h1>To Do</h1>
+
+        <!-- Begin: Card -->
+        <div class='Card'>
+          <div class='Card__Title'>Write some code</div>
+          <div class='Card__Details'>
+            Code along with the samples in the book
+
+            <!-- Begin: TaskList -->
+            <div class='TaskList'>
+              <ul>
+
+                <!-- Begin: TaskList Task-->
+                <li class='TaskList__Task'>
+                  <input type='checkbox' checked='true' />
+                  ContactList Example
+                  <a href='#' class='TaskList__Task--remove'></a>
+                </li>
+                <!-- End: TaskList Task-->
+
+                <!-- Begin: TaskList Task-->
+                <li class='TaskList__Task'>
+                  <input type='checkbox' checked='false' />
+                  Kanban Example
+                  <a href='#' class='TaskList__Task--remove'></a>
+                </li>
+                <!-- End: TaskList Task-->
+
+                <!-- Begin: TaskList Task-->
+                <li class='TaskList__Task'>
+                  <input type='checkbox' checked='false' />
+                  My own experiments
+                  <a href='#' class='TaskList__Task--remove'></a>
+                </li>                  
+                <!-- End: TaskList Task-->
+
+              </ul>
+            </div>
+            <!-- End: TaskList -->
+
+          </div>
+        </div>
+        <!-- End: Card -->
+
+      </div>
+      <!-- End: To Do CardList -->
+
+
+
+
+
+      <!-- Begin: In Progress CardList -->
+      <div class='CardList'>
+        <h1>In Progress</h1>
+
+        <!-- Begin: Card -->
+        <div class='Card'>
+          <div class='Card__Title'>Read the Book</div>
+          <div class='Card__Details'>
+            I should read the whole book
+
+            <!-- Begin: TaskList -->            
+            <div class='TaskList'>
+              <ul>
+              </ul>
+            </div>
+            <!-- End: TaskList --> 
+
+          </div>
+        </div>
+        <!-- End: Card -->
+
+      </div>
+      <!-- End: In Progress CardList -->
+
+
+
+
+
+
+      <!-- Begin: Done CardList -->
+      <div class='CardList'>
+        <h1>Done</h1>
+        
+      </div>
+      <!-- End: Done CardList -->
+        
+
+
+    </div>
+    <!-- End: KanbanBoard -->
+      
+  </div>
+</body>
+</html>
