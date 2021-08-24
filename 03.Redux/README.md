@@ -1,4 +1,4 @@
-## React Practices - Flux
+## React Practices - Redux
 
 ### ex01: Flux: Design Pattern(or Application Architecture) 
 1. 

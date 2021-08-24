@@ -2,8 +2,8 @@
 
 ### 1.  Basics
 ### 2.  Component
-### 3.  Routing
-### 4.  Redux
-### 5.  Testing
-### 6.  Performance
-### 7.  Integration
+### 3.  Redux
+### 4.  Routing
+### 5.  Performance
+### 6.  Working with Backend(Node or Spring Boot)
+### 7.  Testing

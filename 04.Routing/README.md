@@ -18,6 +18,6 @@ $ npm i react-router-dom
 
 ### Run Examples
 ```bash
-$ npm run dev src=[ex01|ex02|ex03|ex04|ex05|ex06|...]
+$ npm run dev [src=01|02|03|04|05|06|..]
 ```
 
