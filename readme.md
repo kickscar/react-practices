@@ -5,5 +5,5 @@
 ### 3.  Redux
 ### 4.  Routing
 ### 5.  Performance
-### 6.  Working with Backend(Node or Spring Boot)
+### 6.  Working with Backend(Node and Spring Boot)
 ### 7.  Testing

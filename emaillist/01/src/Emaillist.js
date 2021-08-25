@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Email from './Email';
+import styles from './assets/scss/Emaillist.scss';
 
 export default function Emaillist({emails, keyword}) {
     return (
-        <ul className='Emaillist'>
+        <ul className={styles.Emaillist}>
             {
                 emails
                     .filter(email => email.firstName.indexOf(keyword) != -1 || email.lastName.indexOf(keyword) != -1 || email.email.indexOf(keyword) != -1)
@@ -15,7 +16,7 @@ export default function Emaillist({emails, keyword}) {
                         email={email.email}/>)
             }
         </ul>
-    )
+    );
 
 }
 

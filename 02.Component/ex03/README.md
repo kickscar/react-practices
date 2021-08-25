@@ -1,4 +1,4 @@
-## ex03: Component - React Event
+## ex03: Component - Event
 
 ### 01. src/01: Inline Handler
 ### 02. src/02: Functional Handler 
