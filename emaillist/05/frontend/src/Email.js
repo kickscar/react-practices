@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './assets/scss/Email.scss'
 
 export default function Email({firstName, lastName, email}) {
     return (
-        <li>
+        <li className={styles.Email}>
             {`${firstName} ${lastName}`}
             <br/>
             {email}

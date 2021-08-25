@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
+import RegisterForm from './RegisterForm';
 import SearchBar from './SearchBar';
 import Emaillist from './Emaillist';
+import './assets/scss/App.scss';
 
 export default function App() {
     const [emails, setEmails] = useState([]);
@@ -44,7 +46,8 @@ export default function App() {
     }
 
     return (
-        <div className='EmaillistApp'>
+        <div className={'App'}>
+            <RegisterForm/>
             <SearchBar keyword={keyword} callback={notifyKeywordChanged}/>
             <Emaillist emails={emails} keyword={keyword}/>
         </div>

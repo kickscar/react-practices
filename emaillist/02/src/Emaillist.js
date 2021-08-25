@@ -21,6 +21,6 @@ export default function Emaillist({emails, keyword}) {
 }
 
 Emaillist.propTypes = {
-    emails: PropTypes.arrayOf(Email.propTypes),
+    emails: PropTypes.arrayOf(PropTypes.shape(Email.propTypes)),
     keyword: PropTypes.string.isRequired
 }
