@@ -1,5 +1,5 @@
 {
-  "name": "emaillist.01",
+  "name": "emaillist.02",
   "version": "1.0.0",
   "description": "",
   "main": "",
@@ -25,6 +25,7 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
+    "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   }
