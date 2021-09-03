@@ -10,11 +10,12 @@ module.exports = (env) => ({
     },
     module: {
         rules: [{
-            test: /\.(png|gif|jpe?g|svg|ico|tiff?|bmp)$/i,
-            type: 'asset/resource'
-        }, {
             test: /\.(sa|sc|c)ss$/i,
-            use: ['style-loader', 'css-loader', 'sass-loader']
+            use:[
+                'style-loader',
+                { loader: 'css-loader', options: { modules: env['css-modules'] !== 'false' } },
+                'sass-loader'
+            ]
         }, {
             test: /\.js$/,
             exclude: /node_modules/,

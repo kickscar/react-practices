@@ -9,5 +9,5 @@
 
 ## Run Examples
 ```bash
-$ npm run dev [src=no]
+$ npm run dev src=[no]
 ```

@@ -2,11 +2,11 @@ const path = require('path');
 
 module.exports = (env) => ({
     mode: "none",
-    entry: path.resolve(`src/${env.src}/index.js`),
+    entry: path.resolve(`src/index.js`),
     output: {
         path: path.resolve('public'),
-        filename: 'bundle.js',
-        assetModuleFilename: 'assets/images/[hash][ext]'
+        filename: 'js/main.js',
+        assetModuleFilename: 'images/[hash][ext]'
     },
     module: {
         rules: [{
