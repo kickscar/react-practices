@@ -1,0 +1,43 @@
+@charset "utf-8";
+
+nav.Navigation {
+  text-align: center;
+  margin-top: 10px;
+
+  span  {
+    padding: 0 5px;
+    &::before {
+      content: '|'
+    }
+  }
+
+  a {
+    color: #4F4F4F;
+    font-weight: bold;
+
+    font-size: 1.1em;
+    text-decoration: none;
+
+    &:hover {
+      color: #4F4F4F;
+      text-decoration: none;
+    }
+
+    &:visited {
+      color: #4F4F4F;
+      text-decoration: none;
+    }
+
+    &:active {
+      color: #4F4F4F;
+      text-decoration: none;
+    }
+  }
+
+  :global(a.active) {
+    color: green;
+    text-decoration: underline;
+  }
+
+}
+
