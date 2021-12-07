@@ -21,23 +21,6 @@ export default function App() {
         setRoute({page: url});
     }
 
-    const router = function () {
-        let component = null;
-        switch (route.page) {
-            case '/':
-                component = <Main/>;
-                break;
-            case '/gallery':
-                component = <Gallery/>;
-                break;
-            case '/guestbook':
-                component = <Guestbook/>;
-                break;
-        }
-
-        return component;
-    };
-
     return (
         <div>
             {
