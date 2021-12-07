@@ -7,34 +7,22 @@ export default function App() {
     const [route, setRoute] = useState('');
 
     useEffect(() => {
-        const handleHashChange = () => {
-            setRoute(window.location.hash.substr(1));
-        };
-
+        const handleHashChange = () => setRoute(window.location.hash.substr(1));
         window.addEventListener('hashchange', handleHashChange);
 
-        return () => {
-            window.removeEventListener('hashchange', handleHashChange);
-        };
+        return () => window.removeEventListener('hashchange', handleHashChange);
     }, []);
 
-    const router = function () {
-        let component = null;
-
+    return (() => {
         switch (route) {
             case '/':
-                component = <Main/>;
-                break;
+                return <Main/>;
             case '/gallery':
-                component = <Gallery/>;
-                break;
+                return <Gallery/>;
             case '/guestbook':
-                component = <Guestbook/>;
-                break;
+                return <Guestbook/>;
+            default :
+                return null;
         }
-
-        return component;
-    };
-
-    return router(route);
+    })();
 }

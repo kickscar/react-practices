@@ -8,18 +8,15 @@ export default function App() {
 
     useEffect(() => {
         const handlePopState = (e) => setRoute(e.state);
-
         window.addEventListener('popstate', handlePopState);
-        return () => {
-            window.removeEventListener('popstate', handlePopState);
-        };
+
+        return () => window.removeEventListener('popstate', handlePopState);
     }, []);
 
     const handleLinkClick = (e) => {
         e.preventDefault();
 
-        const url = `${e.target.href.substr(e.target.href.lastIndexOf('/'))}`;
-
+        const url = e.target.href.substr(e.target.href.lastIndexOf('/'));
         window.history.pushState({page: url}, e.target.text, url);
         setRoute({page: url});
     }
@@ -43,7 +40,20 @@ export default function App() {
 
     return (
         <div>
-            { router(route) }
+            {
+                (() => {
+                    switch (route.page) {
+                        case '/':
+                            return <Main/>;
+                        case '/gallery':
+                            return <Gallery/>;
+                        case '/guestbook':
+                            return <Guestbook/>;
+                        default :
+                            return null;
+                    }
+                })()
+            }
             <ul>
                 <li><a href={'/'} onClick={handleLinkClick}>[Main]</a></li>
                 <li><a href={'/gallery'} onClick={handleLinkClick}>[Gallery]</a></li>
