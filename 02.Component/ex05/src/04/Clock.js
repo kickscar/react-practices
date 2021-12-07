@@ -4,10 +4,8 @@ import SessionAmPm from "./SessionAmPm";
 import './assets/scss/Clock.scss';
 
 export default function Clock({message, hours, minutes, seconds}) {
-
     useEffect(() => {
         console.log('Clock', 'Mounted(componentDidMount)');
-
         return function () {
             console.log('Clock', 'Clean-Up(componentWillUnmount)');
         }

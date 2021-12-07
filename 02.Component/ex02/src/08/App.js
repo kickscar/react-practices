@@ -1,22 +1,21 @@
 import React, {Fragment} from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faBell, faCheckCircle, faTimesCircle} from '@fortawesome/free-solid-svg-icons'
+import {faBell, faBars, faCheckCircle, faTimesCircle} from '@fortawesome/free-solid-svg-icons'
 // additinal... not necessarily
 import {library} from '@fortawesome/fontawesome-svg-core'
 import {faBell as farCoffee} from '@fortawesome/free-regular-svg-icons'
 import {fab} from '@fortawesome/free-brands-svg-icons'
 
 export default function App() {
-    library.add(faBell, farCoffee, fab);
+    // library.add(faBell, faBars, farCoffee, fab);
 
     return (
         <Fragment>
             {/* light: not free */}
-            {/*<FontAwesomeIcon icon={["fal", "coffee"]} />*}
+            {/*<FontAwesomeIcon icon={["fal", "coffee"]} />*/}
 
             {/* regular */}
             <FontAwesomeIcon icon={["far", "bell"]}/>
-
             {/* solid */}
             <FontAwesomeIcon icon={["fas", "bell"]}/>
 

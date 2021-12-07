@@ -1,7 +1,6 @@
 import fs from 'fs';
 import update from 'react-addons-update';
 
-
 let state = {
     order: JSON.parse(fs.readFileSync('./json/data.json').toString())
 };
@@ -35,4 +34,10 @@ let updateOrder = update(state.order, {
     }
 });
 
-console.log(state.order, updateOrder, state.order === updateOrder);
+console.log(
+    state.order,
+    updateOrder,
+    state.order === updateOrder,
+    state.order.receive === updateOrder.receive,
+    state.order.payment === updateOrder.payment,
+    state.order.products == updateOrder.products);

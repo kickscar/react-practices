@@ -9,7 +9,7 @@ const applicationRouter = {
             res.locals.res = res;
             next();
         })
-        .use('/api', require('./guestbook'))
+        .use('/api', require('./emaillist'))
         .use(errorRouter.error404)
         .use(errorRouter.error500)
     }

@@ -80,7 +80,7 @@ export default function MessageList({messages, notifyMessage}) {
                 onRequestClose={() => setModalData({isOpen: false, password: ''})}
                 shouldCloseOnOverlayClick={true}
                 className={modalStyles.Modal}
-                overlayClassName={modalStyles.Overlay}
+                overlayClassName={modalStleys.Overlay}
                 style={{content: {width: 350}}}>
                 <h1>비밀번호입력</h1>
                 <div>

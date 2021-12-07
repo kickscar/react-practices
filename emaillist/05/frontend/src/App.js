@@ -12,7 +12,7 @@ export default function App() {
         try {
             const response = await fetch('/api', {
                 method: 'get',
-                mode: 'same-origin',                    // no-cors, cors, *same-origin
+                mode: 'cors',                           // no-cors, cors, *same-origin
                 credentials: 'same-origin',             // include, *same-origin, omit
                 cache: 'default',                       // *default, no-cache, reload, force-cache, only-if-cached
                 headers: {
@@ -20,7 +20,7 @@ export default function App() {
                     'Accept': 'applcation/json'
                 },
                 redirect: 'follow',                     // manual, *follow, error
-                referrer: 'no-referrer',                // no-referrer, *client
+                referrer: 'client',                     // no-referrer, *client
                 body: null                              // body data type must match "'Content-Type" header, set null when method is 'GET'
             });
 

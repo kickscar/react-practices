@@ -1,18 +1,38 @@
 import React from 'react';
-import {HashRouter, Route} from 'react-router-dom';
+import {BrowserRouter as Router} from 'react-router-dom';
+import {Routes, Route} from 'react-router';
 import Main from "./component/Main";
 import Gallery from "./component/Gallery";
 import Guestbook from "./component/Guestbook";
-import About from "./component/About";
+
+import About from "./component/about/About";
+import Me from "./component/about/Me";
+import Location from "./component/about/Location";
+
+import Error404 from "./component/error/Error404";
+
+import Login from "./component/user/Login";
+import Join from "./component/user/Join";
+import Settings from "./component/user/Settings";
+
 import './assets/scss/App.scss'
 
 export default function App() {
     return (
-        <HashRouter>
-            <Route exact path='/' component={Main}/>
-            <Route path='/gallery' component={Gallery}/>
-            <Route path='/guestbook' component={Guestbook}/>
-            <Route path='/about' component={About}/>
-        </HashRouter>
+        <Router>
+            <Routes>
+                <Route path='/' element={<Main />}/>
+                <Route path='gallery' element={<Gallery />}/>
+                <Route path='guestbook' element={<Guestbook />}/>
+                <Route exact path='about' element={<About />}>
+                    <Route path='kickscar' element={<Me />}/>
+                    <Route path='location' element={<Location />}/>
+                </Route>
+                <Route path='user/login' element={<Login />}/>
+                <Route path='user/join' element={<Join />}/>
+                <Route path='user/settings' element={<Settings />}/>
+                <Route path="*" element={<Error404 />} />
+            </Routes>
+        </Router>
     );
 }

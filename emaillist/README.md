@@ -1,18 +1,47 @@
-## Emaillist Branches
+## React Pracractices - Integration(개발 환경 통합)
 
-### branch: 01
-1. Practice for Component Composition: [in 02.ex01]
-2. Practice for Component Styling: [in 02.ex02]
+## Configuration
+1. Application(Project) Structure
+   <pre>
+   /app
+    |--- /backend
+    |       |--- /logging
+    |       |       |--- index.js
+    |       |--- /routes
+    |       |       |--- [index.js]
+    |       |       |--- authorized.js
+    |       |       |--- error.js
+    |       |--- /controllers
+    |       |--- /models
+    |       |--- /views
+    |       |       |--- /error
+    |       |               |--- [404.ejs]
+    |       |               |--- [500.ejs]
+    |       |--- /public
+    |       |--- [index.js]
+    |       |--- [app.config.env]    
+    |--- /frontend
+    |       |--- /config
+    |       |       |--- babel.config.json
+    |       |       |--- [webpack.config.json]
+    |       |--- /public
+    |       |       |--- favicon.ico
+    |       |       |--- index.html
+    |       |--- /src
+    |       |--- /assets
+    |--- /node_modules
+    |--- package.json
+    |--- package-lock.json
+   </pre>
+2. nodemon
+3. webpack dev server
+4. package.json
+5. concurrently
+6. node application
 
-### branch: 02
-1. Practice for Event: [in 02.ex03] 
-2. Practice for Component's State: [in 02.ex04] 
-3. Practice for Statefull & Pure Component: [in 02.ex04]
-4. Practice for Data Flow(Bottom-up Direction Using Callback Prop): [in 02.ex04]
-5. Practice for Props Validation
-
-### branch: 03
-
-### branch: 04
-
-### branch: 05 (final trim)
+emaillist
+    - 개발 통합 설정(with Node Backend)
+    - backend: Fully APIs(Node Exporess기반)
+    - Frontend: React(SPA)
+    - AJAX: fetch 기반
+    

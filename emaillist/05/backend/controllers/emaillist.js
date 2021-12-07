@@ -4,7 +4,10 @@ module.exports = {
     readAll: async function(req, res, next) {
         try {
             const result = await model.findAll();
-            res.send({
+            res
+                .set('Access-Control-Allow-Origin', ...['http://localhost:9999', 'http://localhost:9090'].filter((o) => req.headers.origin === o))
+                .set('Access-Control-Allow-Credentials', true)
+                .send({
                 result: 'success',
                 data: result,
                 message: null

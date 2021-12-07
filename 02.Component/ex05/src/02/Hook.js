@@ -1,47 +1,56 @@
-import React, {useState, useRef, useEffect, Fragment} from 'react';
+import React, { Fragment, useRef, useState, useEffect } from 'react';
 
-export default function Hook({color}) {
-    const [boxColor, setBoxColor] = useState('#000');
+export default function Hook({ color }) {
+    const [boxColor, setBoxColor] = useState(null);
     const [title, setTitle] = useState('');
     const h3Ref = useRef(null);
 
     /**
-     *  ex01. Alternative of getDerivedStateFromProps
+     *   1. Alternative 01: getDerivedStateFromProps
      */
-    if (boxColor !== color) {
+    if(boxColor !== color ) {
         setBoxColor(color);
     }
 
     /**
-     *   02. After Rendering(Combination componentDidUpdate and componentDidMount)
+     *   2. After Rendering 함수( 상태의 변화 -> 렌더링 -> 함수)
+     *   class component lifecycle(componentDidMount, componentDidUpdate)
      */
     useEffect(() => {
         console.log('After Rendering');
-        // const hexColor = h3Ref.current.style.backgroundColor.replace(/[^\d,]/g, '').split(',').map(e => parseInt(e)).reduce((s, e) => s + ('0' + e.toString(16)).slice(-2), "#");
-        // console.log(`called after redering(boxColor=${ boxColor }, h3ref.style.color=${ hexColor }`);
     });
 
     /**
-     *   03. Calling Depend on State Changed : Seperation of Concern
+     *  3. 어떤 특정 상태(boxColor)의 변화에 반응하는 After Rendering 함수
+     *     : 관심 분리
      */
     useEffect(() => {
-        console.log('Update Color Using APIs....');
+        console.log('Update Color(DB) Using APIs...');
     }, [boxColor]);
 
     /**
-     *  04. Alternative of componentWillUnmount and componentWillUnmount
+     *  4. Alternative 02: componentDidMount & componentWillUnmount
      */
     useEffect(() => {
-        console.log('After Mount');
-        return (function () {
-            console.log('After Unmount(Clean-Up)');
+        console.log('After Mount(componentDidMount)');
+        return (function(){
+            console.log('After Unmount(componentWillUnmount)');
         });
     }, []);
 
     return (
         <Fragment>
-            <h3 style={{backgroundColor: boxColor, width: 190, height: 100}} ref={h3Ref}/>
-            <input type='text' value={title} onChange={(e) => setTitle(e.target.value)}/>
+            <h3
+                style={ {
+                    width: 300,
+                    height: 50,
+                    backgroundColor: boxColor
+                } }
+                ref={ h3Ref } />
+            <input
+                type='text'
+                value={ title }
+                onChange={ (e) => setTitle(e.target.value) } />
         </Fragment>
     );
 }

@@ -9,4 +9,9 @@ let updateOrder = Object.assign({}, state.order, {
 });
 updateOrder.payment.method = "Mobile";
 
-console.log(state.order, updateOrder, state.order === updateOrder);
+console.log(
+    state.order,
+    updateOrder,
+    state.order === updateOrder,
+    state.order.receive === updateOrder.receive,
+    state.order.payment === updateOrder.payment);
