@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../../assets/scss/component/gallery/ImageListItem.scss';
 
-export default function ImageListItem({no, url, comment, notifyImage}) {
+export default ({no, url, comment, notifyImage}) => {
     return (
         <li className={styles.ImageListItem}>
             <span style={{

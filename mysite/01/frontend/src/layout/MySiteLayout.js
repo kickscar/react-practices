@@ -4,7 +4,7 @@ import Navigation from "./Navigation";
 import Footer from "./Footer";
 import styles from '../assets/scss/layout/Content.scss';
 
-export default function MySiteLayout({children}) {
+export default ({children}) => {
     return (
         <Fragment>
             <Header/>

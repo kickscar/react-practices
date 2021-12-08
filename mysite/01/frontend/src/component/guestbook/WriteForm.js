@@ -1,7 +1,7 @@
 import React, {useRef} from 'react';
 import styles from '../../assets/scss/component/guestbook/WriteForm.scss';
 
-export default function WriteForm({notifyMessage}) {
+export default ({notifyMessage}) => {
     const refForm = useRef(null);
 
     const handleSubmit = function (e) {

@@ -2,7 +2,7 @@ import React from 'react';
 import ImageListItem from './ImageListItem';
 import styles from '../../assets/scss/component/gallery/ImageList.scss';
 
-export default function ImageList({imageList, notifyImage}) {
+export default ({imageList, notifyImage}) => {
     return (
         <ul className={styles.ImageList}>
             {imageList.map(item => <ImageListItem

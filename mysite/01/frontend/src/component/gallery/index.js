@@ -4,7 +4,7 @@ import Header from "./Header";
 import ImageList from "./ImageList";
 import styles from '../../assets/scss/component/gallery/Galery.scss';
 
-export default function Index() {
+export default () => {
     const [imageList, setImageList] = useState([]);
 
     useEffect(async () => {

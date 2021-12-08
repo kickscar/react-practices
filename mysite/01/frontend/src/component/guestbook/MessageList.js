@@ -7,7 +7,7 @@ import modalStyles from '../../assets/scss/component/modal/modal.scss';
 
 Modal.setAppElement('body');
 
-export default function MessageList({messages, notifyMessage}) {
+export default ({messages, notifyMessage}) => {
     const refForm = useRef(null);
     const [modalData, setModalData] = useState({isOpen: false});
 
@@ -109,8 +109,4 @@ export default function MessageList({messages, notifyMessage}) {
             </Modal>
         </Fragment>
     );
-}
-
-MessageList.propType = {
-    message: PropTypes.arrayOf(PropTypes.shape(Message.propType))
 }

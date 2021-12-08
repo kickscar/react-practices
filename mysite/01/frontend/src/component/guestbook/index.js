@@ -4,7 +4,7 @@ import WriteForm from './WriteForm';
 import MessageList from './MessageList';
 import styles from '../../assets/scss/component/guestbook/Guestbook.scss';
 
-export default function Guestbook() {
+export default () => {
     let isFetching = false;
     const [messages, _setMessages] = useState([]);
     const messagesRef = useRef(messages);

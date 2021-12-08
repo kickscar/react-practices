@@ -1,45 +1,58 @@
 const models = require('../models');
-const moment = require('moment');
+const {Op} = require("sequelize");
 
 module.exports = {
-    index: async function(req, res, next) {
-        try { 
+    create: async function (req, res, next) {
+        try {
+            const result = await models.Guestbook.create(req.body);
+            res
+                .status(200)
+                .send({
+                    result: 'success',
+                    data: result,
+                    message: null
+                });
+        } catch (err) {
+            next(err);
+        }
+    },
+    read: async function (req, res, next) {
+        try {
+            const startNo = req.params.startNo || 0;
             const results = await models.Guestbook.findAll({
-                attributes: ['no', 'name', 'message', 'regDate'],
+                attributes: ['no', 'name', 'message'],
+                where: (startNo > 0) ? {no: {[Op.lt]: startNo}} : {},
                 order: [
-                    ['no', 'DESC']
-                ]
+                    ['no', 'desc']
+                ],
+                limit: 3
             });
-            res.render('guestbook/index', {
-                guestbooks: results,
-                moment: moment
+
+            res
+                .status(200)
+                .send({
+                    result: 'success',
+                    data: results,
+                    message: null
+                });
+        } catch (err) {
+            next(err);
+        }
+    },
+    delete: async function (req, res, next) {
+        try {
+            const result = await models.Guestbook.destroy({
+                where: {
+                    [Op.and]: [{no: req.params.no}, {password: req.body.password}]
+                }
             });
-        } catch(e) { 
-            next(e);
-        }         
-    },
-    spalanding: function(req, res, next){
-        res.render('guestbook/spa-landing');
-    },
-    delete: function(req, res) {
-        res.render('guestbook/delete');
-    },
-    _delete: async function(req, res, next) {
-        try { 
-            await models.Guestbook.destroy({
-                where: req.body
+            res.send({
+                result: 'success',
+                data: result === 0 ? null : req.params.no,
+                message: null
             });
-            res.redirect('/guestbook');
-        } catch(e) {
-            next(e);
-        }   
-    },
-    add: async function(req, res, next) {
-        try {        
-            await models.Guestbook.create(req.body);
-            res.redirect('/guestbook');
-        } catch(e) {
-            next(e);
-        }        
+        } catch (err) {
+            next(err);
+        }
     }
 }

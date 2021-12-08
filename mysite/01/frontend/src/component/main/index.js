@@ -2,7 +2,7 @@ import React from 'react';
 import MySiteLayout from "../../layout/MySiteLayout";
 import styles from '../../assets/scss/component/main/Main.scss';
 
-export default function Main() {
+export default () => {
     return (
         <MySiteLayout>
             <div className={styles.Main}>

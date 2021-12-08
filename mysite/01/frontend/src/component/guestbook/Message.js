@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from '../../assets/scss/component/guestbook/Message.scss';
 
-export default function Message({no, name, message, notifyMessage}) {
+export default ({no, name, message, notifyMessage}) => {
     return (
         <li className={styles.Message}>
             <strong>{name}</strong>
@@ -17,10 +17,4 @@ export default function Message({no, name, message, notifyMessage}) {
             <a onClick={() => notifyMessage(no)}>삭제</a>
         </li>
     );
-}
-
-Message.propTypes = {
-    no: PropTypes.number.isRequired,
-    name: PropTypes.string.isRequired,
-    message: PropTypes.string.isRequired
 }

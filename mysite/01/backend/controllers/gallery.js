@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const models = require('../../models');
+const models = require('../models');
 
 module.exports = {
     readAll: async function(req, res, next) {
