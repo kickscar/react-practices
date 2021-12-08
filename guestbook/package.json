@@ -4,8 +4,18 @@
   "description": "",
   "main": "",
   "scripts": {
-    "dev": "webpack serve --config config/webpack.config.js --mode development --progress",
-    "build": "webpack --config config/webpack.config.js --mode production --progress"
+    "start": "cross-env NODE_ENV=development nohup node backend/index.js --name $npm_package_name > /dev/null 2>&1 &",
+    "restart": "npm stop && npm start",
+    "stop": "pkill $npm_package_name",
+    "prestart": "npm run build",
+    "postinstall": "npm run build",
+    "build": "npm run build:frontend && npm run build:backend",
+    "build:backend": "echo \"no build specified\"",
+    "build:frontend": "cross-env NODE_ENV=production webpack --config frontend/config/webpack.config.js --mode production --progress",
+    "test": "echo \"no test specified\"",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\" --kill-others",
+    "dev:backend": "cross-env NODE_ENV=development nodemon backend/index.js -e js,mjs,json,env --watch backend --name $npm_package_name",
+    "dev:frontend": "cross-env NODE_ENV=development webpack serve --config frontend/config/webpack.config.js --mode development --progress"
   },
   "keywords": [],
   "author": "",
