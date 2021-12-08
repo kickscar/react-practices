@@ -29,30 +29,18 @@
 
 4. gallery
     - Integration Configuration with Node
-    - Backend: Fully APIs on node Express
+    - Backend: Fully APIs on Node Express
     - Frontend: Fully React Applied(SPA)
     - AJAX: based on fetch
 
 5. mysite.01
-    - Integration Configuration with Node
-    - Backend: Fully APIs on node Express
+    - Integration Configuration with Spring Boot
+    - Backend: Fully APIs on Node Express
     - Frontend: Fully React Applied(SPA)
     - AJAX: based on fetch
 
 6. mysite.02
-    - Integration Configuration with Node
-    - Backend: Classic Web Application(Partial APIs) on Node Express
-    - Frontend: Partial React Applied(without Webpack Dev Server)
-    - AJAX: based on axios
-
-7. mysite.03
     - Integration Configuration with Spring Boot
     - Backend: Fully APIs on Spring Boot
     - Frontend: Fully React Applied(SPA)
-    - AJAX: based on axios
-
-8. mysite.04
-    - Integration Configuration with Spring Boot
-    - Backend: Classic Web Application(Partial APIs) on Spring Boot
-    - Frontend: Partial React Applied(without Webpack Dev Server)
     - AJAX: based on axios

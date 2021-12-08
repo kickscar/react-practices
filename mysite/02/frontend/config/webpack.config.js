@@ -4,7 +4,7 @@ module.exports = (env) => ({
     mode: "none",
     entry: path.resolve('frontend/src/index.js'),
     output: {
-        path: path.resolve('backend/public'),
+        path: path.resolve('backend/src/webapp'),
         filename: 'assets/js/main.js',
         assetModuleFilename: 'images/[hash][ext]'
     },

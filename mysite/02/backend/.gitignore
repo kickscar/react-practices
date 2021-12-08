@@ -1,8 +1,25 @@
-# Bulk Data of Backend
-/logs
-/multer-temporary-store
-**/upload-images
+# IDE directories and files
+**/.idea
+**/*.iml
+**/.vscode
+**/.suo
+**/.ntvs*
+**/.njsproj
+**/.sln
+**/.sw?
+
+# build target
+**/.classpath
+**/.project
+**/.settings/
+**/target/
+**/build/
 
 # Bundle Target(main.js or bundle.js) of Frontend
 **/main.js
 **/bundle.js
+
+
+# Bulk Data of Backend
+/logs
+**/upload-images
