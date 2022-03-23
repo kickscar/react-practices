@@ -41,14 +41,70 @@ export default function App() {
         }
     }, []);
 
-    const notifyKeywordChanged = function (keyword) {
-        setKeyword(keyword);
+    const notifyEmailAdd = async function(email) {
+        try {
+            const response = await fetch(`/api?kw=${keyword}`, {
+                method: 'post',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body:JSON.stringify(email)
+            });
+
+            if (!response.ok) {
+                throw new Error(`${response.status} ${response.statusText}`);
+            }
+
+            const json = await response.json();
+
+            if(json.result !== 'success') {
+                throw new Error(`${json.result} ${json.message}`);
+            }
+
+            setEmails([json.data, ...emails]);
+        } catch (err) {
+            console.error(err);
+        }    
+    }
+
+    const notifyKeywordChanged = async function(keyword) {
+        try {
+            const response = await fetch(`/api?kw=${keyword}`, {
+                method: 'get',
+                mode: 'cors',                           // no-cors, cors, *same-origin
+                credentials: 'same-origin',             // include, *same-origin, omit
+                cache: 'default',                       // *default, no-cache, reload, force-cache, only-if-cached
+                headers: {
+                    'Content-Type': 'application/json', // cf. 'Content-Type': 'application/x-www-form-urlencoded'
+                    'Accept': 'application/json'
+                },
+                redirect: 'follow',                     // manual, *follow, error
+                referrer: 'client',                     // no-referrer, *client
+                body: null                              // body data type must match "'Content-Type" header, set null when method is 'GET'
+            });
+
+            if (!response.ok) {
+                throw new Error(`${response.status} ${response.statusText}`);
+            }
+
+            const json = await response.json();
+
+            if(json.result !== 'success') {
+                throw new Error(`${json.result} ${json.message}`);
+            }
+            
+            setEmails(json.data);
+            setKeyword(keyword);
+        } catch (err) {
+            console.error(err);
+        }
     }
 
     return (
         <div className={'App'}>
-            <RegisterForm/>
-            <SearchBar keyword={keyword} callback={notifyKeywordChanged}/>
+            <RegisterForm notifyEmailAdd={notifyEmailAdd}/>
+            <SearchBar keyword={keyword} notifyKeywordChanged={notifyKeywordChanged}/>
             <Emaillist emails={emails} keyword={keyword}/>
         </div>
     )
