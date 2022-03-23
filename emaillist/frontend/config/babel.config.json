@@ -9,5 +9,8 @@
       "safari": "13"
     }
   }], "@babel/preset-react"],
-  "plugins": ["@babel/plugin-transform-runtime"]
+  "plugins": [
+    "@babel/plugin-transform-runtime",
+    "@babel/plugin-syntax-throw-expressions"
+  ]
 }

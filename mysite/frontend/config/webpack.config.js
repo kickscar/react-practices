@@ -2,11 +2,11 @@ const path = require('path');
 
 module.exports = (env) => ({
     mode: "none",
-    entry: path.resolve('src/index.js'),
+    entry: path.resolve('frontend/src/index.js'),
     output: {
-        path: path.resolve('../backend/src/main/resources'),
-        filename: 'static/js/main.js',
-        assetModuleFilename: 'static/images/[hash][ext]'
+        path: path.resolve('backend/src/webapp'),
+        filename: 'assets/js/main.js',
+        assetModuleFilename: 'images/[hash][ext]'
     },
     module: {
         rules: [{
@@ -16,7 +16,7 @@ module.exports = (env) => ({
             test: /\.(sa|sc|c)ss$/i,
             use: [
                 'style-loader',
-                { loader: 'css-loader', options: { modules: true } },
+                {loader: 'css-loader', options: {modules: true}},
                 'sass-loader'
             ]
         }, {
@@ -24,16 +24,17 @@ module.exports = (env) => ({
             exclude: /node_modules/,
             loader: 'babel-loader',
             options: {
-                configFile: path.resolve('config/babel.config.json')
+                configFile: path.resolve('frontend/config/babel.config.json')
             }
         }]
     },
     devtool: "eval-source-map",
     devServer: {
         host: "0.0.0.0",
-        port: 9090,
+        port: 9999,
         proxy: {
-            '/api': 'http://localhost:8080'
+            '/api': 'http://localhost:8888',
+            '/assets/upload-images': 'http://localhost:8888'
         },
         liveReload: true,
         hot: false,
@@ -41,3 +42,4 @@ module.exports = (env) => ({
         historyApiFallback: true
     }
 });
+

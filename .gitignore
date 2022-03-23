@@ -7,15 +7,21 @@
 **/public/main.js
 **/public/assets
 
-
 # IDE directories and files
 **/.idea
+**/.iml
+**/.classpath
+**/.project
+**/.settings
 **/.vscode
 **/.suo
 **/.ntvs*
 **/.njsproj
 **/.sln
 **/.sw?
+
+**/target
+**/build
 
 # private resources
 **/PrivateResources

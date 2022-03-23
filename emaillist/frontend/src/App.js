@@ -17,7 +17,7 @@ export default function App() {
                 cache: 'default',                       // *default, no-cache, reload, force-cache, only-if-cached
                 headers: {
                     'Content-Type': 'application/json', // cf. 'Content-Type': 'application/x-www-form-urlencoded'
-                    'Accept': 'applcation/json'
+                    'Accept': 'application/json'
                 },
                 redirect: 'follow',                     // manual, *follow, error
                 referrer: 'client',                     // no-referrer, *client

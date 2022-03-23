@@ -40,7 +40,14 @@ export default function Form() {
     }
 
     return (
-        <form id="joinForm" name="joinForm" method="post" action="/do/not/post">
+        <form
+            id="joinForm" name="joinForm" method="post" action="/do/not/post"
+            onSubmit={(e) => {
+                e.preventDefault();
+
+                console.log('validation');
+
+            }}>
             <label htmlFor="name">이름</label>
             <input
                 id="name"
@@ -48,7 +55,6 @@ export default function Form() {
                 type="text"
                 value={ name }
                 onChange={ onChangeInputName }/>
-
             <label htmlFor="email">이메일</label>
             <input
                 id="email"

@@ -21,22 +21,22 @@ export default function App() {
     const [currentClockTime, setCurrentClockTime] = useState(getCurrentClockTime());
     const [ticks, setTicks] = useState(0);
 
-    // useEffect(() => {
-    //     setInterval(() => {
-    //         setCurrentClockTime(getCurrentClockTime());
-    //         setTicks(ticks + 1);
-    //         console.log("!!!", ticks);
-    //     }, 1000);
-    // }, []);
-
     useEffect(() => {
-        console.log(":::::::", ticks);
-        setTimeout(function () {
+        setInterval(() => {
             setCurrentClockTime(getCurrentClockTime());
+            setTicks(ticks + 1);
             console.log("!!!", ticks);
-            setTicks(ticks+1);
-        }, 5000);
-    }, [currentClockTime]);
+        }, 1000);
+    }, []);
+
+    // useEffect(() => {
+    //     console.log(":::::::", ticks);
+    //     setTimeout(function () {
+    //         setCurrentClockTime(getCurrentClockTime());
+    //         console.log("!!!", ticks);
+    //         setTicks(ticks+1);
+    //     }, 5000);
+    // }, [currentClockTime]);
 
     return (
         <Fragment>
