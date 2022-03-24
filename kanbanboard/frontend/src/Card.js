@@ -5,7 +5,7 @@ import Task from "./Task";
 import styles from './assets/scss/Card.scss';
 
 export default function Card({no, title, description, tasks, status, notifyTask}) {
-    const [showDetails, setShowDetails] = useState(true);
+    const [showDetails, setShowDetails] = useState(false);
 
     const styleSideColor = {
         position: 'absolute',

@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npx webpack --config config/webpack.config.js --progress --mode production",
-    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\" --kill-others",
-    "dev:backend": "cd ../backend && mvn spring-boot:run",
-    "dev:frontend": "npx webpack serve --config config/webpack.config.js --progress --mode development"
-},
+    "build": "npm run build:fe && npm run build:be",
+    "build:be": "cd ../backend && mvn clean package",
+    "build:fe": "npx webpack --config config/webpack.config.js --progress --mode production",
+    "dev": "concurrently \"npm run dev:be\" \"npm run dev:fe\" --kill-others",
+    "dev:be": "cd ../backend && mvn spring-boot:run",
+    "dev:fe": "npx webpack serve --config config/webpack.config.js --progress --mode development"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -32,6 +34,7 @@
   "dependencies": {
     "prop-types": "^15.8.1",
     "react": "^17.0.2",
+    "react-addons-update": "^15.6.3",
     "react-dom": "^17.0.2"
   }
 }

@@ -5,8 +5,8 @@ module.exports = (env) => ({
     entry: path.resolve('src/index.js'),
     output: {
         path: path.resolve('../backend/src/main/resources'),
-        filename: 'assets/js/main.js',
-        assetModuleFilename: 'assets/images/[hash][ext]'
+        filename: 'static/js/main.js',
+        assetModuleFilename: 'static/images/[hash][ext]'
     },
     module: {
         rules: [{

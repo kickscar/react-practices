@@ -7,7 +7,7 @@ export default function Task({name}) {
         <li className={styles.Task}>
             <input type='checkbox' defaultChecked={true}/>
             {name}
-            <a href='#' className={styles['Task--remove']}/>
+            <a href='#' className={styles.Task__remove}/>
         </li>
     );
 }

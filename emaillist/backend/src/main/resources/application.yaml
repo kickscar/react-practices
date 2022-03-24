@@ -29,8 +29,20 @@ spring:
       driver-class-name: org.mariadb.jdbc.Driver
       url: jdbc:mysql://localhost:3306/webdb?characterEncoding=utf8
       username: webdb
-      password: webdb
+      password: webdb   
 
+---
+# development profile - spring boot configuration
+spring:
+   config:
+      activate:
+         on-profile: development
+
+   # devtools enabled
+   devtools:
+      livereload:
+         enabled: true
+         
 ---
 # mybatis
 mybatis:

@@ -11,7 +11,7 @@ export default function TaskList({cardNo, tasks, notifyTask}) {
             </ul>
             <input
                 type='text'
-                className={styles['TaskList--add-task']}
+                className={styles.TaskList__add_task}
                 placeholder='태스크 추가'
                 onKeyPress={(e) => {
                     if (e.key === 'Enter') {

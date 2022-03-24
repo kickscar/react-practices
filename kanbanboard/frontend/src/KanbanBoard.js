@@ -2,10 +2,12 @@ import React, {useEffect, useState} from 'react';
 import update from 'react-addons-update';
 import CardList from "./CardList";
 import styles from './assets/css/KabanBoard.css';
+import data from './assets/json/data.json';
 
 export default function KanbanBoard() {
-    const [cards, setCards] = useState([]);
+    const [cards, setCards] = useState(data);
 
+    /*
     useEffect(async () => {
         try {
             const response = await fetch('/api/cards', {
@@ -30,6 +32,7 @@ export default function KanbanBoard() {
             console.error(err);
         }
     }, []);
+    */
 
     const notifyTask = {
         add: async function (cardNo, taskName) {
