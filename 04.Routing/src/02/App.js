@@ -16,7 +16,7 @@ export default function App() {
     const handleLinkClick = (e) => {
         e.preventDefault();
 
-        const url = e.target.href.substr(e.target.href.lastIndexOf('/'));
+        const url = e.target.href.substring(e.target.href.lastIndexOf('/'));
         window.history.pushState({page: url}, e.target.text, url);
         setRoute({page: url});
     }

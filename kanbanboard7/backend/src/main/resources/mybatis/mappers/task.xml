@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="task">
+	<select id="findAllByCardNo" resultType="taskvo" parameterType="long">
+		<![CDATA[	
+			  select no, name, done
+		      	from task
+		       where card_no=#{cardNo}	
+		  	order by no desc
+	  	]]>	
+	</select>
+	
+	<insert id="insert" parameterType="taskvo">
+		<![CDATA[
+			insert
+			  into task 
+			values (null, #{name}, #{done}, #{cardNo})	
+	  	]]>
+	  	<selectKey keyProperty="no" resultType="long" order="AFTER">
+			<![CDATA[
+		  	select last_insert_id()
+	  		]]>
+	  	</selectKey>	
+	</insert>
+
+	<update id="updateDone" parameterType="map">
+		<![CDATA[
+			update task 
+			   set done=#{done}
+			 where no=#{no}	
+	  	]]>	
+	</update>	
+		
+</mapper>

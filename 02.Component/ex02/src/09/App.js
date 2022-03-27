@@ -80,14 +80,14 @@ export default function App() {
             </Modal>
 
 
-            {/* example modal04: Using inline styles */}
+            {/* example modal05: Using inline styles */}
             <button onClick={() => setModal05IsOpen(true)}>modal05</button>
             <br/><br/>
 
             <Modal
                 isOpen={modal05IsOpen}
                 onRequestClose={() => setModal05IsOpen(false)}
-                shouldCloseOnOverlayClick={true}
+                shouldCloseOnOverlayClick={false}
                 className={styles.Modal}
                 overlayClassName={styles.Overlay}
                 style={{content: {width: 350}}}

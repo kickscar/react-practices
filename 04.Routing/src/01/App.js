@@ -7,7 +7,11 @@ export default function App() {
     const [route, setRoute] = useState('');
 
     useEffect(() => {
-        const handleHashChange = () => setRoute(window.location.hash.substr(1));
+        const handleHashChange = () => {
+            console.log(window.location.hash);
+            setRoute(window.location.hash.substring(1));
+        };
+
         window.addEventListener('hashchange', handleHashChange);
 
         return () => window.removeEventListener('hashchange', handleHashChange);

@@ -6,7 +6,7 @@ export default function Main() {
         <div>
             <h1>Main</h1>
             {
-                /*
+                //*
                 <ul>
                     <li><Link to={'/'}>[Main]</Link></li>
                     <li><Link to={'gallery'}>[gallery]</Link></li>
