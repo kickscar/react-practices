@@ -34,8 +34,6 @@ export default function App() {
                 throw new Error(`${json.result} ${json.message}`);
             }
 
-            console.log(json.data);
-            
             setEmails(json.data);
 
         } catch (err) {

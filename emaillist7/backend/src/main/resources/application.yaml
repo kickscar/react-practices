@@ -57,4 +57,3 @@ server:
       encoding:
          charset: UTF-8
          enabled: true
-

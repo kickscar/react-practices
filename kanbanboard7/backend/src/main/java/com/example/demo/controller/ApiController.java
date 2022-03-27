@@ -51,6 +51,7 @@ public class ApiController {
 				.body(JsonResult.success(taskVo));
 	}
 
+	@SuppressWarnings("serial")
 	@PutMapping("/task/{no}")
 	public ResponseEntity<JsonResult> updateTask(@PathVariable("no") Long no, String done) {
 		taskRepository.updateDone(no, done);
