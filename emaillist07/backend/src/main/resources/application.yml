@@ -1,0 +1,89 @@
+# active profile
+spring:
+   profiles:
+      active: development
+      
+---
+#
+# common configuration
+#
+spring:
+   mvc:
+      # Path pattern used for static resources
+      static-path-pattern: /assets/**
+
+      # Whether a "NoHandlerFoundException" should be thrown if no Handler was found to process a request
+      throw-exception-if-no-handler-found: true
+   web:
+      resources:
+         # Locations of static resources
+         static-locations: classpath:/static/
+         
+   # Template Engine: thymeleaf    
+   thymeleaf:
+      prefix : classpath:templates/
+      check-template-location: true
+      mode: HTML5
+      suffix : .html
+      cache : false
+
+# mybatis
+mybatis:
+   config-location: classpath:mybatis/configuration.xml
+
+         
+---
+#
+# development profile configuration
+#
+spring:
+   config:
+      activate:
+         on-profile: development
+
+   # devtools enabled
+   devtools:
+      livereload:
+         enabled: true
+
+   # datasource
+   datasource:
+      driver-class-name: org.mariadb.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/webdb?characterEncoding=utf8
+      username: webdb
+      password: webdb   
+
+# server
+server:
+   port: 8080
+   servlet:
+      context-path: /
+      encoding:
+         charset: UTF-8
+         enabled: true
+         
+
+---
+#
+# production profile configuration
+#
+spring:
+   config:
+      activate:
+         on-profile: production
+              
+   # datasource
+   datasource:
+      driver-class-name: org.mariadb.jdbc.Driver
+      url: jdbc:mysql://49.247.9.194:3307/webdb?characterEncoding=utf8
+      username: webdb
+      password: webdb   
+         
+# server
+server:
+   port: 8888
+   servlet:
+      context-path: /
+      encoding:
+         charset: UTF-8
+         enabled: true
