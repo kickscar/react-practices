@@ -6,21 +6,20 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.6.4</version>
+		<version>2.6.6</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>emaillist07</artifactId>
+	<artifactId>mysite07</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>emaillist7</name>
-	<description>Demo project for Spring Boot</description>
-
+	<name>mysite07</name>
+	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>11</java.version>
 	</properties>
-
+	
 	<dependencies>
 		<!-- Core Starter -->
 		<dependency>
@@ -76,7 +75,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>emaillist07</finalName>
+		<finalName>mysite07</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

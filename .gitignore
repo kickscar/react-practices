@@ -1,4 +1,4 @@
-# for Mac
+# Mac
 **/.DS_Store
 
 # JavaScript Project
@@ -8,20 +8,31 @@
 **/public/assets
 
 # IDE directories and files
-**/.idea
-**/.iml
+**/target
+**/build
+
+### STS/Eclipse ###
+**/.apt_generated
 **/.classpath
+**/.factorypath
 **/.project
 **/.settings
+**/.springBeans
+**/.sts4-cache
+
+### IntelliJ IDEA ###
+**/.idea
+**/*.iws
+**/*.iml
+**/*.ipr
+
+### VS Code ###
 **/.vscode
 **/.suo
 **/.ntvs*
 **/.njsproj
 **/.sln
 **/.sw?
-
-**/target
-**/build
 
 # private resources
 **/PrivateResources

@@ -85,7 +85,7 @@ spring:
          
 # server
 server:
-   port: 8881
+   port: 8882
    servlet:
       context-path: /
       encoding:
