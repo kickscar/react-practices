@@ -42,4 +42,3 @@ module.exports = (env) => ({
         historyApiFallback: true
     }    
 });
-

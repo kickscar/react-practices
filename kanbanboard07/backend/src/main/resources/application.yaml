@@ -20,7 +20,7 @@ spring:
    thymeleaf:
       prefix : classpath:templates/
       check-template-location: true
-      mode: HTML5
+      mode: HTML
       suffix : .html
       cache : false
 

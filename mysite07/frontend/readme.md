@@ -7,8 +7,8 @@ $ npm i react react-dom react-addons-update react-router react-router-dom prop-t
 
 
 ### 2. 설정
-config/babel.config.json
-config/webpack.config.js
+1.  config/babel.config.json
+2.  config/webpack.config.js
 
 
 

@@ -23,7 +23,7 @@ spring:
    thymeleaf:
       prefix: classpath:templates/
       check-template-location: true
-      mode: HTML5
+      mode: HTML
       suffix: .html
       cache: false
 
@@ -85,7 +85,7 @@ spring:
          
 # server
 server:
-   port: 8882
+   port: 8883
    servlet:
       context-path: /
       encoding:
