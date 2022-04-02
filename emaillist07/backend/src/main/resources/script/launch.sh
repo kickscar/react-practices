@@ -7,7 +7,7 @@ PID=$(ps -ef | grep java | grep $SERVICE_NAME.jar | awk '{print $2}')
 
 if  [ ! -z "$PID" ] 
 then
-	echo "stopping [$SERVICE_NAME][$JAVA]" > test.txt
+	echo "stopping [$SERVICE_NAME][$JAVA]" > $SCRIPT_DIR/test.txt
 	kill -9 $PID
 	sleep 10
 fi
