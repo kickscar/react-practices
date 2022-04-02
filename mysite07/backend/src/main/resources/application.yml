@@ -17,7 +17,7 @@ spring:
    web:
       resources:
          # locations of static resources
-         static-locations: classpath:/static/
+         static-locations: classpath:/static/, file:/Users/kickscar/mysite-uploads/
          
    # template engine: thymeleaf    
    thymeleaf:
@@ -26,6 +26,13 @@ spring:
       mode: HTML
       suffix: .html
       cache: false
+   
+   # multipart uploads
+   servlet:
+      multipart:
+         enabled: true
+         max-file-size: 20MB
+         max-request-size: 100MB
 
 # mybatis
 mybatis:

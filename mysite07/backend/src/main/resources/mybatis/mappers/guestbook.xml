@@ -23,7 +23,7 @@
 	<insert id="insert" parameterType="guestbookvo">
 		<![CDATA[
 		insert
-		  into guestboo
+		  into guestbook
 		values (null, #{name }, #{password }, #{message }, now())	
 	  	]]>
 	  	<selectKey keyProperty="no" resultType="long" order="AFTER">

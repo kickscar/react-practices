@@ -27,10 +27,10 @@ export default function MessageList({messages, notifyDeleteMessage}) {
             const response = await fetch(`/api/guestbook/${modalData.messageNo}`, {
                 method: 'delete',
                 headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'applcation/json'
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Accept': 'application/json'
                 },
-                body: JSON.stringify({password: e.target.password.value})
+                body: `password=${e.target.password.value}`
             });
 
             if (!response.ok) {
