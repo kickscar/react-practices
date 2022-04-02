@@ -7,10 +7,10 @@ PID=$(ps -ef | grep java | grep $SERVICE_NAME.jar | awk '{print $2}')
 
 if  [ ! -z "$PID" ] 
 then
-	echo "stopping [$1]"
+	echo "stopping [$SERVICE_NAME][$JAVA]" > test.txt
 	kill -9 $PID
 	sleep 10
 fi
 
-echo "starting [$1]"
+echo "starting [$SERVICE_NAME]"
 nohup $JAVA -Dspring.profiles.active=production -jar $SCRIPT_DIR/$SERVICE_NAME.jar >> $SCRIPT_DIR/launch.log &
