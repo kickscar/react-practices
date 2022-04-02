@@ -12,4 +12,5 @@ then
 fi
 
 echo "starting [$SERVICE_NAME]"
+echo $PATH > test.txt
 nohup java -Dspring.profiles.active=production -jar $SCRIPT_DIR/$SERVICE_NAME.jar >> $SCRIPT_DIR/launch.log &
