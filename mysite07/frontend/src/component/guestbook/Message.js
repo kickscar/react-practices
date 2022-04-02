@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from '../../assets/scss/component/guestbook/Message.scss';
 
-export default function Message({no, name, message, notifyMessage}) {
+export default function Message({no, name, message, notifyModalDeleteMessage}) {
     return (
         <li className={styles.Message}>
             <strong>{name}</strong>
@@ -14,7 +14,7 @@ export default function Message({no, name, message, notifyMessage}) {
                     </span> : line)}
             </p>
             <strong/>
-            <a onClick={() => notifyMessage(no)}>삭제</a>
+            <a onClick={() => notifyModalDeleteMessage(no)}>삭제</a>
         </li>
     );
 }

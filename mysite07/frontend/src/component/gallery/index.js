@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import MySiteLayout from "../../layout/MySiteLayout";
 import Header from "./Header";
 import ImageList from "./ImageList";
-import styles from '../../assets/scss/component/gallery/Galery.scss';
+import styles from '../../assets/scss/component/gallery/Gallery.scss';
 
 export default function Index() {
     const [imageList, setImageList] = useState([]);

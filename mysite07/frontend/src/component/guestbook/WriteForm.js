@@ -1,7 +1,7 @@
 import React, {useRef} from 'react';
 import styles from '../../assets/scss/component/guestbook/WriteForm.scss';
 
-export default function WriteForm({notifyMessage}) {
+export default function WriteForm({notifyAddMessage}) {
     const refForm = useRef(null);
 
     const handleSubmit = function (e) {
@@ -9,7 +9,6 @@ export default function WriteForm({notifyMessage}) {
         try {
             const newMessage = Array
                 .from(e.target, (input) => {
-                    // simple validatation of empty string
                     if (input.value === '') {
                         throw `validation ${input.placeholder} is empty ''`;
                     }
@@ -22,7 +21,7 @@ export default function WriteForm({notifyMessage}) {
                 }, {});
 
             refForm.current.reset();
-            notifyMessage.add(newMessage);
+            notifyAddMessage(newMessage);
         } catch (err) {
             console.error(err);
         }
@@ -38,7 +37,7 @@ export default function WriteForm({notifyMessage}) {
                 type={'text'}
                 name={'name'}
                 placeholder={'이름'}
-                autoComplete={' off'}/>
+                autoComplete={'off'}/>
             <input
                 type={'password'}
                 name={'password'}

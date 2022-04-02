@@ -1,7 +1,7 @@
 .Message {
     width: 100%;
     margin-top: 20px;
-    background: url('frontend/src/assets/images/component/guestbook/user.png') 0 20px no-repeat;
+    background: url('../../../images/component/guestbook/user.png') 0 20px no-repeat;
     padding-left: 50px;
     position: relative;
 
@@ -28,7 +28,7 @@
         width:20px;
         height:20px;
         font-size:0;
-        background:url('frontend/src/assets/images/component/guestbook/delete.png') 0 0 no-repeat;
+        background:url('../../../images/component/guestbook/delete.png') 0 0 no-repeat;
         left:20px;
         top:40px;
         outline:none;

@@ -22,42 +22,38 @@ export default function Guestbook() {
         window.addEventListener('scroll', handleWindowScroll);
         fetchMessage.call(this);
 
-        return () => {
-            window.removeEventListener('scroll', handleWindowScroll);
-        }
-
+        return () => window.removeEventListener('scroll', handleWindowScroll);
     }, []);
 
-    const setMessages = function(messages) {
+    const setMessages = (messages) => {
         messagesRef.current = messages;
         _setMessages(messages);
     }
 
-    const notifyMessage = {
-        delete: function (no) {
+    const notifyDeleteMessage = (no) => {
             setMessages(messages.filter((message) => message.no != no));
-        },
-        add: async function (message) {
-            const response = await fetch('/api/guestbook', {
-                method: 'post',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'applcation/json'
-                },
-                body: JSON.stringify(message)
-            });
+    };
+    
+    const notifyAddMessage = async (message) => {
+        const response = await fetch('/api/guestbook', {
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'applcation/json'
+            },
+            body: JSON.stringify(message)
+        });
 
-            if (!response.ok) {
-                throw new Error(`${response.status} ${response.statusText}`);
-            }
-
-            const json = await response.json();
-            if (json.result !== 'success') {
-                throw json.message;
-            }
-
-            setMessages([json.data, ...messages]);
+        if (!response.ok) {
+            throw new Error(`${response.status} ${response.statusText}`);
         }
+
+        const json = await response.json();
+        if (json.result !== 'success') {
+            throw json.message;
+        }
+
+        setMessages([json.data, ...messages]);
     }
 
     const fetchMessage = async function () {
@@ -69,11 +65,10 @@ export default function Guestbook() {
         const messagesInState = this ? messagesRef.current : messages;
         const startNo = messagesInState.length === 0 ? 0 : messagesInState[messagesInState.length - 1].no;
         try {
-            const response = await fetch(`/api/guestbook/${startNo}`, {
+            const response = await fetch(`/api/guestbook?no=${startNo}`, {
                 method: 'get',
                 headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'applcation/json'
+                    'Accept': 'application/json'
                 }
             });
 
@@ -97,8 +92,8 @@ export default function Guestbook() {
         <MySiteLayout>
             <div className={styles.Guestbook}>
                 <h2>방명록</h2>
-                <WriteForm notifyMessage={notifyMessage}/>
-                <MessageList messages={messages} notifyMessage={notifyMessage}/>
+                <WriteForm notifyAddMessage={notifyAddMessage}/>
+                <MessageList messages={messages} notifyDeleteMessage={notifyDeleteMessage}/>
             </div>
         </MySiteLayout>
     );
