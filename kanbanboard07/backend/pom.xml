@@ -6,13 +6,12 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.6.4</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath/>
 	</parent>
-	<groupId>com.example</groupId>
+	<groupId>me.kickscar</groupId>
 	<artifactId>kanbanboard07</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>kanbanboard</name>
-	<description>Demo project for Spring Boot</description>
 	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -67,7 +66,7 @@
 			<optional>true</optional>
 		</dependency>
 
-		<!-- Boot Test Integration -->
+		<!-- Spring Boot Test Integration -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>

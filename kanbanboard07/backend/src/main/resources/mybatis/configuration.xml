@@ -6,8 +6,8 @@
     </settings>
     	
 	<typeAliases>
-		<typeAlias type="com.example.demo.vo.CardVo" alias="cardvo" />
-		<typeAlias type="com.example.demo.vo.TaskVo" alias="taskvo" />
+		<typeAlias type="me.kickscar.kanbanboard.vo.CardVo" alias="cardvo" />
+		<typeAlias type="me.kickscar.kanbanboard.vo.TaskVo" alias="taskvo" />
 	</typeAliases>
 	
 	<mappers>

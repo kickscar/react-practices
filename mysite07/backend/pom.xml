@@ -9,7 +9,7 @@
 		<version>2.6.6</version>
 		<relativePath />
 	</parent>
-	<groupId>com.example</groupId>
+	<groupId>me.kickscar</groupId>
 	<artifactId>mysite07</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>mysite07</name>
@@ -66,7 +66,7 @@
 			<optional>true</optional>
 		</dependency>
 
-		<!-- Boot Test Integration -->
+		<!-- Spring Boot Test Integration -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>

@@ -45,7 +45,7 @@ export default function App() {
 
     const notifyEmailAdd = async function(email) {
         try {
-            const response = await fetch(`/api?kw=${keyword}`, {
+            const response = await fetch('/api', {
                 method: 'post',
                 headers: {
                     'Content-Type': 'application/json',

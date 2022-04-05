@@ -5,7 +5,7 @@
         <setting name="mapUnderscoreToCamelCase" value="true"/>
     </settings>
 	<typeAliases>
-		<typeAlias type="com.example.demo.vo.EmaillistVo" alias="emaillistvo" />
+		<typeAlias type="me.kickscar.emailllist.vo.EmaillistVo" alias="emaillistvo" />
 	</typeAliases>
 	<mappers>
 		<mapper resource="mybatis/mappers/emaillist.xml" />

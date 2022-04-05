@@ -1,5 +1,6 @@
-# active profile
 spring:
+   application:
+      name: emaillist
    profiles:
       active: development
       
@@ -9,17 +10,11 @@ spring:
 #
 spring:
    mvc:
-      # path pattern used for static resources
       static-path-pattern: /assets/**
-
-      # whether a "NoHandlerFoundException" should be thrown if no handler was found to process a request
       throw-exception-if-no-handler-found: true
    web:
       resources:
-         # locations of static resources
          static-locations: classpath:/static/
-         
-   # template engine: thymeleaf    
    thymeleaf:
       prefix: classpath:templates/
       check-template-location: true
@@ -27,14 +22,8 @@ spring:
       suffix: .html
       cache: false
 
-# mybatis
 mybatis:
    config-location: classpath:mybatis/configuration.xml
-
-# logging
-logging:
-   level:
-      root: INFO
          
 ---
 #
@@ -44,20 +33,15 @@ spring:
    config:
       activate:
          on-profile: development
-
-   # devtools enabled
    devtools:
       livereload:
          enabled: true
-
-   # datasource
    datasource:
       driver-class-name: org.mariadb.jdbc.Driver
       url: jdbc:mysql://localhost:3306/webdb?characterEncoding=utf8
       username: webdb
       password: webdb   
 
-# server
 server:
    port: 8080
    servlet:
@@ -66,7 +50,12 @@ server:
          charset: UTF-8
          enabled: true
          
-
+logging:
+   pattern:
+      console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n"
+   level:
+      root: INFO
+      
 ---
 #
 # production profile configuration
@@ -75,19 +64,35 @@ spring:
    config:
       activate:
          on-profile: production
-              
-   # datasource
    datasource:
       driver-class-name: org.mariadb.jdbc.Driver
       url: jdbc:mysql://49.247.9.194:3307/webdb?characterEncoding=utf8
       username: webdb
       password: webdb   
          
-# server
 server:
-   port: 8881
+   port: 8880
    servlet:
       context-path: /
       encoding:
          charset: UTF-8
          enabled: true
+
+logging:
+   pattern:
+      file: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n"
+   logback:
+      rollingpolicy:
+         file-name-pattern: "logs/${spring.application.name}.%d{yyyy-MM-dd}.%i.log.zip"
+   file:
+      name: logs/${spring.application.name}.log
+      max-history: 30
+   level:
+      root: INFO
+      me:
+         kickscar:
+            emaillist:
+               exception: ERROR
+
+      
+              
