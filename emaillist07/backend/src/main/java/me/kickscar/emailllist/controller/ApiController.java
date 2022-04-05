@@ -9,12 +9,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import lombok.extern.slf4j.Slf4j;
 import me.kickscar.emailllist.dto.JsonResult;
 import me.kickscar.emailllist.repository.EmaillistRepository;
 import me.kickscar.emailllist.vo.EmaillistVo;
 
+@Slf4j
 @RestController
-// @CrossOrigin(origins = {"http://localhost:9999"}, allowedHeaders = "*", allowCredentials="false", methods={RequestMethod.GET})
 public class ApiController {
 	
 	@Autowired
@@ -22,6 +23,8 @@ public class ApiController {
 	
 	@GetMapping("/api")
 	public ResponseEntity<JsonResult> read(@RequestParam(value="kw", required=true, defaultValue="") String keyword) {
+		log.info("Request[GET /api]");
+		
 		return ResponseEntity
 				.status(HttpStatus.OK)
 				.body(JsonResult.success(emaillistRepository.findAll(keyword)));
