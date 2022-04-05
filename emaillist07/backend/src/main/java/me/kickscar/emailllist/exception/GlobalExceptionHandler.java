@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import lombok.extern.slf4j.Slf4j;
 import me.kickscar.emailllist.dto.JsonResult;
 
-@ControllerAdvice
 @Slf4j
+@ControllerAdvice
 public class GlobalExceptionHandler {
 	
 	@ExceptionHandler(Exception.class)
