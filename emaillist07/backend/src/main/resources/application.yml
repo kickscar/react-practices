@@ -3,6 +3,7 @@ spring:
       name: emaillist
    profiles:
       active: development
+
       
 ---
 #
@@ -24,10 +25,11 @@ spring:
 
 mybatis:
    config-location: classpath:mybatis/configuration.xml
+
          
 ---
 #
-# development profile configuration
+# development configuration
 #
 spring:
    config:
@@ -55,10 +57,11 @@ logging:
       console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n"
    level:
       root: INFO
+
       
 ---
 #
-# production profile configuration
+# production configuration
 #
 spring:
    config:
@@ -93,6 +96,4 @@ logging:
          kickscar:
             emaillist:
                exception: ERROR
-
-      
-              
+   

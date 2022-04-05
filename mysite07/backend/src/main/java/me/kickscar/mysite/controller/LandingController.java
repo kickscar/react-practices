@@ -1,4 +1,4 @@
-package me.kickscar.emailllist.controller;
+package me.kickscar.mysite.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
