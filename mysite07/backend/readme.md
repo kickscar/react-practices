@@ -7,5 +7,5 @@ $ mvn -f ./backend exec:exec clean package
 
 #### 실행
 ```bash
-$ java -Dspring.profiles.active=production -jar MySite07.jar
+$ java -Dspring.profiles.active=production -jar mysite07.jar
 ```

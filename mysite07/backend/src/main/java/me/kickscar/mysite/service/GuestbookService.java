@@ -2,7 +2,6 @@ package me.kickscar.mysite.service;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -11,9 +10,12 @@ import me.kickscar.mysite.vo.GuestbookVo;
 
 @Service
 public class GuestbookService {
-	@Autowired
-	GuestbookRepository guestbookRepository;
-	
+	final GuestbookRepository guestbookRepository;
+
+	public GuestbookService(GuestbookRepository guestbookRepository) {
+		this.guestbookRepository = guestbookRepository;
+	}
+
 	public List<GuestbookVo> getMessageList(Long no) {
 		return guestbookRepository.findAll(no);
 	}

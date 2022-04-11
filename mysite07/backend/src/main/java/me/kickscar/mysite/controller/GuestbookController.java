@@ -1,6 +1,5 @@
 package me.kickscar.mysite.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -19,8 +18,11 @@ import me.kickscar.mysite.vo.GuestbookVo;
 @RestController
 @RequestMapping("/api/guestbook")
 public class GuestbookController {
-	@Autowired
-	private GuestbookService guestbookService;
+	private final GuestbookService guestbookService;
+
+	public GuestbookController(GuestbookService guestbookService) {
+		this.guestbookService = guestbookService;
+	}
 
 	@GetMapping("")
 	public ResponseEntity<JsonResult> list(@RequestParam(value="no", required=true, defaultValue="0") Long startNo) {

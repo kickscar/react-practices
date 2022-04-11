@@ -1,17 +1,14 @@
 spring:
+   application:
+      name: kanbanboard
    profiles:
       active: development
-
-
----
-# common configuration
-spring:
    mvc:
       static-path-pattern: /assets/**
       throw-exception-if-no-handler-found: true
    web:
       resources:
-         static-locations: classpath:/static/
+         static-locations: classpath:/assets/
    thymeleaf:
       prefix : classpath:templates/
       check-template-location: true
@@ -23,13 +20,14 @@ spring:
       url: jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;MODE=MYSQL
       username: sa
       password:
-
 mybatis:
    config-location: classpath:mybatis/configuration.xml
 
 
 ---
+#
 # development configuration
+#
 spring:
    config:
       activate:
@@ -37,8 +35,6 @@ spring:
    devtools:
       livereload:
          enabled: true
-
-# server
 server:
    port: 8080
    servlet:
@@ -46,7 +42,6 @@ server:
       encoding:
          charset: UTF-8
          enabled: true
-
 logging:
    pattern:
       console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n"
@@ -61,8 +56,7 @@ logging:
 spring:
    config:
       activate:
-         on-profile: production
-         
+         on-profile: production         
 server:
    port: 8880
    servlet:
@@ -70,20 +64,19 @@ server:
       encoding:
          charset: UTF-8
          enabled: true
-
 logging:
    pattern:
       file: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n"
    logback:
       rollingpolicy:
          file-name-pattern: "logs/${spring.application.name}.%d{yyyy-MM-dd}.%i.log.zip"
+         max-file-size: 10MB
    file:
       name: logs/${spring.application.name}.log
-      max-history: 30
+      max-history: 10
    level:
-      root: INFO
+      root: WARN
       me:
          kickscar:
             kanbanboard:
-               exception: ERROR
-      
+               exception: ERROR      
