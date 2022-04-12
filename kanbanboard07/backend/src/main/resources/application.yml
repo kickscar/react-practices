@@ -58,7 +58,7 @@ spring:
       activate:
          on-profile: production         
 server:
-   port: 8880
+   port: 8881
    servlet:
       context-path: /
       encoding:

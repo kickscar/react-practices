@@ -74,7 +74,7 @@ spring:
       username: webdb
       password: webdb   
 server:
-   port: 8883
+   port: 8882
    servlet:
       context-path: /
       encoding:
