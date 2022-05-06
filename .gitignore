@@ -35,4 +35,4 @@
 **/.sw?
 
 # private resources
-**/PrivateResources
+**/private-resources
