@@ -77,12 +77,12 @@ logging:
       rollingpolicy:
          file-name-pattern: "logs/${spring.application.name}.%d{yyyy-MM-dd}.%i.log.zip"
          max-file-size: 10MB
+         max-history: 10
    file:
       name: logs/${spring.application.name}.log
-      max-history: 10
    level:
       root: WARN
       me:
          kickscar:
-            emaillist:
-               exception: ERROR   
+            mysite:
+               exception: ERROR
