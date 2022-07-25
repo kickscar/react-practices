@@ -35,4 +35,4 @@
 **/.sw?
 
 # private resources
-**/private-resources
+technotes/private-resource
