@@ -14,14 +14,6 @@ public class CardRepository {
 	@Autowired
 	private SqlSession sqlSession;
 
-	public List<CardVo> findAll() {
-		return sqlSession.selectList("card.findAll");
-	}
-
-	public List<CardVo> findAll(String deckTitle) {
-		return sqlSession.selectList("card.findAllbyDeckTitle", deckTitle);
-	}
-
 	public void updateOrderNo(Map moving) {
 		sqlSession.update("card.updateOrderNo", moving);
 	}

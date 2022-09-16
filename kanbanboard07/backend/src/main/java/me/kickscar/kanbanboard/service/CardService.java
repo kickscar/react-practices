@@ -28,12 +28,4 @@ public class CardService {
         cardRepository.updateOrderNo(movingDest);
     }
 
-    public List<CardVo> getCardList() {
-        return cardRepository.findAll();
-    }
-
-    public List<CardVo> getCardList(String deckTitle) {
-        return cardRepository.findAll(deckTitle);
-    }
-
 }

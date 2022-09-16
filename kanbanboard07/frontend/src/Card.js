@@ -20,7 +20,7 @@ const Container = styled.div`
 
 export default function Card({index, card}) {
     return (<Draggable
-        draggableId={`${card.no}`}
+        draggableId={`card:${card.no}`}
         index={index}>
         {(dragProvided, dragSnapshot) => (<Container
             isDragging={dragSnapshot.isDragging}

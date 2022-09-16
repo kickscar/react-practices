@@ -94,27 +94,30 @@ export default function KanbanBoard() {
         if (result.type === 'CARD') {
             console.info('Moving Card between 2 Different Decks or in a Same Deck');
 
-            const destDeckTitle = destination.droppableId;
-            const destCardIndex = destination.index;
-            const srcDeckTitle = source.droppableId;
+            const srcDeckNo = source.droppableId.split(":")[1];
             const srcCardIndex = source.index;
+            const destDeckNo = destination.droppableId.split(":")[1];
+            const destCardIndex = destination.index;
 
-            // const newDeckMap = Object.assign({}, deckMap);
-            // const [removed] = newDeckMap[srcDeckTitle].splice(srcCardIndex, 1);
-            // newDeckMap[destDeckTitle].splice(destCardIndex, 0, removed);
-            //
-            // setDeckMap(newDeckMap);
-            // setCardMoving({
-            //     no: result.draggableId,
-            //     dest: {
-            //        deckTitle: destDeckTitle,
-            //        orderNo: destCardIndex
-            //     },
-            //     src: {
-            //        deckTitle: srcDeckTitle,
-            //        orderNo: srcCardIndex
-            //     }
-            // });
+            const newDecks = [...decks];
+            const indexSrcDeck = newDecks.findIndex(e => e.no == srcDeckNo)
+            const indexDestDeck = newDecks.findIndex(e => e.no == destDeckNo)
+
+            const [cardRemoved] = newDecks[indexSrcDeck].cards.splice(srcCardIndex, 1);
+            newDecks[indexDestDeck].cards.splice(destCardIndex, 0, cardRemoved);
+
+            setDecks(newDecks);
+            setCardMoving({
+                no: result.draggableId.split(":")[1],
+                dest: {
+                   deckNo: destDeckNo,
+                   orderNo: destCardIndex
+                },
+                src: {
+                   deckNo: srcDeckNo,
+                   orderNo: srcCardIndex
+                }
+            });
         }
     }
 
@@ -129,7 +132,7 @@ export default function KanbanBoard() {
     return (<DragDropContext
         onDragEnd={onDragEnd}>
         <Droppable
-            droppableId="KanbanBoard"
+            droppableId="kanbanboard"
             type="DECK"
             direction="horizontal"
             ignoreContainerClipping={false}

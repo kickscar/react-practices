@@ -31,7 +31,7 @@ const Title = styled.h4`
 
 export default function Deck({index, deck}) {
     return (<Draggable
-        draggableId={deck.no}
+        draggableId={`deck:${deck.no}`}
         index={index}>
         {(provided, snapshot) => (<Container
             isDragging={snapshot.isDragging}

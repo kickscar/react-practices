@@ -44,7 +44,7 @@ public class ApiController {
 
 	@PutMapping("/card/mv")
 	public ResponseEntity<JsonResult> updateCard(@RequestBody Map moving) {
-		// System.out.println(moving);
+		System.out.println(moving);
 		cardService.updateCardOrder(moving);
 
 		return ResponseEntity

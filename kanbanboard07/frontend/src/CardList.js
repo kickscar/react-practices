@@ -18,7 +18,7 @@ const Container = styled.div`
 
 export default function CardList({deckNo, cards}) {
     return (<Droppable
-        droppableId={deckNo}
+        droppableId={`deck:${deckNo}`}
         type={"CARD"}>
         {(dropProvided, dropSnapshot) => (<Container
             ref={dropProvided.innerRef}
