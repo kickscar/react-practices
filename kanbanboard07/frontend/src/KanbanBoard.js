@@ -16,28 +16,27 @@ export default function KanbanBoard() {
     const [deckMoving, setDeckMoving] = useState(null);
 
     const moveDeck = async () => {
-        console.log(deckMoving);
-        // try {
-        //     const response = await fetch(`/api/deck/mv`, {
-        //         method: 'put',
-        //         headers: {
-        //             'Content-Type': 'application/json',
-        //             'Accept': 'application/json'
-        //         },
-        //         body: JSON.stringify(cardMoving)
-        //     });
-        //
-        //     if (!response.ok) {
-        //         throw new Error(`${response.status} ${response.statusText}`);
-        //     }
-        //
-        //     const json = await response.json();
-        //     if (json.result !== 'success') {
-        //         throw new Error(`${json.result} ${json.message}`);
-        //     }
-        // } catch (err) {
-        //     console.error(err);
-        // }
+        try {
+            const response = await fetch(`/api/deck/mv`, {
+                method: 'put',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(deckMoving)
+            });
+
+            if (!response.ok) {
+                throw new Error(`${response.status} ${response.statusText}`);
+            }
+
+            const json = await response.json();
+            if (json.result !== 'success') {
+                throw new Error(`${json.result} ${json.message}`);
+            }
+        } catch (err) {
+            console.error(err);
+        }
     }
 
     const moveCard = async () => {
@@ -108,11 +107,20 @@ export default function KanbanBoard() {
         if (result.type === 'DECK') {
             console.info('Reordering Deck');
 
+            const srcDeckIndex = source.index;
+            const destDeckIndex = destination.index;
+
             const newDecks = [...decks];
-            const [deckRemoved] = newDecks.splice(source.index, 1);
-            newDecks.splice(destination.index, 0, deckRemoved);
+            const [deckRemoved] = newDecks.splice(srcDeckIndex, 1);
+            newDecks.splice(destDeckIndex, 0, deckRemoved);
 
             setDecks(newDecks);
+            setDeckMoving({
+                no: result.draggableId.split(":")[1],
+                destOrderNo: destDeckIndex,
+                srcOrderNo: srcDeckIndex
+            });
+
             return;
         }
 

@@ -22,5 +22,31 @@
 	  	]]>	
 	</select>
 
+	<update id="updateOrderNo" parameterType="map">
+		<![CDATA[
+			update deck
+			   set order_no=#{destOrderNo}
+			 where no=#{no}
+	  	]]>
+	</update>
+
+	<update id="updateOrderNos" parameterType="map">
+		<choose>
+			<when test="destOrderNo lt srcOrderNo">
+				<![CDATA[
+					update deck
+					   set order_no = order_no + 1
+					 where (#{destOrderNo} <= order_no and order_no < #{srcOrderNo})
+	  			]]>
+			</when>
+			<otherwise>
+				<![CDATA[
+					update deck
+					   set order_no = order_no - 1
+					 where (#{srcOrderNo} < order_no and order_no <= #{destOrderNo})
+	  			]]>
+			</otherwise>
+		</choose>
+	</update>
 
 </mapper>

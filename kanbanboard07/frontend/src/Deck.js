@@ -2,6 +2,7 @@ import React from 'react';
 import styled from "@emotion/styled";
 import {Draggable} from "react-beautiful-dnd";
 import CardList from "./CardList";
+import styles from "./assets/scss/Deck.scss";
 
 const Container = styled.div`
     margin: 8px;
@@ -41,6 +42,11 @@ export default function Deck({index, deck}) {
                 isDragging={snapshot.isDragging}
                 {...provided.dragHandleProps}>
                 <Title>{deck.title}</Title>
+                <div className={styles.deck_val}>
+                    <small className={styles.no}>no:{deck.no}</small>
+                    <small className={styles.index}>index:{index}</small>
+                    <small className={styles.order_no}>order no:{deck.orderNo}</small>
+                </div>
             </Header>
             <CardList
                 deckNo={deck.no}
