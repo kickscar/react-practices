@@ -38,25 +38,14 @@ public class ApiController {
 				.body(JsonResult.success(cardService.getCardList()));
 	}
 
-	@PutMapping("/card/{no}/moving")
-	public ResponseEntity<JsonResult> updateCard(@PathVariable("no") Long no, @RequestBody Map moving) {
-		// System.out.println(no);
+	@PutMapping("/card/mv")
+	public ResponseEntity<JsonResult> updateCard(@RequestBody Map moving) {
 		// System.out.println(moving);
-
-		cardService.updateCardOrder(no, moving);
-
-		String destDeckTitle = (String)((Map)moving.get("dest")).get("deckTitle");
-		List<CardVo> destCardList = cardService.getCardList(destDeckTitle);
-
-		String srcDeckTitle = (String)((Map)moving.get("src")).get("deckTitle");
-		List<CardVo> srcCardList = cardService.getCardList(srcDeckTitle);
+		cardService.updateCardOrder(moving);
 
 		return ResponseEntity
 				.status(HttpStatus.OK)
-				.body(JsonResult.success(
-						destDeckTitle.equals(srcDeckTitle) ?
-						Map.of(destDeckTitle, destCardList):
-						Map.of(destDeckTitle, destCardList, srcDeckTitle, srcCardList)));
+				.body(JsonResult.success("ok"));
 	}
 
 	@GetMapping("/task")

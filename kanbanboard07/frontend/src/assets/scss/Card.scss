@@ -34,15 +34,24 @@
   .no {
     color: rgba(9, 30, 66, 0.71);
     flex-grow: 0;
-    margin: 0px;
+    margin-right: 30px;
     background-color: rgb(227, 252, 239);
     border-radius: 2px;
     font-weight: normal;
     padding: 4px;
   }
 
-  .order_no {
+  .index {
     flex-grow: 1;
+    flex-shrink: 1;
+    margin: 0px;
+    font-weight: normal;
+    text-overflow: ellipsis;
+    text-align: right;
+  }
+
+  .order_no {
+    flex-grow: 2;
     flex-shrink: 1;
     margin: 0px;
     font-weight: normal;

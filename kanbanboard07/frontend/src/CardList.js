@@ -27,6 +27,7 @@ export default function CardList({title, cards}) {
             {...dropProvided.droppableProps}>
             {cards.map((card, index) => (<Card
                 key={card.no}
+                index={index}
                 card={card}/>))}
             {dropProvided.placeholder}
         </Container>)}

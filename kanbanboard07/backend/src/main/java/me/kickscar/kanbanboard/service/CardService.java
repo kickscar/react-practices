@@ -15,7 +15,7 @@ public class CardService {
     private CardRepository cardRepository;
 
     @Transactional
-    public void updateCardOrder(Long no, Map moving) {
+    public void updateCardOrder(Map moving) {
         Map movingDest = (Map)moving.get("dest");
         movingDest.put("ascending", true);
         cardRepository.updateOrderNos(movingDest);
@@ -24,7 +24,7 @@ public class CardService {
         movingSrc.put("ascending", false);
         cardRepository.updateOrderNos(movingSrc);
 
-        movingDest.put("no", no);
+        movingDest.put("no", moving.get("no"));
         cardRepository.updateOrderNo(movingDest);
     }
 

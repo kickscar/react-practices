@@ -18,10 +18,10 @@ const Container = styled.div`
     color: rgb(9, 30, 66);  
 `;
 
-export default function Card({card}) {
+export default function Card({index, card}) {
     return (<Draggable
         draggableId={`${card.no}`}
-        index={card.orderNo}>
+        index={index}>
         {(dragProvided, dragSnapshot) => (<Container
             isDragging={dragSnapshot.isDragging}
             isGroupedOver={dragSnapshot.isGroupedOver}
@@ -38,8 +38,9 @@ export default function Card({card}) {
             </div>
             <div
                 className={styles.card_val}>
-                <small className={styles.no}>no: {card.no}</small>
-                <small className={styles.order_no}>order no: {card.orderNo}</small>
+                <small className={styles.no}>no:{card.no}</small>
+                <small className={styles.index}>drag index:{index}</small>
+                <small className={styles.order_no}>order no:{card.orderNo}</small>
             </div>
         </Container>)}
     </Draggable>);

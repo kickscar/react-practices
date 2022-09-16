@@ -16,18 +16,17 @@ export default function KanbanBoard() {
         result[title] = [];
         return result;
     }, {}));
+    const [cardMoving, setCardMoving] = useState(null);
 
-    const moveCard = async (no, movingInfo) => {
-        console.log(no, movingInfo);
-
+    const moveCard = async () => {
         try {
-            const response = await fetch(`/api/card/${no}/moving`, {
+            const response = await fetch(`/api/card/mv`, {
                 method: 'put',
                 headers: {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json'
                 },
-                body: JSON.stringify(movingInfo)
+                body: JSON.stringify(cardMoving)
             });
 
             if (!response.ok) {
@@ -40,9 +39,6 @@ export default function KanbanBoard() {
             }
 
             console.log(json.data);
-            const newdeckMap = Object.assign({}, deckMap, json.data);
-            setDeckMap(newdeckMap);
-
         } catch (err) {
             console.error(err);
         }
@@ -95,16 +91,11 @@ export default function KanbanBoard() {
         if (result.type === 'DECK') {
             console.info('Reordering Deck');
 
-            //
-            // 업데이트 API 호출 결과가 'success'일 때 할 것
-            //
             const newDeckTitles = Array.from(deckTitles);
-
             const [removed] = newDeckTitles.splice(source.index, 1);
             newDeckTitles.splice(destination.index, 0, removed);
 
             setDeckTitles(newDeckTitles);
-
             return;
         }
 
@@ -112,15 +103,24 @@ export default function KanbanBoard() {
         if (result.type === 'CARD') {
             console.info('Moving Card between 2 Different Decks or in a Same Deck');
 
-            moveCard(result.draggableId, {
-               dest: {
-                   deckTitle: destination.droppableId,
+            const destDeckTitle = destination.droppableId;
+            const srcDeckTitle = source.droppableId;
+            const newDeckMap = Object.assign({}, deckMap);
+
+            const [removed] = newDeckMap[srcDeckTitle].splice(source.index, 1);
+            newDeckMap[destDeckTitle].splice(destination.index, 0, removed);
+
+            setDeckMap(newDeckMap);
+            setCardMoving({
+                no: result.draggableId,
+                dest: {
+                   deckTitle: destDeckTitle,
                    orderNo: destination.index
-               },
-               src: {
-                   deckTitle: source.droppableId,
+                },
+                src: {
+                   deckTitle: srcDeckTitle,
                    orderNo: source.index
-               }
+                }
             });
         }
     }
@@ -129,7 +129,9 @@ export default function KanbanBoard() {
         fetchCards();
     }, []);
 
-    console.log("!!!!!");
+    useEffect(() => {
+        cardMoving && moveCard();
+    }, [cardMoving]);
 
     return (<DragDropContext
         onDragEnd={onDragEnd}>
