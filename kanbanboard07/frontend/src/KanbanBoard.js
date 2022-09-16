@@ -13,6 +13,32 @@ const Container = styled.div`
 export default function KanbanBoard() {
     const [decks, setDecks] = useState([]);
     const [cardMoving, setCardMoving] = useState(null);
+    const [deckMoving, setDeckMoving] = useState(null);
+
+    const moveDeck = async () => {
+        console.log(deckMoving);
+        // try {
+        //     const response = await fetch(`/api/deck/mv`, {
+        //         method: 'put',
+        //         headers: {
+        //             'Content-Type': 'application/json',
+        //             'Accept': 'application/json'
+        //         },
+        //         body: JSON.stringify(cardMoving)
+        //     });
+        //
+        //     if (!response.ok) {
+        //         throw new Error(`${response.status} ${response.statusText}`);
+        //     }
+        //
+        //     const json = await response.json();
+        //     if (json.result !== 'success') {
+        //         throw new Error(`${json.result} ${json.message}`);
+        //     }
+        // } catch (err) {
+        //     console.error(err);
+        // }
+    }
 
     const moveCard = async () => {
         try {
@@ -82,11 +108,11 @@ export default function KanbanBoard() {
         if (result.type === 'DECK') {
             console.info('Reordering Deck');
 
-            // const newDeckTitles = Array.from(deckTitles);
-            // const [removed] = newDeckTitles.splice(source.index, 1);
-            // newDeckTitles.splice(destination.index, 0, removed);
+            const newDecks = [...decks];
+            const [deckRemoved] = newDecks.splice(source.index, 1);
+            newDecks.splice(destination.index, 0, deckRemoved);
 
-            // setDeckTitles(newDeckTitles);
+            setDecks(newDecks);
             return;
         }
 
@@ -124,6 +150,10 @@ export default function KanbanBoard() {
     useEffect(() => {
         fetchDecks();
     }, []);
+
+    useEffect(() => {
+        deckMoving && moveDeck();
+    }, [deckMoving]);
 
     useEffect(() => {
         cardMoving && moveCard();
