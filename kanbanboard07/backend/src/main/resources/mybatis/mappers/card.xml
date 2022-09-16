@@ -3,9 +3,48 @@
 <mapper namespace="card">
 	<select id="findAll" resultType="cardvo">
 		<![CDATA[	
-			  select no, title, description, status
+			  select no, title, description, deck_title as deckTitle, order_no as orderNo
 		      	from card
-		  	order by no desc
+		  	order by deckTitle asc, orderNo asc
 	  	]]>	
 	</select>
+
+	<select id="findAllbyDeckTitle" resultType="cardvo" parameterType="string">
+		<![CDATA[
+			  select no, title, description, deck_title as deckTitle, order_no as orderNo
+		      	from card
+		       where deck_title = #{deckTitle}
+		  	order by orderNo asc
+	  	]]>
+	</select>
+
+	<update id="updateOrderNo" parameterType="map">
+		<![CDATA[
+			update card
+			   set order_no=#{orderNo}, deck_title=#{deckTitle}
+			 where no=#{no}
+	  	]]>
+	</update>
+
+	<update id="updateOrderNos" parameterType="map">
+		<choose>
+			<when test="ascending">
+				<![CDATA[
+					update card
+					   set order_no = order_no + 1
+					 where deck_title = #{deckTitle}
+					   and order_no >= #{orderNo}
+	  			]]>
+			</when>
+			<otherwise>
+				<![CDATA[
+					update card
+					   set order_no = order_no - 1
+					 where deck_title = #{deckTitle}
+					   and order_no > #{orderNo}
+	  			]]>
+			</otherwise>
+		</choose>
+	</update>
+
 </mapper>

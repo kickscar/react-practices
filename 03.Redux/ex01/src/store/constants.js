@@ -1,0 +1,5 @@
+export default {
+    CREATE_EMAIL: 'CREATE_EMAIL',
+    READ_EMAILS: 'READ_EMAILS',
+    DELETE_EMAIL: 'DELETE_EMAIL'
+}

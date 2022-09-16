@@ -1,7 +1,7 @@
 import AppDispatcher from "./AppDispatcher";
 import emailConstants from "./constants";
 
-const EmailActions = {
+const AppAction = {
     createEmail(email) {
         AppDispatcher.dispatch({
             type: emailConstants.CREATE_EMAIL,
@@ -17,4 +17,4 @@ const EmailActions = {
     }
 }
 
-export default EmailActions;
+export default AppAction;

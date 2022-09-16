@@ -1,7 +1,11 @@
 package me.kickscar.kanbanboard.controller;
 
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
+import me.kickscar.kanbanboard.service.CardService;
+import me.kickscar.kanbanboard.vo.CardVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,9 +25,8 @@ import me.kickscar.kanbanboard.vo.TaskVo;
 @RestController
 @RequestMapping("/api")
 public class ApiController {
-	
 	@Autowired
-	private CardRepository cardRepository;
+	private CardService cardService;
 
 	@Autowired
 	private TaskRepository taskRepository;
@@ -32,9 +35,30 @@ public class ApiController {
 	public ResponseEntity<JsonResult> readCard() {
 		return ResponseEntity
 				.status(HttpStatus.OK)
-				.body(JsonResult.success(cardRepository.findAll()));
+				.body(JsonResult.success(cardService.getCardList()));
 	}
-	
+
+	@PutMapping("/card/{no}/moving")
+	public ResponseEntity<JsonResult> updateCard(@PathVariable("no") Long no, @RequestBody Map moving) {
+		// System.out.println(no);
+		// System.out.println(moving);
+
+		cardService.updateCardOrder(no, moving);
+
+		String destDeckTitle = (String)((Map)moving.get("dest")).get("deckTitle");
+		List<CardVo> destCardList = cardService.getCardList(destDeckTitle);
+
+		String srcDeckTitle = (String)((Map)moving.get("src")).get("deckTitle");
+		List<CardVo> srcCardList = cardService.getCardList(srcDeckTitle);
+
+		return ResponseEntity
+				.status(HttpStatus.OK)
+				.body(JsonResult.success(
+						destDeckTitle.equals(srcDeckTitle) ?
+						Map.of(destDeckTitle, destCardList):
+						Map.of(destDeckTitle, destCardList, srcDeckTitle, srcCardList)));
+	}
+
 	@GetMapping("/task")
 	public ResponseEntity<JsonResult> readTask(Long cardNo) {
 		return ResponseEntity

@@ -1,23 +1,34 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import styled from "@emotion/styled";
 import Card from "./Card";
-import styles from "./assets/css/CardList.css";
+import {Draggable, Droppable} from "react-beautiful-dnd";
+
+const Container = styled.div`
+    background-color: rgb(235, 236, 240);
+    display: flex;
+    flex-direction: column;
+    opacity: inherit;
+    padding: 8px 8px 0px;
+    border: 8px;
+    transition: background-color 0.2s ease 0s, opacity 0.1s ease 0s;
+    user-select: none;
+    border-radius: 0 0 2px 2px;
+    width: 250px;
+`;
 
 export default function CardList({title, cards}) {
-    return (
-        <div className={styles.CardList}>
-            <h1>{title}</h1>
-            {cards.map(card => <Card
+    return (<Droppable
+        droppableId={title}
+        type={"CARD"}>
+        {(dropProvided, dropSnapshot) => (<Container
+            ref={dropProvided.innerRef}
+            isDraggingOver={dropSnapshot.isDraggingOver}
+            isDraggingFrom={false}
+            {...dropProvided.droppableProps}>
+            {cards.map((card, index) => (<Card
                 key={card.no}
-                no={card.no}
-                title={card.title}
-                description={card.description}
-                status={card.status} />)}
-        </div>
-    )
-}
-
-CardList.propTypes = {
-    title: PropTypes.string.isRequired,
-    cards: PropTypes.arrayOf(PropTypes.shape(Card.propTypes))
+                card={card}/>))}
+            {dropProvided.placeholder}
+        </Container>)}
+    </Droppable>);
 }

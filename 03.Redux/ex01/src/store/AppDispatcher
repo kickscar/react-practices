@@ -1,0 +1,12 @@
+const AppDispatcher = {
+    callback: null,
+    register(callback) {
+        this.callback = callback;
+    },
+    dispatch(action = {}){
+        console.log(`dispatched ${action.type}`);
+        this.callback(action);
+    }
+}
+
+export default AppDispatcher;

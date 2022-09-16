@@ -4,22 +4,22 @@ import SearchBar from './SearchBar';
 import Emaillist from './Emaillist';
 import './assets/scss/App.scss';
 
-import EmailStore from "../flux/EmailStore";
-import EmailActions from "../flux/EmailActions";
+import AppStore from "../store/AppStore";
+import AppAction from "../store/AppAction";
 
 export default function App() {
-    const [emails, setEmails] = useState(EmailStore.getState());
+    const [emails, setEmails] = useState(AppStore.getState());
 
     const addEmail = function(email) {
-        EmailActions.createEmail(email);
+        AppAction.createEmail(email);
     }
 
     const keywordChanged = function(keyword) {
     }
 
     useEffect(() => {
-        const subscription = EmailStore.addListender(() => {
-            setEmails(EmailStore.getState());
+        const subscription = AppStore.subsribe(() => {
+            setEmails(AppStore.getState());
         });
 
         return () => {

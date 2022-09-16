@@ -11,5 +11,6 @@ public class CardVo {
 	private Long no;
 	private String title;
 	private String description;
-	private String status;
+	private String deckTitle;
+	private Integer orderNo;
 }
