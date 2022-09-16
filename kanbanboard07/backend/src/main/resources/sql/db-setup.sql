@@ -1,12 +1,23 @@
 -- create table
+CREATE TABLE IF NOT EXISTS `deck` (
+    `no` INT NOT NULL AUTO_INCREMENT,
+    `title` VARCHAR(45) NOT NULL,
+    `order_no` INT NOT NULL,
+    PRIMARY KEY (`no`))
+ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `card` (
   `no` INT NOT NULL AUTO_INCREMENT,
   `title` VARCHAR(45) NOT NULL,
   `description` VARCHAR(200) NOT NULL,
-  `deck_title` ENUM('ToDo', 'Doing', 'Done') NOT NULL,
   `order_no` INT NOT NULL,
-  PRIMARY KEY (`no`))
+  `deck_no` INT NOT NULL,
+  PRIMARY KEY (`no`),
+  CONSTRAINT `fk_card_deck`
+    FOREIGN KEY (`deck_no`)
+    REFERENCES `deck` (`no`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `task` (
@@ -22,14 +33,20 @@ CREATE TABLE IF NOT EXISTS `task` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+-- insert deck
+insert into deck values(null, 'ToDo', (select count(*) from deck a));
+insert into deck values(null, 'Doing', (select count(*) from deck a));
+insert into deck values(null, 'Done', (select count(*) from deck a));
+insert into deck values(null, 'Discard', (select count(*) from deck a));
+
 -- insert card
-insert into card values(null, 'DB Scheme Design', '프로젝트 Database 논리 모델링 작업', 'ToDo', (select count(*) from card where deck_title = 'ToDo'));
-insert into card values(null, 'Stroy Board 작성', '기능 기반의 화면 목업 작업', 'Done', (select count(*) from card where deck_title = 'Done'));
-insert into card values(null, 'React Study', 'React.JS 공부 하기', 'Doing', (select count(*) from card where deck_title = 'Doing'));
-insert into card values(null, 'View Publishing', '화면 HTML CSS publishing 하기', 'ToDo', (select count(*) from card where deck_title = 'ToDo'));
-insert into card values(null, 'User Story 작성', '사용자 스토리 도출 작업', 'Done', (select count(*) from card where deck_title = 'Done'));
-insert into card values(null, 'Dev. Env. Set-Up', '개발 도구, 서버, 기술 스택 세팅', 'Done', (select count(*) from card where deck_title = 'Done'));
-insert into card values(null, 'Git Practice', 'git 공통 사용 룰을 정하고 연습하기', 'ToDo', (select count(*) from card where deck_title = 'ToDo'));
+insert into card values(null, 'DB Scheme Design', '프로젝트 Database 논리 모델링 작업', (select count(*) from card a where deck_no = 1), 1);
+insert into card values(null, 'Stroy Board 작성', '기능 기반의 화면 목업 작업', (select count(*) from card a where deck_no = 3), 3);
+insert into card values(null, 'React Study', 'React.JS 공부 하기', (select count(*) from card a where deck_no = 2), 2);
+insert into card values(null, 'View Publishing', '화면 HTML CSS publishing 하기', (select count(*) from card a where deck_no = 1), 1);
+insert into card values(null, 'User Story 작성', '사용자 스토리 도출 작업', (select count(*) from card a where deck_no = 3), 3);
+insert into card values(null, 'Dev. Env. Set-Up', '개발 도구, 서버, 기술 스택 세팅', (select count(*) from card a where deck_no = 3), 3);
+insert into card values(null, 'Git Practice', 'git 공통 사용 룰을 정하고 연습하기', (select count(*) from card a where deck_no = 1), 1);
 
 -- insert task
 insert into task values(null, '사용자 스토리 리스트업', 'Y', 2);

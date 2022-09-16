@@ -1,23 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="card">
-	<select id="findAll" resultType="cardvo">
-		<![CDATA[	
-			  select no, title, description, deck_title as deckTitle, order_no as orderNo
-		      	from card
-		  	order by deckTitle asc, orderNo asc
-	  	]]>	
-	</select>
-
-	<select id="findAllbyDeckTitle" resultType="cardvo" parameterType="string">
-		<![CDATA[
-			  select no, title, description, deck_title as deckTitle, order_no as orderNo
-		      	from card
-		       where deck_title = #{deckTitle}
-		  	order by orderNo asc
-	  	]]>
-	</select>
-
 	<update id="updateOrderNo" parameterType="map">
 		<![CDATA[
 			update card

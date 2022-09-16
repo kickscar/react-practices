@@ -29,9 +29,9 @@ const Title = styled.h4`
     cursor: grab;
 `;
 
-export default function Deck({index, title, cards}) {
+export default function Deck({index, deck}) {
     return (<Draggable
-        draggableId={title}
+        draggableId={deck.no}
         index={index}>
         {(provided, snapshot) => (<Container
             isDragging={snapshot.isDragging}
@@ -40,11 +40,11 @@ export default function Deck({index, title, cards}) {
             <Header
                 isDragging={snapshot.isDragging}
                 {...provided.dragHandleProps}>
-                <Title>{title}</Title>
+                <Title>{deck.title}</Title>
             </Header>
             <CardList
-                title={title}
-                cards={cards} />
+                deckNo={deck.no}
+                cards={deck.cards} />
         </Container>)}
     </Draggable>);
 }

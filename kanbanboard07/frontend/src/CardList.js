@@ -16,9 +16,9 @@ const Container = styled.div`
     width: 250px;
 `;
 
-export default function CardList({title, cards}) {
+export default function CardList({deckNo, cards}) {
     return (<Droppable
-        droppableId={title}
+        droppableId={deckNo}
         type={"CARD"}>
         {(dropProvided, dropSnapshot) => (<Container
             ref={dropProvided.innerRef}

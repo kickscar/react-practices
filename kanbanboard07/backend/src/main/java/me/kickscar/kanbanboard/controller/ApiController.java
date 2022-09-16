@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import me.kickscar.kanbanboard.service.CardService;
+import me.kickscar.kanbanboard.service.DeckService;
 import me.kickscar.kanbanboard.vo.CardVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -26,16 +27,19 @@ import me.kickscar.kanbanboard.vo.TaskVo;
 @RequestMapping("/api")
 public class ApiController {
 	@Autowired
+	private DeckService deckService;
+
+	@Autowired
 	private CardService cardService;
 
 	@Autowired
 	private TaskRepository taskRepository;
 
-	@GetMapping("/card")
+	@GetMapping("/deck")
 	public ResponseEntity<JsonResult> readCard() {
 		return ResponseEntity
 				.status(HttpStatus.OK)
-				.body(JsonResult.success(cardService.getCardList()));
+				.body(JsonResult.success(deckService.getCardList()));
 	}
 
 	@PutMapping("/card/mv")
@@ -71,10 +75,7 @@ public class ApiController {
 		
 		return ResponseEntity
 				.status(HttpStatus.OK)
-				.body(JsonResult.success(new HashMap<String, Object>() {{
-				    put("no", no);
-				    put("done", done);
-				}}));
+				.body(JsonResult.success(Map.of("no", no, "done", done)));
 	}
 
 }

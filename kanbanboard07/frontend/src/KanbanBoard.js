@@ -11,11 +11,7 @@ const Container = styled.div`
 `;
 
 export default function KanbanBoard() {
-    const [deckTitles, setDeckTitles] = useState(['ToDo', 'Doing', 'Done']);
-    const [deckMap, setDeckMap] = useState(() => deckTitles.reduce((result, title) => {
-        result[title] = [];
-        return result;
-    }, {}));
+    const [decks, setDecks] = useState([]);
     const [cardMoving, setCardMoving] = useState(null);
 
     const moveCard = async () => {
@@ -37,16 +33,14 @@ export default function KanbanBoard() {
             if (json.result !== 'success') {
                 throw new Error(`${json.result} ${json.message}`);
             }
-
-            console.log(json.data);
         } catch (err) {
             console.error(err);
         }
     }
 
-    const fetchCards = async () => {
+    const fetchDecks = async () => {
         try {
-            const response = await fetch('/api/card', {
+            const response = await fetch('/api/deck', {
                 method: 'get',
                 headers: {'Accept': 'application/json'}
             });
@@ -60,10 +54,7 @@ export default function KanbanBoard() {
                 throw new Error(`${json.result} ${json.message}`);
             }
 
-            const newDeckMap = Object.assign({}, deckMap);
-            json.data.forEach((card) => (card.deckTitle in newDeckMap) && newDeckMap[card.deckTitle].push(card));
-
-            setDeckMap(newDeckMap);
+            setDecks(json.data);
         } catch (err) {
             console.log(err.message);
         }
@@ -91,11 +82,11 @@ export default function KanbanBoard() {
         if (result.type === 'DECK') {
             console.info('Reordering Deck');
 
-            const newDeckTitles = Array.from(deckTitles);
-            const [removed] = newDeckTitles.splice(source.index, 1);
-            newDeckTitles.splice(destination.index, 0, removed);
+            // const newDeckTitles = Array.from(deckTitles);
+            // const [removed] = newDeckTitles.splice(source.index, 1);
+            // newDeckTitles.splice(destination.index, 0, removed);
 
-            setDeckTitles(newDeckTitles);
+            // setDeckTitles(newDeckTitles);
             return;
         }
 
@@ -104,29 +95,31 @@ export default function KanbanBoard() {
             console.info('Moving Card between 2 Different Decks or in a Same Deck');
 
             const destDeckTitle = destination.droppableId;
+            const destCardIndex = destination.index;
             const srcDeckTitle = source.droppableId;
-            const newDeckMap = Object.assign({}, deckMap);
+            const srcCardIndex = source.index;
 
-            const [removed] = newDeckMap[srcDeckTitle].splice(source.index, 1);
-            newDeckMap[destDeckTitle].splice(destination.index, 0, removed);
-
-            setDeckMap(newDeckMap);
-            setCardMoving({
-                no: result.draggableId,
-                dest: {
-                   deckTitle: destDeckTitle,
-                   orderNo: destination.index
-                },
-                src: {
-                   deckTitle: srcDeckTitle,
-                   orderNo: source.index
-                }
-            });
+            // const newDeckMap = Object.assign({}, deckMap);
+            // const [removed] = newDeckMap[srcDeckTitle].splice(srcCardIndex, 1);
+            // newDeckMap[destDeckTitle].splice(destCardIndex, 0, removed);
+            //
+            // setDeckMap(newDeckMap);
+            // setCardMoving({
+            //     no: result.draggableId,
+            //     dest: {
+            //        deckTitle: destDeckTitle,
+            //        orderNo: destCardIndex
+            //     },
+            //     src: {
+            //        deckTitle: srcDeckTitle,
+            //        orderNo: srcCardIndex
+            //     }
+            // });
         }
     }
 
     useEffect(() => {
-        fetchCards();
+        fetchDecks();
     }, []);
 
     useEffect(() => {
@@ -144,11 +137,10 @@ export default function KanbanBoard() {
             {(provided) => (<Container
                 ref={provided.innerRef}
                 {...provided.droppableProps}>
-                {deckTitles.map((title, index) => (<Deck
-                    key={title}
+                {decks.map((deck, index) => (<Deck
+                    key={deck.no}
                     index={index}
-                    title={title}
-                    cards={deckMap[title]}/>))}
+                    deck={deck}/>))}
                 {provided.placeholder}
             </Container>)}
         </Droppable>

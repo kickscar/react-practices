@@ -6,11 +6,13 @@
     </settings>
     	
 	<typeAliases>
+		<typeAlias type="me.kickscar.kanbanboard.vo.DeckVo" alias="deckvo" />
 		<typeAlias type="me.kickscar.kanbanboard.vo.CardVo" alias="cardvo" />
 		<typeAlias type="me.kickscar.kanbanboard.vo.TaskVo" alias="taskvo" />
 	</typeAliases>
 	
 	<mappers>
+		<mapper resource="mybatis/mappers/deck.xml" />
 		<mapper resource="mybatis/mappers/card.xml" />
 		<mapper resource="mybatis/mappers/task.xml" />
 	</mappers>
