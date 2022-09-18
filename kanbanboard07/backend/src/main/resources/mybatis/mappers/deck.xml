@@ -25,8 +25,8 @@
 	<update id="updateOrderNo" parameterType="map">
 		<![CDATA[
 			update deck
-			   set order_no=#{destOrderNo}
-			 where no=#{no}
+			   set order_no = #{destOrderNo}
+			 where no = #{no}
 	  	]]>
 	</update>
 
@@ -36,14 +36,16 @@
 				<![CDATA[
 					update deck
 					   set order_no = order_no + 1
-					 where (#{destOrderNo} <= order_no and order_no < #{srcOrderNo})
+					 where #{destOrderNo} <= order_no
+					   and order_no < #{srcOrderNo}
 	  			]]>
 			</when>
 			<otherwise>
 				<![CDATA[
 					update deck
 					   set order_no = order_no - 1
-					 where (#{srcOrderNo} < order_no and order_no <= #{destOrderNo})
+					 where #{srcOrderNo} < order_no
+					   and order_no <= #{destOrderNo}
 	  			]]>
 			</otherwise>
 		</choose>

@@ -18,6 +18,10 @@ public class JsonResult {
 		this.message = message; 
 	}
 
+	public static JsonResult success() {
+		return success(null);
+	}
+
 	public static JsonResult success(Object data) {
 		return new JsonResult(data);
 	}

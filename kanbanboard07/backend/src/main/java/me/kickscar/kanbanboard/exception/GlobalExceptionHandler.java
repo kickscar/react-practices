@@ -11,10 +11,16 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.extern.slf4j.Slf4j;
 import me.kickscar.kanbanboard.dto.JsonResult;
+import org.springframework.web.servlet.NoHandlerFoundException;
 
 @Slf4j
 @ControllerAdvice
 public class GlobalExceptionHandler {
+	@ExceptionHandler(NoHandlerFoundException.class)
+	public String handlerNoHandlerFoundException(Exception e) {
+		return "index";
+	}
+
 	@ExceptionHandler(Exception.class)
 	@ResponseBody
 	public ResponseEntity<JsonResult> handlerException(Exception e) {

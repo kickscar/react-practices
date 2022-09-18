@@ -4,8 +4,9 @@
 	<update id="updateOrderNo" parameterType="map">
 		<![CDATA[
 			update card
-			   set order_no=#{orderNo}, deck_no=#{deckNo}
-			 where no=#{no}
+			   set order_no = #{orderNo},
+			       deck_no = #{deckNo}
+			 where no = #{no}
 	  	]]>
 	</update>
 

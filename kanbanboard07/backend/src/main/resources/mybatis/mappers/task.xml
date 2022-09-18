@@ -5,7 +5,7 @@
 		<![CDATA[	
 			  select no, name, done
 		      	from task
-		       where card_no=#{cardNo}	
+		       where card_no = #{cardNo}
 		  	order by no desc
 	  	]]>	
 	</select>
@@ -26,8 +26,8 @@
 	<update id="updateDone" parameterType="map">
 		<![CDATA[
 			update task 
-			   set done=#{done}
-			 where no=#{no}	
+			   set done = #{done}
+			 where no = #{no}
 	  	]]>	
 	</update>	
 		

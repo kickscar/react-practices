@@ -40,12 +40,10 @@ public class ApiController {
 
 	@PutMapping("/deck/mv")
 	public ResponseEntity<JsonResult> updateDeck(@RequestBody Map moving) {
-		System.out.println(moving);
 		deckService.updateDeckOrder(moving);
-
 		return ResponseEntity
 				.status(HttpStatus.OK)
-				.body(JsonResult.success("ok"));
+				.body(JsonResult.success());
 	}
 
 	@PutMapping("/card/mv")
@@ -53,7 +51,7 @@ public class ApiController {
 		cardService.updateCardOrder(moving);
 		return ResponseEntity
 				.status(HttpStatus.OK)
-				.body(JsonResult.success("ok"));
+				.body(JsonResult.success());
 	}
 
 	@GetMapping("/task")
@@ -71,7 +69,6 @@ public class ApiController {
 				.body(JsonResult.success(taskVo));
 	}
 
-	@SuppressWarnings("serial")
 	@PutMapping("/task/{no}")
 	public ResponseEntity<JsonResult> updateTask(@PathVariable("no") Long no, String done) {
 		taskService.updateDone(no, done);
