@@ -1,34 +1,57 @@
-.deck_val {
+.Container {
+  margin: 8px;
   display: flex;
-  flex-direction: row;
-  margin-top: 8px;
-  align-items: center;
+  flex-direction: column;
 
-  .no {
-    color: rgba(200, 230, 240, 0.71);
-    flex-grow: 0;
-    margin-right: 30px;
-    background-color: rgb(30, 136, 236);
-    border-radius: 2px;
-    font-weight: normal;
-    padding: 4px;
-  }
+  .Header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px 2px 0 0;
+    background-color: rgb(235, 236, 240);
+    transition: background-color 0.2s ease 0s;
 
-  .index {
-    flex-grow: 1;
-    flex-shrink: 1;
-    margin-right: 10px;
-    font-weight: normal;
-    text-overflow: ellipsis;
-    text-align: right;
-  }
+    h4 {
+      background-color: rgb(235, 236, 240);
+      transition: background-color 0.2s ease 0s;
+      padding: 8px;
+      margin: 12px 0 0 0;
+      flex-grow: 1;
+      user-select: none;
+      position: relative;
+      cursor: grab;
+    }
 
-  .order_no {
-    flex-grow: 2;
-    flex-shrink: 1;
-    margin-right: 5px;
-    font-weight: normal;
-    text-overflow: ellipsis;
-    text-align: right;
+    div {
+      display: flex;
+      flex-direction: row;
+      margin-top: 8px;
+      align-items: center;
+
+      small {
+        flex-grow: 1;
+        flex-shrink: 1;
+        font-weight: normal;
+        margin-right: 10px;
+      }
+
+      small:nth-child(1) {
+        color: rgba(200, 230, 240, 0.71);
+        background-color: rgb(30, 136, 236);
+        border-radius: 2px;
+        padding: 4px;
+      }
+
+      small:nth-child(2) {
+        margin-right: 10px;
+        text-overflow: ellipsis;
+        text-align: right;
+      }
+
+      small:nth-child(3) {
+        text-overflow: ellipsis;
+        text-align: right;
+      }
+    }
   }
 }

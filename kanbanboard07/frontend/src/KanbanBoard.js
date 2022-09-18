@@ -1,14 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState} from "react";
 import {DragDropContext, Droppable} from "react-beautiful-dnd";
-import Deck from "./Deck";
 import styled from "@emotion/styled";
+import styles from "./assets/scss/KabanBoard.scss";
+import Deck from "./Deck";
 
-const Container = styled.div`
-    background-color: rgb(76, 154, 255);
-    min-height: 100vh;
-    min-width: 100vw;
-    display: inline-flex;  
-`;
+const Container = styled.div``;
 
 export default function KanbanBoard() {
     const [decks, setDecks] = useState([]);
@@ -107,6 +103,7 @@ export default function KanbanBoard() {
         if (result.type === 'DECK') {
             console.info('Reordering Deck');
 
+            const [,deckNo] = result.draggableId.split(":");
             const srcDeckIndex = source.index;
             const destDeckIndex = destination.index;
 
@@ -116,7 +113,7 @@ export default function KanbanBoard() {
 
             setDecks(newDecks);
             setDeckMoving({
-                no: result.draggableId.split(":")[1],
+                no: deckNo,
                 destOrderNo: destDeckIndex,
                 srcOrderNo: srcDeckIndex
             });
@@ -128,9 +125,10 @@ export default function KanbanBoard() {
         if (result.type === 'CARD') {
             console.info('Moving Card between 2 Different Decks or in a Same Deck');
 
-            const srcDeckNo = source.droppableId.split(":")[1];
+            const [,cardNo] = result.draggableId.split(":");
+            const [,srcDeckNo] = source.droppableId.split(":");
             const srcCardIndex = source.index;
-            const destDeckNo = destination.droppableId.split(":")[1];
+            const [,destDeckNo] = destination.droppableId.split(":");
             const destCardIndex = destination.index;
 
             const newDecks = [...decks];
@@ -142,7 +140,7 @@ export default function KanbanBoard() {
 
             setDecks(newDecks);
             setCardMoving({
-                no: result.draggableId.split(":")[1],
+                no: cardNo,
                 dest: {
                    deckNo: destDeckNo,
                    orderNo: destCardIndex
@@ -176,6 +174,7 @@ export default function KanbanBoard() {
             ignoreContainerClipping={false}
             isCombineEnabled={false}>
             {(provided) => (<Container
+                className={styles.Container}
                 ref={provided.innerRef}
                 {...provided.droppableProps}>
                 {decks.map((deck, index) => (<Deck

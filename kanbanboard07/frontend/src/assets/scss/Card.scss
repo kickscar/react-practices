@@ -1,61 +1,76 @@
-.card_title {
-  cursor: pointer;
-  pointer-events: none;
-  font: {
-    weight: bold;
-  }
-  border: {
-    bottom: solid 5px transparent;
-  }
-
-  &:before {
-    display: inline-block;
-    pointer-events: auto;
-    width: 1em;
-    content: '▸';
-  }
-}
-
-.card_title_open {
-  &:before {
-    content: '▾';
-  }
-}
-
-.card_desc {
-}
-
-.card_val {
+.Card {
   display: flex;
-  flex-direction: row;
-  margin-top: 8px;
-  align-items: center;
+  flex-direction: column;
+  border-radius: 2px;
+  border: 2px solid transparent;
+  background-color: rgb(255, 255, 255);
+  box-shadow: none;
+  box-sizing: border-box;
+  padding: 8px;
+  min-height: 40px;
+  margin-bottom: 8px;
+  user-select: none;
+  color: rgb(9, 30, 66);
 
-  .no {
-    color: rgba(9, 30, 66, 0.71);
-    flex-grow: 0;
-    margin-right: 30px;
-    background-color: rgb(227, 252, 239);
-    border-radius: 2px;
-    font-weight: normal;
-    padding: 4px;
+  .Title {
+    cursor: pointer;
+    pointer-events: none;
+    font: {
+      weight: bold;
+    }
+    border: {
+      bottom: solid 5px transparent;
+    }
+    &:before {
+      display: inline-block;
+      pointer-events: auto;
+      width: 1em;
+      content: '▸';
+    }
   }
 
-  .index {
-    flex-grow: 1;
-    flex-shrink: 1;
-    margin: 0px;
-    font-weight: normal;
-    text-overflow: ellipsis;
-    text-align: right;
+  .Title_Open {
+    &:before {
+      content: '▾';
+    }
   }
 
-  .order_no {
-    flex-grow: 2;
-    flex-shrink: 1;
-    margin: 0px;
-    font-weight: normal;
-    text-overflow: ellipsis;
-    text-align: right;
+  .Desc {
+  }
+
+  .Val {
+    display: flex;
+    flex-direction: row;
+    margin-top: 8px;
+    align-items: center;
+
+    small {
+      flex-grow: 1;
+      flex-shrink: 1;
+      font-weight: normal;
+      margin-right: 10px;
+    }
+
+    small:nth-child(1) {
+      color: rgba(9, 30, 66, 0.71);
+      background-color: rgb(227, 252, 239);
+      margin-right: 30px;
+      border-radius: 2px;
+      text-align:center;
+      padding: 4px;
+    }
+
+    small:nth-child(2) {
+      margin: 0px;
+      text-overflow: ellipsis;
+      text-align: right;
+    }
+
+    small:nth-child(3) {
+      margin: 0px;
+      text-overflow: ellipsis;
+      text-align: right;
+    }
   }
 }
+

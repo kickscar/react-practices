@@ -1,0 +1,12 @@
+.Container {
+  background-color: rgb(235, 236, 240);
+  display: flex;
+  flex-direction: column;
+  opacity: inherit;
+  padding: 8px 8px 0px;
+  border: 8px;
+  transition: background-color 0.2s ease 0s, opacity 0.1s ease 0s;
+  user-select: none;
+  border-radius: 0 0 2px 2px;
+  width: 250px;
+}
