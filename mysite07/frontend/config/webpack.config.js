@@ -1,4 +1,5 @@
 const path = require('path');
+const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 
 module.exports = (env) => ({
     mode: "none",
@@ -10,7 +11,7 @@ module.exports = (env) => ({
     },
     module: {
         rules: [{
-            test: /\.(png|gif|jpe?g|svg|ico|tiff?|bmp)$/i,
+            test: /\.(png|gif|jpe?g|svg|ico|tif?f|bmp)$/i,
             type: 'asset/resource'
         }, {
             test: /\.(sa|sc|c)ss$/i,
@@ -28,6 +29,9 @@ module.exports = (env) => ({
             }
         }]
     },
+    plugins: [
+        new CaseSensitivePathsPlugin()
+    ],
     devtool: "eval-source-map",
     devServer: {
         host: "0.0.0.0",
@@ -39,6 +43,9 @@ module.exports = (env) => ({
         liveReload: true,
         hot: false,
         compress: true,
+        static: {
+            directory: path.resolve('./public')
+        },
         historyApiFallback: true
     }    
 });

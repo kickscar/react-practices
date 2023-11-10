@@ -1,5 +1,5 @@
 import React from 'react';
-import SiteLayout from "../../layout/SiteLayout";
+import {SiteLayout} from "../../layout";
 
 export default function Join() {
     return (

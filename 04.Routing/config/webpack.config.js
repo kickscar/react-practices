@@ -10,7 +10,7 @@ module.exports = (env) => ({
     },
     module: {
         rules: [{
-            test: /\.(png|gif|jpe?g|svg|ico|tiff?|bmp)$/i,
+            test: /\.(png|gif|jpe?g|svg|ico|tif?f|bmp)$/i,
             type: 'asset/resource'
         }, {
             test: /\.(sa|sc|c)ss$/i,
@@ -30,11 +30,11 @@ module.exports = (env) => ({
     },
     devtool: "eval-source-map",
     devServer: {
-        contentBase: path.resolve('public'),
-        watchContentBase: true,
+        static: {
+            directory: path.resolve('public'),
+        },
         host: "0.0.0.0",
         port: 9999,
-        inline: true,
         liveReload: true,
         hot: false,
         compress: true,

@@ -14,3 +14,27 @@
     line-height: 35px;
   }
 }
+
+.DeleteForm {
+  padding: .5em;
+  text-align: left;
+
+  label, input {
+    display: block;
+    margin: 5px;
+  }
+
+  input {
+    width: 310px;
+    padding: 5px;
+    outline: none;
+  }
+
+  p {
+    text-align: center;
+    color: red;
+    font-weight: bold;
+    height:20px;
+    line-height: 20px;
+  }
+}

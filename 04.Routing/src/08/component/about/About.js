@@ -1,13 +1,8 @@
 import React from 'react';
-import {Outlet} from "react-router";
-import SiteLayout from "../../layout/SiteLayout";
-import Navigation from "./Navigation";
+import Me from "./Me";
 
 export default function About() {
     return (
-        <SiteLayout>
-            <Navigation />
-            <Outlet />
-        </SiteLayout>
+        <Me />
     );
 }

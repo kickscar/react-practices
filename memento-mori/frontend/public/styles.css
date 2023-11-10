@@ -1,0 +1,57 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {height:100%; background: #fff; font-family: '맑은 고딕', 돋움, 굴림; }
+h1 {font-weight: 200; color: #3b414c; font-size: 20px; }
+ul {list-style-type: none; padding: 0; margin: 0; }
+#root, .App {width: 100%}
+
+.memento-mori-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: #ddd;
+}
+
+.memento-mori-container .week-box {
+    background: #fff;
+    width: 1.2vh;
+    height: 1.2vh;
+    margin: 1px 1px 0 0;
+    border: 1px solid #000;
+}
+
+@media screen and (max-width: 1140px) {
+    .memento-mori-container {
+        max-width: 850px;
+    }
+}
+@media screen and (max-width: 2040px) {
+    .memento-mori-container {
+        max-width: 1750px;
+    }
+}
+@media screen and (max-width: 1790px) {
+    .memento-mori-container {
+        max-width: 1500px;
+    }
+}
+@media screen and (max-width: 1540px) {
+    .memento-mori-container {
+        max-width: 393px;
+    }
+}
+@media screen and (max-width: 1290px) {
+    .memento-mori-container {
+        max-width: 1000px;
+    }
+}
+@media screen and (max-width: 1040px) {
+    .memento-mori-container {
+        max-width: 780px;
+    }
+}
+@media screen and (max-width: 790px) {
+    .memento-mori-container {
+        max-width: 500px;
+    }
+}

@@ -30,11 +30,8 @@ module.exports = (env) => ({
     },
     devtool: "eval-source-map",
     devServer: {
-        contentBase: path.resolve('public'),
-        watchContentBase: true,
         host: "0.0.0.0",
         port: 9999,
-        inline: true,
         liveReload: true,
         hot: false,
         compress: true,

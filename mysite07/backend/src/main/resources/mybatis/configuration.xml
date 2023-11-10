@@ -6,8 +6,8 @@
     </settings>
     
 	<typeAliases>
-		<typeAlias type="me.kickscar.mysite.vo.GuestbookVo" alias="guestbookvo" />
-		<typeAlias type="me.kickscar.mysite.vo.GalleryVo" alias="galleryvo" />
+		<typeAlias type="com.poscodx.mysite.vo.GuestbookVo" alias="guestbookvo" />
+		<typeAlias type="com.poscodx.mysite.vo.GalleryVo" alias="galleryvo" />
 	</typeAliases>
 	
 	<mappers>

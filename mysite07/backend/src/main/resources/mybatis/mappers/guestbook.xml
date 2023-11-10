@@ -5,7 +5,7 @@
 		<![CDATA[
 		  select no,
 		         name,
-		         message,
+		         contents,
 		         date_format(reg_date, '%Y-%m-%d') as regDate
 		    from guestbook
 		]]>
@@ -24,7 +24,7 @@
 		<![CDATA[
 		insert
 		  into guestbook
-		values (null, #{name }, #{password }, #{message }, now())	
+		values (null, #{name }, #{password }, #{contents }, now())
 	  	]]>
 	  	<selectKey keyProperty="no" resultType="long" order="AFTER">
 			<![CDATA[

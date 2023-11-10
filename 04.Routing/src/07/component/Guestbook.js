@@ -1,5 +1,5 @@
 import React from 'react';
-import SiteLayout from "../layout/SiteLayout";
+import {SiteLayout} from "../layout";
 import styles from '../assets/scss/component/Guestbook.scss';
 
 export default function Gallery() {

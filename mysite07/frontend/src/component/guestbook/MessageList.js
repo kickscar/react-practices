@@ -7,7 +7,7 @@ import modalStyles from '../../assets/scss/component/modal/modal.scss';
 
 Modal.setAppElement('body');
 
-export default function MessageList({messages, notifyDeleteMessage}) {
+export default function MessageList({messages, deleteMessage}) {
     const refForm = useRef(null);
     const [modalData, setModalData] = useState({isOpen: false});
 
@@ -27,10 +27,10 @@ export default function MessageList({messages, notifyDeleteMessage}) {
             const response = await fetch(`/api/guestbook/${modalData.messageNo}`, {
                 method: 'delete',
                 headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                    'Accept': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Accept': 'applcation/json'
                 },
-                body: `password=${e.target.password.value}`
+                body: JSON.stringify({password: e.target.password.value})
             });
 
             if (!response.ok) {
@@ -51,13 +51,13 @@ export default function MessageList({messages, notifyDeleteMessage}) {
             }
 
             setModalData({isOpen: false, password: ''});
-            notifyDeleteMessage(json.data);
+            notifyMessage.delete(json.data);
         } catch (err) {
             console.error(err);
         }
     }
 
-    const notifyModalDeleteMessage = function (no) {
+    const notifyDeleteMessage = function (no) {
         setModalData({
             label: '글 작성시 입력했던 비밀번호를 입력하세요.',
             password: '',
@@ -67,13 +67,13 @@ export default function MessageList({messages, notifyDeleteMessage}) {
     }
 
     return (
-        <Fragment>
+        <>
             <ul className={styles.MessageList}>
                 {messages.map(message => <Message key={`guestbook_message_${message.no}`}
                                                   no={message.no}
                                                   name={message.name}
-                                                  message={message.message}
-                                                  notifyModalDeleteMessage={notifyModalDeleteMessage}/>)}
+                                                  message={message.contents}
+                                                  deleteMessage={deleteMessage}/>)}
             </ul>
             <Modal
                 isOpen={modalData.isOpen}
@@ -100,11 +100,14 @@ export default function MessageList({messages, notifyDeleteMessage}) {
                     </form>
                 </div>
                 <div className={modalStyles['modal-dialog-buttons']}>
-                    <button onClick={() => refForm.current.dispatchEvent(new Event("submit", {cancelable: true, bubbles: true}))}>확인</button>
+                    <button onClick={() => {
+                        refForm.current.dispatchEvent(new Event("submit", {cancelable: true, bubbles: true}));
+                    }}>확인
+                    </button>
                     <button onClick={() => setModalData({isOpen: false, password: ''})}>취소</button>
                 </div>
             </Modal>
-        </Fragment>
+        </>
     );
 }
 
