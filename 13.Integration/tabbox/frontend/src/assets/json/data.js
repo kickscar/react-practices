@@ -5,5 +5,5 @@ export default [
     {"no": 41, "name": "메뉴4", "active": false, "contents": "메뉴4의 뷰 내용"},
     {"no": 5, "name": "메뉴5", "active": false, "contents": "메뉴5의 뷰 내용"},
     {"no": 62, "name": "메뉴6", "active": false, "contents": "메뉴6의 뷰 내용"},
-    {"no": 17, "name": "메뉴7", "active": false, "contents": "메뉴7의 뷰 내용!!!!!"}
+    {"no": 17, "name": "메뉴7", "active": false, "contents": "메뉴7의 뷰 내용"}
 ];
