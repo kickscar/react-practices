@@ -1,0 +1,73 @@
+:global(.clock-display) {
+  font-family: 'digital-7', sans-serif;
+  display: block;
+  text-align: center;
+  padding: 15px 30px;
+  border: solid 5px #ffffff;
+  border-radius: 10px;
+  width: 400px;
+  margin: 60px auto 0 auto;
+  background-color: #000000;
+  color: #ffffff;
+  box-shadow: 4px 4px 7px 4px rgba(0, 0, 0, .3);
+
+  :global(.clock-field) {
+    margin: 5px 0;
+    display: flex;
+    justify-content: center;
+
+    div {
+      display: inline-block;
+      position: relative;
+
+      p {
+        font-size: 100px;
+        position: relative;
+        z-index: 100;
+      }
+    }
+
+    :global(.numbers) {
+      :global(.placeholder) {
+        color: #2b2828;
+        position: absolute;
+        top: 0;
+        z-index: 50;
+      }
+
+      :global(.type) {
+        font-size: 10px;
+        font-weight: bold;
+        font-family: sans-serif;
+        text-transform: uppercase;
+        margin-top: -10px;
+      }
+    }
+
+    :global(.AmPm) {
+      font-family: sans-serif;
+      text-transform: uppercase;
+      width: 20px;
+
+      div {
+        position: relative;
+        top: 50%;
+
+        p {
+          color: #2b2828;
+          font-size: 12px;
+          font-weight: bold;
+          width: 100%;
+        }
+      }
+
+      :global(.on) {
+        color: #ffffff !important;
+      }
+
+      :global(.off) {
+        color: #2b2828 !important;
+      }
+    }
+  }
+}

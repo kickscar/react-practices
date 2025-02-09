@@ -1,0 +1,10 @@
+.Header{
+    font-size: 0.75em;
+    width: 180px;
+    text-align: center;
+    margin:10px auto;
+    padding: 20px;
+    border: 2px solid #999;
+    color: #fe4411;
+    background-color:#c9c1cd
+}

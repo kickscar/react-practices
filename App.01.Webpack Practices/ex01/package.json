@@ -1,0 +1,18 @@
+{
+  "name": "ex01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dev-server.js",
+  "scripts": {
+    "start": "node dev-server",
+    "build": "npx webpack ./src/index.js -o ./public"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.21.2",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1"
+  }
+}

@@ -1,0 +1,11 @@
+@import 'Common.css';
+
+.Header{
+    width: 180px;
+    text-align: center; 
+    margin:100px auto;
+    padding: 20px;
+    border: 2px solid #999;
+    color: #1144fe;
+    background-color:#cdc1ce
+}

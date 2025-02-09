@@ -1,0 +1,47 @@
+._Email {
+    position: relative;
+    background: #fff;
+    width: 298px;
+    margin: 0 auto 10px auto;
+    overflow: auto;
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+
+    h4 {
+        padding: 5px 0;
+    }
+
+    span {
+        display: block;
+        padding: 0 0 5px 0;
+    }
+
+    a {
+        position: absolute;
+        width: 10px;
+        border: 1px solid #e5e5e5;
+        top: 5px;
+        right: 5px;
+        text-decoration: none;
+        color: #fff;
+        background-color: #e5e5e5;
+        font-weight: bold;
+        text-align: center;
+        line-height: 8px;
+        padding: 3px 2px 4px;
+
+        &:before {
+            content:'X'
+        }
+
+        &:visited, &:active {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        &:hover {
+            background-color: #cfcfcf;
+        }        
+    }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "emaillist08",
+  "version": "1.0.0",
+  "description": "Emaillist React Component",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx webpack serve --config config/webpack.config.js --progress --mode development",
+    "build": "npm install && npx webpack --config config/webpack.config.js --mode production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/plugin-syntax-throw-expressions": "^7.24.7",
+    "@babel/plugin-transform-runtime": "^7.24.7",
+    "prop-types": "^15.8.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.7",
+    "@babel/preset-env": "^7.24.7",
+    "@babel/preset-react": "^7.24.7",
+    "babel-loader": "^9.1.3",
+    "css-loader": "^7.1.2",
+    "node-sass": "^9.0.0",
+    "sass-loader": "^14.2.1",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.92.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4"
+  }
+}

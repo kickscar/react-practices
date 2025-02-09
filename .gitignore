@@ -1,0 +1,55 @@
+# Mac
+**/.DS_Store
+
+## maven, gradle
+**/target
+**/.gradle/
+**/settings.gradle
+**/build/
+**/out
+
+## node
+**/node_modules
+
+# typescript
+**/*.tsbuildinfo
+
+## react
+**/bundle.js
+**/main.js
+
+# next.js
+**/.next/
+**/out/
+**/next-env.d.ts
+
+# vercel
+**/.vercel
+
+## eclipse, sts
+**/.apt_generated
+**/.classpath
+**/.mvn
+**/.factorypath
+**/.project
+**/.settings
+**/.springBeans
+**/.sts4-cache
+
+## intellij
+**/.idea
+**/*.iws
+**/*.iml
+**/*.ipr
+
+## vs code
+**/.vscode
+**/.suo
+**/.ntvs*
+**/.njsproj
+**/.sln
+**/.sw?
+
+## application
+**/logs
+/.metadata/

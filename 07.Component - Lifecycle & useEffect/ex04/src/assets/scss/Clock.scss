@@ -1,0 +1,35 @@
+@font-face {
+  font-family: 'digital-7';
+  src: url('../fonts/digital-7.ttf');
+}
+
+:global(.clock-display) {
+  font-family: 'digital-7', sans-serif;
+  display: block;
+  text-align: center;
+  padding: 15px 30px;
+  border: solid 5px #ffffff;
+  border-radius: 10px;
+  width: 400px;
+  margin: 60px auto 0 auto;
+  background-color: #000000;
+  color: #ffffff;
+  box-shadow: 4px 4px 7px 4px rgba(0, 0, 0, .3);
+
+  :global(.Clock) {
+    margin: 5px 0;
+    display: flex;
+    justify-content: center;
+
+    div {
+      display: inline-block;
+      position: relative;
+
+      p {
+        font-size: 100px;
+        position: relative;
+        z-index: 100;
+      }
+    }
+  }
+}

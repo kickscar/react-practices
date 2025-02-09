@@ -1,0 +1,36 @@
+//
+// App.scss
+//
+
+@use "variables" as *;
+
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit
+}
+
+html {
+  box-sizing: border-box;
+
+  body {
+    margin: 0;
+    font-family: $font-family-body;
+    background-color: $bg-body;
+
+    #App {
+
+      .Header {
+        width: $header-width;
+        font-size: $header-fontsize;
+        text-align: $text-align-center;
+        margin: $header-margin;
+        padding: $header-padding;
+        border: $header-border;
+        color: $header-color;
+        background-color: $bg-header
+      }
+    }
+  }
+}
+

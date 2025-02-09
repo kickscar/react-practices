@@ -1,0 +1,30 @@
+:global(.clock-display) {
+  :global(.Clock) {
+    .AmPm {
+      font-family: sans-serif;
+      text-transform: uppercase;
+      width: 20px;
+
+      div {
+        position: relative;
+        top: 50%;
+
+        p {
+          color: #2b2828;
+          font-weight: bold;
+          width: 100%;
+          font-size: 12px;
+        }
+      }
+
+      :global(.on) {
+        color: #ffffff !important;
+      }
+
+      :global(.off) {
+        color: #2b2828 !important;
+      }
+      
+    }
+  }
+}

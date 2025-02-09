@@ -1,0 +1,27 @@
+@charset "utf-8";
+
+html {
+    
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font: 0.75em "맑은 고딕", 돋움, 굴림;
+        text-align: center;
+
+        :global(#root) {
+            width: 100%;
+        
+            :global(#App) {
+                width: 300px;
+                margin: 5px auto 0 auto;
+                background-color: #f2f2f2;
+                border:1px solid #d9d9d9;
+                border-radius: 2px;
+                padding: 7px;
+            }    
+        }
+    }
+}

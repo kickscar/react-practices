@@ -1,0 +1,15 @@
+{
+  "name": "ex01",
+  "version": "1.0.0",
+  "description": "1. 변환(Transpile) 규칙을 소스에 적용해서 변환된 소스를 생성  2. 코어 라이브러리 자체는 변환 규칙을 가지고 있지 않다.   3. 변환 규칙은 플러그인(pulgin) 또는 프리셋(reset)이 가지고 있고 Babel 설정을 통해 적용한다.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.26.7"
+  }
+}

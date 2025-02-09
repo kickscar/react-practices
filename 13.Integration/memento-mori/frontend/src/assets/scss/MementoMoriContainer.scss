@@ -1,0 +1,25 @@
+.mementoMoriContainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  background-color: #fff;
+
+  .weekBox {
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 0.8px;
+  }
+}
+
+@media screen and (max-width: 3000px) {
+  .mementoMoriContainer {
+    max-width: 368px;
+
+    .weekBox {
+      width: 6px;
+      height: 6px;
+    }
+  }
+}
+
+

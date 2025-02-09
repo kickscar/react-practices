@@ -1,0 +1,16 @@
+{
+  "name": "ex02",
+  "version": "1.0.0",
+  "description": "1. CLI 에서 명령어를 통해 Core 변환 기능을 사용할 수 있다. 2. 변환 규칙 등의 다양한 설정이 가능하다.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.26.4",
+    "@babel/core": "^7.26.7"
+  }
+}

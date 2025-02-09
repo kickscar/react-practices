@@ -1,0 +1,9 @@
+{
+    "presets": [
+    ],
+    "plugins": [
+        "@babel/plugin-transform-block-scoping",
+        "@babel/plugin-transform-parameters",
+        "@babel/plugin-transform-for-of"
+    ]
+}

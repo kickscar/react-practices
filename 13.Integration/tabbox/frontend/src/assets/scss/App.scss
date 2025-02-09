@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+html {
+    * {
+        margin: 0;
+        padding: 0;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizelegibility;
+        letter-spacing: -0.25px;
+    }
+        
+    body {
+        font-family: 'Space Mono', monospace; 
+        display: flex;
+        flex-direction: column;
+        padding: 32px;
+        margin: 60px auto;
+
+        :global(#root) {
+            width: 100%;
+
+            :global(#App) {
+                width: 100%
+            }
+        }
+    }
+}
