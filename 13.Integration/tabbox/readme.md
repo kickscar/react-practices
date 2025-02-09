@@ -22,7 +22,7 @@
 
 #### Deploy I: Jenkins with Publish Over SSH PlugIn
 
-1. SSH 연결(ssh key 인증)
+1. SSH 연결: ssh key 인증
 
    1)   key 생성하기
         ```
@@ -53,13 +53,13 @@
         $ ssh -i mykey.pem root@<Server IP>
         ``` 
 
-2. Deploy: Publish Over SSH 플러그인(Jenkins)
+2. Publish Over SSH 플러그인
 
    1)   Publish Over SSH 플러그인 설치 
 
         ![0000.png](../_resources/0000.png)
 
-   2)   Dashboard > Jenkins 관리 > System
+   2) Dashboard > Jenkins 관리 > System
 
         ![0001.png](../_resources/0001.png)
 
@@ -69,8 +69,23 @@
 
       ![0003.png](../_resources/0003.png)
 
-   4) 배포 Jenkins Item(프로젝트) 설정: 빌드후조치(post-build action)의 send build artifacts over ssh 설정
+3. TabBox Project(Jenkins Item) Configuration
 
-          3) tabbox.jar: transfer
-          4) launch.sh: transfer + execution
+   1) 소스 코드 관리
+
+      ![0004.png](../_resources/0004.png)
+   
+   2) Build Steps
+
+      ![0005.png](../_resources/0005.png)
+
+   3) 빌드 후 조치(post-build action): Send build artifacts over SSH
+   
+    - Transfer Set: tabbox.jar
+
+      ![0006.png](../_resources/0006.png)
+
+    - Transfer Set: launch.sh
+
+      ![0007.png](../_resources/0007.png)
  
