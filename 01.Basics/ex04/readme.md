@@ -11,40 +11,46 @@
 
 
 #### 02. 실습
-1. Init Project
+1. Initialize Project
 
-    $ mkdir ex04
-    $ cd ex04
+    ```
+    $ mkdir ex01
+    $ cd ex01
     $ npm init -y 
+    ```
 
 2. Install Packages
 
+    ```
     $ npm i -D webpack webpack-cli webpack-dev-server css-loader style-loader sass-loader sass
+    ```
 
-3. NPM scripting : package.json
-
+3. npm scripting : package.json
+    
+    ```
     "scripts": {
         "start": "npx webpack serve --progress",
         "build": "npx webpack"
     } 
+    ```
 
-4. Configuration
+4. Landing Page
 
-    webpack.config.js
+    1) public/index.html
 
-5. Landing
+5. Application
 
-    public/index.html 
+    1) public/index.js
+    2) public/App.js
 
-6. Application
+6. Test
 
-    1) src/index.js
-    2) src/App.js
-
-7. Test
-
+    ```
     $ npm start
+    ```
 
-8. Build(Bundling)
+7. build
 
+    ```
     $ npm run build
+    ```

@@ -2,43 +2,47 @@
 
 #### Application
 1. ex00 Recofiguration
-2. create-react-app 사용 안 하고 직접 설정하고 구성하기  
-
+2. create-react-app 없이 Application 설정 및 구성  
 
 #### 실습
+1. Initialize Project
 
-1. Init Project
-
-    $ mkdir ex06
-    $ cd ex06
+    ```    
+    $ mkdir ex07
+    $ cd ex07
     $ npm init -y 
+    ```
 
 2. Install Packages
-   
-   1) 개발툴
-   
-        $ npm i -D webpack webpack-cli webpack-dev-server css-loader style-loader sass-loader sass babel-loader @babel/core @babel/preset-env @babel/preset-react
+    - 개발툴
 
-   2) React 라이브러리
+    ```
+    $ npm i -D webpack webpack-cli webpack-dev-server css-loader style-loader sass-loader sass babel-loader @babel/core @babel/preset-env @babel/preset-react
+    ```
 
-        $ npm i react react-dom
+    - React Library
 
+   ```
+   $ npm i react react-dom
+   ```
 
-3. NPM scripting : package.json
+3. npm scripting : package.json
 
+    ```
     "scripts": {
         "start": "npx webpack serve --progress",
         "build": "npx webpack"
-    } 
+    }  
+    ```
 
-4. Configuration
+4. Landing
 
-    1) babel.config.json
-    2) webpack.config.js
+    1) public/index.html
 
-5. Landing
+5. Configuration
 
-    public/*
+   1) webpack.config.js
+   2) babel.config.json)
 
 6. Application
 
@@ -46,8 +50,12 @@
 
 7. Test
 
+   ```
     $ npm start
+   ```
 
-8. Build(Bundling)
+8. Build
 
-    $ npm run build
+   ```
+   $ npm run build 
+   ```

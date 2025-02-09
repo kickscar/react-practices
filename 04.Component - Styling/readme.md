@@ -1,6 +1,5 @@
 ## 04. Component: Styling
 
-
 #### Styling
 1. React 컴포넌트의 다양한 스타일링 방법
 2. CSS/SA(C)SS를 모듈과 비모듈로 다룰 때의 차이점
@@ -13,7 +12,6 @@
     - CSS in JS: Styled Components *** (o) 
     - React Modal *                    (o)
     - Font Awesome *
-
 
 #### Examples
 1. Inline Styling - (예제: ex01)
@@ -57,43 +55,50 @@
 
 #### 실습
 1. Install Packages
-   
+
    1) Dependencies
 
-        $ npm i react react-dom prop-types styled-components
+      ```
+      $ npm i react react-dom prop-types
+      ```
 
    2) Dev. Dependencies
-   
-        $ npm i -D webpack webpack-cli webpack-dev-server css-loader style-loader sass-loader sass babel-loader @babel/core @babel/preset-env @babel/preset-react
 
-   3) 새롭게 추가된 의존성
-        - CSS in JS (예제: ex07): styled-components 패키지 추가
+      ```
+      $ npm i -D webpack webpack-cli webpack-dev-server css-loader style-loader sass-loader sass babel-loader @babel/core @babel/preset-env @babel/preset-react 
+      ```
+   3) 새롭게 추가된 의존성: CSS in JS (예제: ex07)
 
+      ```
+      $ npm i styled-components
+      ```
 
-2. NPM scripting : package.json
+2. npm scripting: package.json
 
+   ```
     "scripts": {
         "start": "npx webpack serve --config config/webpack.config.js --progress --mode development",
         "build": "npm i && npx webpack --config config/webpack.config.js --mode production"
-    } 
-
+    }
+   ```
 
 3. Configuration
 
-    1) config/babel.config.json
-    2) config/webpack.config.js
-
+   1) config/babel.config.json
+   2) config/webpack.config.js
 
 4. Landing
 
-    public/index.html
-
+   1) public/index.html
 
 5. Test
 
+   ```
     $ npm start
-
+   ```
 
 6. Build
 
-    $ npm run build 
+   ```
+   $ npm run build 
+   ```

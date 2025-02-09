@@ -1,53 +1,61 @@
 #### 클래스 컴포넌트
 1. 클래스 컴포넌트 만들어 보기
 
-
-
 #### 실습
-1. Init Project
+1. Initialize Project
 
+    ```    
     $ mkdir ex05
     $ cd ex05
     $ npm init -y 
+    ```
 
 2. Install Packages
-   
-   1) 개발툴
-   
-        $ npm i -D webpack webpack-cli webpack-dev-server css-loader style-loader sass-loader sass babel-loader @babel/core @babel/preset-env @babel/preset-react
+    - 개발툴
 
-   2) React 라이브러리
+    ```
+    $ npm i -D webpack webpack-cli webpack-dev-server css-loader style-loader sass-loader sass babel-loader @babel/core @babel/preset-env @babel/preset-react
+    ```
 
-        $ npm i react react-dom
+    - React Library
 
+   ```
+   $ npm i react react-dom
+   ```
 
-3. NPM scripting : package.json
+3. npm scripting : package.json
 
+    ```
     "scripts": {
         "start": "npx webpack serve --config config/webpack.config.js --progress --mode development",
         "build": "npm i && npx webpack --config config/webpack.config.js --mode production"
-    } 
+    }  
+    ```
 
-4. Configuration
+4. Landing
+
+    1) public/index.html
+
+5. Configuration
 
     1) config/babel.config.json
     2) config/webpack.config.js
 
-5. Landing
-
-    public/index.html
-
 6. Application
-    
+
     1) src/index.js
     2) src/App.js
     3) src/Contents.js
     4) src/Header.js
-   
-1. Test
 
+7. Test
+
+   ```
     $ npm start
+   ```
 
-2. Build(Bundling)
+8. Build
 
-    $ npm run build
+   ```
+   $ npm run build 
+   ```

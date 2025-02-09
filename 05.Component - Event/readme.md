@@ -1,16 +1,12 @@
 ## 05. Component: Event
 
-
 #### Event
 1. Handler 작성 방식
-
     - Inline
     - External Function
-
 2. DOM Event 합성: Synthetic Event
 3. Event 종류
 4. Refs: Real DOM Element 참조하기
-
 
 #### Examples
 1. Inline Handler - (예제: ex01)
@@ -23,41 +19,43 @@
 
 #### 실습
 1. Install Packages
-   
-   1) Dependencies
+    1) Dependencies
+       ```
+       $ npm i react react-dom prop-types styled-components
+       ```
 
-        $ npm i react react-dom prop-types styled-components
+    2) Dev. Dependencies
 
-   2) Dev. Dependencies
-   
-        $ npm i -D webpack webpack-cli webpack-dev-server css-loader style-loader sass-loader sass babel-loader @babel/core @babel/preset-env @babel/preset-react
+       ```
+       $ npm i -D webpack webpack-cli webpack-dev-server css-loader style-loader sass-loader sass babel-loader @babel/core @babel/preset-env @babel/preset-react 
+       ```
 
+2. npm scripting: package.json
 
-2. NPM scripting : package.json
-
+   ```
     "scripts": {
         "start": "npx webpack serve --config config/webpack.config.js --progress --mode development",
         "build": "npm i && npx webpack --config config/webpack.config.js --mode production"
-    } 
-
+    }
+   ```
 
 3. Configuration
 
     1) config/babel.config.json
     2) config/webpack.config.js
 
-
 4. Landing
 
-    public/index.html
-
+    1) public/index.html
 
 5. Test
 
+   ```
     $ npm start
-
+   ```
 
 6. Build
 
-    $ npm run build 
-
+   ```
+   $ npm run build 
+   ```

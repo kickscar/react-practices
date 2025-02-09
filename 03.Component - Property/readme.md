@@ -8,53 +8,58 @@
 5. 상위 컴포넌트에서 하위 컴포넌트로 전달되는 데이터로 Data Flow(Top-Down)의 메카니즘을 제공한다.
 6. Property Validator: 하위 컴포넌트는 상위 컴포넌트로 부터 전달받은 프로퍼티 값의 유효성을 검증할 수 있다.
 
-
 #### Examples
 1. 함수 컴포넌트의 property - (예제: ex01)
 2. Data Flow - (예제: ex02)
 3. 클래스 컴포넌트의 property - (예제: ex03)
 4. Property Validator - (예제: ex04)
-   
 
 #### 실습
 1. Install Packages
-   
-   1) Dependencies
 
-        $ npm i react react-dom prop-types
+    1) Dependencies
 
-   2) Dev. Dependencies
-   
-        $ npm i -D webpack webpack-cli webpack-dev-server css-loader style-loader sass-loader sass babel-loader @babel/core @babel/preset-env @babel/preset-react
+       ```
+       $ npm i react react-dom
+       ```
 
-   3) 새롭게 추가된 의존성
-        - Property Validator (예제: ex04): prop-types 패키지 추가
+    2) Dev. Dependencies
 
+       ```
+       $ npm i -D webpack webpack-cli webpack-dev-server css-loader style-loader sass-loader sass babel-loader @babel/core @babel/preset-env @babel/preset-react 
+       ```
+    3) 새롭게 추가된 의존성: Property Validator (예제: ex04)
 
-1. NPM scripting : package.json
+       ```
+       $ npm i prop-types
+       ```
 
+2. npm scripting: package.json
+
+   ```
     "scripts": {
         "start": "npx webpack serve --config config/webpack.config.js --progress --mode development",
         "build": "npm i && npx webpack --config config/webpack.config.js --mode production"
-    } 
-
+    }
+   ```
 
 3. Configuration
 
     1) config/babel.config.json
     2) config/webpack.config.js
 
-
 4. Landing
 
-    public/index.html
-
+    1) public/index.html
 
 5. Test
 
+   ```
     $ npm start
-
+   ```
 
 6. Build
 
-    $ npm run build
+   ```
+   $ npm run build 
+   ```
