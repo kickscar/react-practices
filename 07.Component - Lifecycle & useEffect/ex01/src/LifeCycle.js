@@ -9,7 +9,7 @@ export default class LifeCircle extends Component {
             color: null
         }
 
-        console.log('[MOUNT01]: constructor()');
+        console.log('[MOUNT 1][UPDATE X][UNMOUNT X]: constructor()');
     }
 
     /**
@@ -17,7 +17,7 @@ export default class LifeCircle extends Component {
      *  props로 받아온 값을 state에 동기화 한다.[react v16.3]
      */
     static getDerivedStateFromProps(nextProps, prevState) {
-        console.log(`[MOUNT02][UPDATE01]: getDerivedStateFromProps(nextProps=${nextProps.color}, prevState=${prevState.color})`);
+        console.log(`[MOUNT 2][UPDATE 1][UNMOUNT X]: getDerivedStateFromProps(nextProps=${nextProps.color}, prevState=${prevState.color})`);
         return nextProps.color !== prevState.color ? {color: nextProps.color} : null;
     }
 
@@ -31,12 +31,12 @@ export default class LifeCircle extends Component {
      *  컴포넌트 성능 최적화(튜닝)에 사용할 수 있다.
      */
     shouldComponentUpdate(nextProps, nextState) {
-        console.log(`[UPDATE02]: shouldComponentUpdate(nextProps=${nextProps.color}, nextState=${nextState.color})`)
+        console.log(`[MOUNT X][UPDATE 2][UNMOUNT X]: shouldComponentUpdate(nextProps=${nextProps.color}, nextState=${nextState.color})`)
         return true;
     }
 
     render() {
-        console.log('[MOUNT03][UPDATE03]: render()');
+        console.log('[MOUNT 3][UPDATE 3][UNMOUNT X]: render()');
         return <h3 style={{backgroundColor: this.state.color, width: 100, height: 50}} ref={ref => this.h3Ref = ref}/>
     }
 
@@ -48,7 +48,7 @@ export default class LifeCircle extends Component {
      *  주로 업데이트 직전의 값을 참고해야 할 일이 있을 때 오버라이딩 한다.
      */
     getSnapshotBeforeUpdate(prevProps, prevState) {
-        console.log(`[UPDATE04]: getSnapshotBeforeUpdate(prevProps=${prevProps.color}, prevState=${prevState.color})`);
+        console.log(`[MOUNT X][UPDATE 4][UNMOUNT X]: getSnapshotBeforeUpdate(prevProps=${prevProps.color}, prevState=${prevState.color})`);
         return prevProps.color !== this.state.color ? this.h3Ref.style.backgroundColor : null;
     }
 
@@ -58,12 +58,11 @@ export default class LifeCircle extends Component {
      *  변경 전의 state 값과 props값에 접근 가능
      */
     componentDidUpdate(prevProps, prevState, snapshot) {
-        // console.log(`[UPDATE05]: componentDidUpdate(prevProps=${prevProps.color}, prevState=${prevState.color}, snapshot=${snapshot})`);
+        // console.log(`[MOUNT X][UPDATE 5][UNMOUNT X]: componentDidUpdate(prevProps=${prevProps.color}, prevState=${prevState.color}, snapshot=${snapshot})`);
 
-        const hexColor = snapshot.replace(/[^\d,]/g, '').split(',').map(e => parseInt(e)).reduce((s, e) => s + ('0' + e.toString(16)).slice(-2), "#");
         //   "10, 20, 30" -> [10, 20, 30] -> reduce( '#' -> '#0a' -> '#0af5' -> '#0xf5ee')
-
-        console.log(`[UPDATE05]: componentDidUpdate(prevProps=${prevProps.color}, prevState=${prevState.color}, snapshot=${hexColor})`);
+        const hexColor = snapshot.replace(/[^\d,]/g, '').split(',').map(e => parseInt(e)).reduce((s, e) => s + ('0' + e.toString(16)).slice(-2), "#");
+        console.log(`[MOUNT X][UPDATE 5][UNMOUNT X]: componentDidUpdate(prevProps=${prevProps.color}, prevState=${prevState.color}, snapshot=${hexColor})`);
     }
 
     /**
@@ -75,7 +74,7 @@ export default class LifeCircle extends Component {
      * 등을 할 수 있다.
      */
     componentDidMount() {
-        console.log('[MOUNT04]: componentDidMount()');
+        console.log('[MOUNT 4][UPDATE X][UNMOUNT X]: componentDidMount()');
     }
 
     /**
@@ -84,6 +83,6 @@ export default class LifeCircle extends Component {
      *  작업을 한다.
      */
     componentWillUnmount() {
-        console.log('[UNMOUNT]: componentWillUnmount()');
+        console.log('[MOUNT X][UPDATE X][UNMOUNT O]: componentWillUnmount()');
     }
 }

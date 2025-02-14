@@ -7,12 +7,11 @@ function Emaillist({emails}) {
         <ul className={Email_List}>
             {
 
-                    emails?.map(email => <Email
-                                            key={email.no}
-                                            no={email.no}
-                                            firstName={email.firstName}
-                                            lastName={email.lastName}
-                                            email={email.email} />)
+                emails?.map(email => <Email
+                                        key={email.id}
+                                        firstName={email.firstName}
+                                        lastName={email.lastName}
+                                        email={email.email} />)
 
             }
         </ul>

@@ -5,23 +5,26 @@ export default function Hook({ color }) {
     const [title, setTitle] = useState('');
 
     /**
-     *   1. Alternative 01: getDerivedStateFromProps
+     *   [1] Alternative 01: getDerivedStateFromProps
+     * 
      */
     if(boxColor !== color ) {
         setBoxColor(color);
     }
 
+
     /**
-     *   2. After Rendering 함수( 상태의 변화 -> 렌더링 -> 함수)
-     *   class component lifecycle(componentDidMount, componentDidUpdate)
+     *   [2-1] After Rendering 함수 -
+     *  
+     *  
      */
     useEffect(() => {
         console.log('After Rendering');
     });
-
     /**
-     *  3. 어떤 특정 상태(boxColor)의 변화에 반응하는 After Rendering 함수 : 관심 분리
-     *    
+     *  [2-2] After Rendering 함수
+     * 
+     *  어떤 특정 상태(boxColor)의 변화에 반응하는 After Rendering 함수 : 관심 분리
      */
     useEffect(() => {
         console.log('Update Color');
@@ -30,17 +33,28 @@ export default function Hook({ color }) {
     useEffect(() => {
         console.log('Update Title');
     }, [title]);
+    
+    
 
     /**
-     *  4. Alternative 02: componentDidMount & componentWillUnmount
+     *  [3] Alternative 03: componentDidMount & componentWillUnmount
+     * 
      */
-    useEffect(() => {
-        console.log('After Mount(componentDidMount)');
-        return (function(){
-            console.log('After Unmount(componentWillUnmount)');
-        });
-    }, []);
+        useEffect(() => {
+            
+            console.log('After Mount(componentDidMount)');
 
+            return (function(){
+                console.log('After Unmount(componentWillUnmount)');
+            });
+
+        }, []);
+
+
+
+
+
+    // render
     return (
         <>
             <h3

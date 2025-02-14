@@ -18,12 +18,11 @@
     1) componentWillUnmount() ***
 
 #### Functional Component: useEffect(Component Alternative Lifecycle)
-1. getDerivedStateFromProps 대체
+1. 대체1: getDerivedStateFromProps
 2. After Rendering
-   1) componentDidUpdate 대체 
+   1) 대체2: componentDidUpdate 
    2) 어떤 특정 상태 변화에 반응
-3. componentDidMount 
-4. componentWillUnmount
+3. 대체3: componentDidMount & componentWillUnmount
 
 #### Examples
 1. Component Lifecycle - (예제: ex01)

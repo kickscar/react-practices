@@ -6,19 +6,17 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.7.16</version>
+		<version>3.4.1</version>
 		<relativePath/>
-	</parent>	
+	</parent>
 	
 	<groupId>com.poscodx</groupId>
-	<artifactId>emaillist8</artifactId>
+	<artifactId>emaillist08</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	
 	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.build.outputEncoding>UTF-8</project.build.outputEncoding>
-		<java.version>17</java.version>
+		<java.version>21</java.version>
 	</properties>
 	
 	<dependencies>
@@ -41,25 +39,12 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- MyBatis Starter -->
-		<dependency>
-			<groupId>org.mybatis.spring.boot</groupId>
-			<artifactId>mybatis-spring-boot-starter</artifactId>
-			<version>2.2.0</version>
-		</dependency>
-		
         <!-- Thymeleaf Starter -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
-		
-		<!-- Mariadb JDBC -->
-		<dependency>
-		    <groupId>org.mariadb.jdbc</groupId>
-		    <artifactId>mariadb-java-client</artifactId>
-		</dependency>
-				
+
 		<!-- Lombok -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
@@ -70,7 +55,7 @@
 	</dependencies>
 	
 	<build>
-		<finalName>emaillist8</finalName>
+		<finalName>emaillist08</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

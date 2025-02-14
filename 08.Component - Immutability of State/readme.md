@@ -14,12 +14,6 @@
 4. 결론은 변경하지 말고 대체해라: 불변성의 주개념!!!!
 5. Functional JavaScript 에서는 4번이 표준이 아니다.(가능하지만) 따라서 의도치 않게 변경할 가능성이 있기 때문에 주의해야 한다.
 
-### Violation 예) Class Component
-```javascript
-this.state.emails = [{}, {}, {}];
-let emails = this.state.emails;
-emails.push({});
-```
 
 ### How I:
 1. 비파괴 배열 메소드 및 연산자: map, filter, concat, ... (ES6 spread 연산자)
@@ -27,7 +21,7 @@ emails.push({});
 
 ### How II:
 1. Object.assign 을 이용해 변경이 적용된 객체를 새로 생성하는 방법
-2. 예제: ex02
+2. 예제: ex01
 
 ### How III:
 1. How II의 해결 방법은 Nest Object가 있는 경우, 까다롭다.
@@ -35,21 +29,21 @@ emails.push({});
    - deep clone을 사용하는 것은 비용이 비싸다.
    - 직접 구현하는 경우는 관리가 어렵고 코드에 실수가 있을 가능성 많음.
 2. 자바스크립트 한계
-3. 예제: ex03
+3. 예제: ex01
 
 ### How IV:
 1. React Addon에 복잡하고 중첩된 객체의 변경을 도와주는 immutablity helper 함수를 사용하는 것이다.
 2. add-on 설치
-```bash
-$ npm i react-addons-update
-```
+   ```bash
+   $ npm i react-addons-update
+   ```
 
 3. 적용
-```javascript
-import update from 'react-addons-update';
-
-const newObject = update(objectInState, { [WHERE] : { [WHAT]: updateValue } });
-```
+   ```javascript
+   import update from 'react-addons-update';
+   
+   const newObject = update(objectInState, { [WHERE] : { [WHAT]: updateValue } });
+   ```
 
 4. WHERE
    - 객체: 업데이트 하고자 하는 프로퍼티 이름
@@ -57,10 +51,10 @@ const newObject = update(objectInState, { [WHERE] : { [WHAT]: updateValue } });
 
 5. WHAT Command
    - $push      * : 배열 요소 추가
-   - $splice
-   - $unsift
+   - $splice    * : 배열 요소 추가/삭제/대체
+   - $unshift   * : 배열 요소 추가 
    - $set       * : 객체의 속성 변경 또는 배열의 요소 변경
    - $merge
    - $apply
 
-6. 예제: ex04
+6. 예제: ex02

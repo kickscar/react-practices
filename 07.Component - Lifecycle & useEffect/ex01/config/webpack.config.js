@@ -9,12 +9,6 @@ module.exports = function(env) {
             filename: 'assets/js/main.js',
             assetModuleFilename: 'assets/images/[hash][ext]'
         },
-        plugins: [
-            new CaseSensitivePathsPlugin(),
-            new webpack.EnvironmentPlugin({
-                DEBUG: false
-            })
-        ],
         module: {
             rules:[{
                 test: /\.js/i,

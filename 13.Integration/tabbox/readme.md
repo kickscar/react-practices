@@ -6,7 +6,7 @@
     ```    
     $ mvn -f tabbox/backend exec:exec clean package
     $ pwd
-    $ java -Dspring.profiles.active=production -jar /root/.jenkins/workspace/tabbox/tabbox/backend/target/tabbox.jar 
+    $ java -Dspring.profiles.active=production -jar tabbox/backend/target/tabbox.jar 
     ```
 
 #### Frontend
@@ -57,35 +57,35 @@
 
    1)   Publish Over SSH 플러그인 설치 
 
-        ![0000.png](../_resources/0000.png)
+        ![0000.png](./_resources/0000.png)
 
    2) Dashboard > Jenkins 관리 > System
 
-        ![0001.png](../_resources/0001.png)
+        ![0001.png](./_resources/0001.png)
 
    3) 실행서버(SSH server) 등록: springboot-publish-server
 
-      ![0002.png](../_resources/0002.png)
+      ![0002.png](./_resources/0002.png)
 
-      ![0003.png](../_resources/0003.png)
+      ![0003.png](./_resources/0003.png)
 
 3. TabBox Project(Jenkins Item) Configuration
 
    1) 소스 코드 관리
 
-      ![0004.png](../_resources/0004.png)
+      ![0004.png](./_resources/0004.png)
    
    2) Build Steps
 
-      ![0005.png](../_resources/0005.png)
+      ![0005.png](./_resources/0005.png)
 
    3) 빌드 후 조치(post-build action): Send build artifacts over SSH
    
     - Transfer Set: tabbox.jar
 
-      ![0006.png](../_resources/0006.png)
+      ![0006.png](./_resources/0006.png)
 
     - Transfer Set: launch.sh
 
-      ![0007.png](../_resources/0007.png)
+      ![0007.png](./_resources/0007.png)
  

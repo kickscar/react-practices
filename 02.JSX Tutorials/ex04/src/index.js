@@ -4,8 +4,14 @@ import {App} from './App.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
     <App />
-  </React.StrictMode>
-);
+    );
+
+console.log(root)
+console.log("=======");
+
+//console.log(root._internalRoot.containerInfo);
+console.log("=======");
+console.log(root._internalRoot.current);
+
 

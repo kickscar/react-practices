@@ -1,0 +1,32 @@
+html *      { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizelegibility; letter-spacing: -0.25px; }
+html, body  { width: 100%; height:100%; }
+body        { background: #eee; font-family: "맑은 고딕", 돋움, 굴림;  }
+
+#root { width: 100%; height:100%; }
+
+
+/* KanbanBoard */
+.Kanban_Board  { white-space: nowrap; height:100%; margin: 20px auto; }
+
+
+/* CardList */
+.Card_List                          { position: relative; list-style-type: none; display: inline-block; vertical-align: top; white-space: normal; height: 100%; width: 33%; padding: 0 20px; overflow: auto; }
+.Card_List:not(:last-child):after   { content: ''; position: absolute; top: 0; right: 0; width: 1px; height: 99%; background: linear-gradient(to bottom, #eee 0%, #ccc 50%, #eee 100%) fixed; }
+.Card_List h1                       { font-weight: 500; color: #3b414c; font-size: 20px; }
+
+
+/* Card */
+._Card                  { position: relative; z-index: 1; background: #fff; width: 100%; padding: 10px 10px 10px 15px; margin: 0 0 10px 0; overflow: auto; border: 1px solid #e5e5df; border-radius: 3px; box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25); }
+.Card_Title             { font-weight: bold; border-bottom: solid 5px transparent; }
+.Card_Title:before      { display: inline-block; width: 1em; content: '▸'; }
+.Card_Title_Open:before { content: '▾'; }
+
+
+/* TaskList */
+.Task_List ul               { list-style-type: none; }
+.Task_List .Input_Add_Task  { border: 1px dashed #bbb; width: 100%; padding: 10px; margin-top: 5px; border-radius: 3px }
+
+
+/* Task */
+._Task:first-child  { margin-top: 10px; padding-top: 10px; border-top: dashed 1px #ddd; }
+.Task_Remove:after  { display: inline-block; color: #d66; content: '✖'; }

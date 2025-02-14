@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+<meta charset='UTF-8'>
+<title>Kanban Board</title>
+<link rel='stylesheet' type='text/css' href='styles.css'>
+</head>
+<body>
+  <div id='root'>
+
+    <!-- Begin: KanbanBoard -->
+    <div class='Kanban_Board'>
+
+      <!-- Begin: To Do CardList -->
+      <div class='Card_List'>
+        <h1>To Do</h1>
+
+        <!-- Begin: Card -->
+        <div class='_Card'>
+          <div class='Card_Title  Card_Title_Open'>Stroy Board 작성</div>
+          <div class='Card_Details'>
+            기능 기반의 화면 목업 작업
+
+            <!-- Begin: TaskList -->
+            <div class='Task_List'>
+              <ul>
+
+                <!-- Begin: Task-->
+                <li class='_Task'>
+                  <input type='checkbox' checked='true'>
+                  사용자 스토리 리스트업
+                  <a href='#' class='Task_Remove'></a>
+                </li>
+                <!-- End: Task-->
+
+                <!-- Begin: Task-->
+                <li class='_Task'>
+                  <input type='checkbox' checked='false'>
+                  개별 화면 목업
+                  <a href='#' class='Task_Remove'></a>
+                </li>
+                <!-- End: Task-->
+
+              </ul>
+              <input class='Input_Add_Task' type='text' placeholder='태스크 추가'>
+
+            </div>
+            <!-- End: TaskList -->
+
+          </div>
+        </div>
+        <!-- End: Card -->
+
+      </div>
+      <!-- End: To Do CardList -->
+
+
+
+
+
+      <!-- Begin: In Progress CardList -->
+      <div class='Card_List'>
+        <h1>Doing</h1>
+
+        <!-- Begin: Card -->
+        <div class='_Card'>
+          <div class='Card_Title'>React Study</div>
+          <div class='Card_Details'>
+            React.JS 공부 하기
+
+          </div>
+        </div>
+        <!-- End: Card -->
+
+      </div>
+      <!-- End: In Progress CardList -->
+
+
+
+
+
+
+      <!-- Begin: Done CardList -->
+      <div class='Card_List'>
+        <h1>Done</h1>
+        
+      </div>
+      <!-- End: Done CardList -->
+        
+
+
+    </div>
+    <!-- End: KanbanBoard -->
+      
+  </div>
+</body>
+</html>

@@ -1,74 +1,26 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import RegisterForm from './RegisterForm';
 import SearchBar from './SearchBar';
 import Emaillist from './Emaillist';
 import './assets/scss/App.scss';
 
+import data from './assets/json/data.js';
+
 function App() {
-    const [emails, setEmails] = useState(null);
+    const [emails, setEmails] = useState(data);
 
-    const addEmail = async (email) => {
-        try {
-            const response = await fetch('/api', {
-                method: 'post',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(email)
-            });
+    const searchEmails = (keyword) => {
+        const keywordLowerCase = keyword.toLowerCase();
 
-            if(!response.ok) {
-                throw new Error(`${response.status} ${response.statusText}`);
-            }
-
-            const json = await response.json();
-
-            if(json.result !== 'success') {
-                throw new Error(json.message);
-            }
-
-            setEmails([json.data, ...emails]);
-        } catch(err) {
-            console.error(err);
-        }
-    };
-
-    const fetchEmails = async (keyword) => {
-        try {
-            const response = await fetch(`/api?kw=${keyword ? keyword : ''}`, {
-                method: 'get',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: null
-            });
-
-            if(!response.ok) {
-                throw new Error(`${response.status} ${response.statusText}`);
-            }
-
-            const json = await response.json();
-
-            if(json.result !== 'success') {
-                throw new Error(json.message);
-            }
-
-            setEmails(json.data);
-        } catch(err) {
-            console.error(err);
-        }
+        setEmails(!keywordLowerCase ? data : data.filter(({firstName, lastName, email}) => {
+            return firstName.toLowerCase().indexOf(keywordLowerCase) !== -1 || lastName.toLowerCase().indexOf(keywordLowerCase) !== -1 || email.toLowerCase().indexOf(keywordLowerCase) !== -1;
+        }));
     }
-
-    useEffect(() => {
-        fetchEmails();
-    }, []);
 
     return (
         <div id={'App'}>
-            <RegisterForm addEmail={addEmail}/>
-            <SearchBar fetchEmails={fetchEmails} />
+            <RegisterForm/>
+            <SearchBar searchEmails={searchEmails} />
             <Emaillist emails={emails} />
         </div>
     );

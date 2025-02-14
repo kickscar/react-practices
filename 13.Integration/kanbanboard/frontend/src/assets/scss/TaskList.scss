@@ -1,0 +1,12 @@
+:global(.Kanban_Board)  {
+    .Task_List {
+        
+        ul {
+            list-style-type: none;
+        }
+    
+        .Input_Add_Task  {
+            border: 1px dashed #bbb; width: 100%; padding: 10px; margin-top: 5px; border-radius: 3px
+        }
+    }
+}

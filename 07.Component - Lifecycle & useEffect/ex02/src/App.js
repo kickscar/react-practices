@@ -7,14 +7,19 @@ export default function App() {
 
     return (
         <>
-            <h2>ex05 - Hook of Functional Component </h2>
+            <h2>ex02 - React Hook(useEffect) of Functional Component </h2>
             <button
                 onClick={() => setColor(`#${Math.floor((Math.random() * 0x00ffffff)).toString(16)}`)}>
-                색상변경
+                {'색상변경'}
             </button>
-            <input type='checkbox' value={show} checked={show} onChange={() => setShow(!show)}/> 컴포넌트 보기
             <br/>
-            {show ? <Hook color={color}/> : null}
+            <input type='checkbox' checked={show} onChange={e => setShow(!show)}/>
+            <span>{'컴포넌트 보기'}</span>
+            {
+                show ?
+                    <Hook color={color}/> :
+                    null
+            }
         </>
     );
 }
