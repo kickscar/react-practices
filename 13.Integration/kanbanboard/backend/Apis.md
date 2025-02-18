@@ -2,9 +2,9 @@
 
 
 ### GET /kanbanboard/card
-### Parameters
+#### Parameters
 none
-### Response
+#### Response
 code: 200
 
 content-type: application/json
@@ -33,10 +33,10 @@ example value
 ```
 ---
 
-## GET /kanbanboard/task
-### Parameters
+### GET /kanbanboard/task
+#### Parameters
 cardNo : Long(query)
-### Response
+#### Response
 code: 200
 
 content-type: application/json
@@ -66,11 +66,11 @@ example value
 ---
 
 
-## POST /kanbaboard/task
-### Parameters
+### POST /kanbaboard/task
+#### Parameters
 none
 
-### Request body
+#### Request body
 content-type: application/json
 
 example value
@@ -83,7 +83,7 @@ example value
 } 
 ```
 
-### Response
+#### Response
 code: 200
 
 content-type: application/json
@@ -101,12 +101,12 @@ example value
 ---
 
 
-## PUT /kanbaboard/task/{no}
-### Parameters
+### PUT /kanbaboard/task/{no}
+#### Parameters
 no : Long(PATH)
 done: String(query)
 
-### Response
+#### Response
 code: 200
 
 content-type: application/json
@@ -127,11 +127,11 @@ example value
 
 
 
-## DELETE /kanbaboard/task/{no}
-### Parameters
+### DELETE /kanbaboard/task/{no}
+#### Parameters
 no : Long(PATH)
 
-### Response
+#### Response
 code: 200
 
 content-type: application/json 
