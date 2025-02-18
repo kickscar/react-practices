@@ -1,0 +1,104 @@
+# spring configuration
+spring:
+   application:
+      name: ajax-backend
+   profiles:
+      active: development
+
+
+---
+# common profile
+spring:
+   mvc:
+      static-path-pattern: /assets/**
+   web:
+      resources:
+         static-locations: [classpath:/assets/, file:/Users/kickscar/ajax-practices-uploads/]
+   thymeleaf:      
+      check-template-location: true
+      enable-spring-el-compiler: true	  
+      mode: HTML
+      prefix: classpath:templates/      	  
+      suffix : .html
+   servlet:
+      # multipart(file upload)
+      multipart:
+         enabled: true
+         file-size-threshold: 5242880
+         max-file-size: 10485760
+         max-request-size: 104857600
+
+server:
+   error:
+      whitelabel:
+         enabled: false
+      path: /error
+
+   servlet:
+      context-path: /
+
+
+---
+# development profile
+spring:
+   config:
+      activate:
+         on-profile: development
+
+
+   devtools:
+      restart:
+         enabled: true
+      livereload:
+         enabled: true
+   thymeleaf:
+      cache: false     
+
+server:
+   port: 8080
+    
+logging:
+   pattern:
+      console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n"
+   level:
+      root: INFO
+
+springdoc:
+   api-docs:
+      path: /api-docs
+   packagesToScan:
+      - ajax.controller.api
+   swagger-ui:
+      path: /swagger-ui
+      operations-sorter: method
+      groups-order: DESC
+      tags-sorter: alpha
+
+---
+# production profile
+spring:
+   config:
+      activate:
+         on-profile: production
+
+
+   thymeleaf:
+      cache: true         
+
+server:
+   port: 8081
+
+logging:
+   pattern:
+      file: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n"
+   logback:
+      rollingpolicy:
+         file-name-pattern: "logs/${spring.application.name}.%d{yyyy-MM-dd}.%i.log.zip"
+         max-file-size: 10MB
+         max-history: 10
+   file:
+      name: logs/${spring.application.name}.log
+   level:
+      root: WARN
+      ajax:
+         exception: ERROR

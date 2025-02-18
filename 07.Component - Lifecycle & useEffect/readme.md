@@ -34,7 +34,7 @@
 1. Install Packages
    1) Dependencies
       ```
-      $ npm i react react-dom prop-types styled-components
+      $ npm i react react-dom react-modal styled-components
       ```
 
    2) Dev. Dependencies

@@ -32,5 +32,6 @@ mysite08(guestbook, gallery)
    |-- frontend
 </pre>
 
-#### [Appendix 01] webpack-practices *
-#### [Appendix 02] babel-practices *
+#### [Appendix 01] Webpack Practices *
+#### [Appendix 02] Babel Practices *
+#### [Appendix 03] AJAX Practices **

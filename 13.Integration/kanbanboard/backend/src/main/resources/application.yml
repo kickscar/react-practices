@@ -1,0 +1,103 @@
+# spring configuration
+spring:
+   application:
+      name: kanbanboard-backend
+   profiles:
+      active: development
+
+  
+---
+# common profile
+spring:
+   mvc:
+      static-path-pattern: /assets/**
+   web:
+      resources:
+         static-locations: classpath:/assets/
+   thymeleaf:      
+      check-template-location: true
+      enable-spring-el-compiler: true	  
+      mode: HTML
+      prefix: classpath:templates/      	  
+      suffix : .html
+   datasource:
+      driver-class-name: org.h2.Driver
+      url: jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;MODE=MYSQL
+      username: sa
+      password:
+   h2:
+    console:
+      enabled: true
+      path: /h2-console      
+
+mybatis:
+   config-location: classpath:mybatis/configuration.xml      
+
+server:
+   error:
+      whitelabel:
+         enabled: false
+      path: /error
+
+   servlet:
+      context-path: /
+
+
+---
+# development profile
+spring:
+   config:
+      activate:
+         on-profile: development
+
+   devtools:
+      livereload:
+         enabled: true
+   thymeleaf:
+      cache: false     
+
+server:
+   port: 8080
+    
+logging:
+   pattern:
+      console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n"
+   level:
+      root: INFO
+
+springdoc:
+   api-docs:
+      path: /api-docs
+   swagger-ui:
+      path: /swagger-ui
+      operations-sorter: method
+      groups-order: DESC
+      tags-sorter: alpha
+
+---
+# production profile
+spring:
+   config:
+      activate:
+         on-profile: production
+
+   thymeleaf:
+      cache: true         
+
+server:
+   port: 8083
+
+logging:
+   pattern:
+      file: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n"
+   logback:
+      rollingpolicy:
+         file-name-pattern: "logs/${spring.application.name}.%d{yyyy-MM-dd}.%i.log.zip"
+         max-file-size: 10MB
+         max-history: 10
+   file:
+      name: logs/${spring.application.name}.log
+   level:
+      root: WARN
+      kanbanboard:
+         exception: ERROR
