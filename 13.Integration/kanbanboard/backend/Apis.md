@@ -104,6 +104,7 @@ example value
 ### PUT /kanbaboard/task/{no}
 #### Parameters
 no : Long(PATH)
+
 done: String(query)
 
 #### Response
